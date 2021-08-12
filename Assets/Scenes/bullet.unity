@@ -372,6 +372,7 @@ GameObject:
   - component: {fileID: 1903631534}
   - component: {fileID: 1903631533}
   - component: {fileID: 1903631532}
+  - component: {fileID: 1903631536}
   m_Layer: 0
   m_Name: enemyBulletSpawner
   m_TagString: Untagged
@@ -449,12 +450,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903631531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 487.3514, y: 239.9434, z: 93.72206}
+  m_LocalPosition: {x: 461.5, y: 282.94, z: -101.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1903631536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903631531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46ed0e8900e48a41a847d99481cd838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  shotCooldown: 1
 --- !u!1001 &2318607988078341250
 PrefabInstance:
   m_ObjectHideFlags: 0
