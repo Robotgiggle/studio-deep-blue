@@ -31,7 +31,7 @@ public class HealthScript : MonoBehaviour
 
         if (LevelToLoad == "") // default to current scene 
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
         }
     }
 
