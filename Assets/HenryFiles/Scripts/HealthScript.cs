@@ -60,7 +60,7 @@ public class HealthScript : MonoBehaviour
                 switch (onLivesGone)
                 {
                     case deathAction.loadLevelWhenDead:
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                         break;
                     case deathAction.doNothingWhenDead:
                         // do nothing, death must be handled in another way elsewhere
