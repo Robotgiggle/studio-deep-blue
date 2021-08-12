@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 4879448512616401791, guid: 925bd8d0340dd464382857cf7272ad35, type: 3}
+      propertyPath: m_TagString
+      value: bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925bd8d0340dd464382857cf7272ad35, type: 3}
 --- !u!1 &1896919824
