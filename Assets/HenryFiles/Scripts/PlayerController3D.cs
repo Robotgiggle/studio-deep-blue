@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController3D : MonoBehaviour
 {
-
+    //Public Variables
     public float moveSpeed = 5.0f;
     public float gravity = 9.81f;
     float _vy;
@@ -19,7 +19,6 @@ public class PlayerController3D : MonoBehaviour
     public bool isGrounded = false;
     int _playerLayer;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         _transform = GetComponent<Transform>();
@@ -27,6 +26,7 @@ public class PlayerController3D : MonoBehaviour
         _playerLayer = this.gameObject.layer;
     }
 
+    // Start is called before the first frame update
     void Start()
     {
         myController = gameObject.GetComponent<CharacterController>();
