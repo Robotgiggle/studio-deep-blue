@@ -7,10 +7,10 @@ public class CoreController : MonoBehaviour
 {
     public GameObject player;
     public int health = 100;
-    public int bulletDamage;
-    public int weakDamage;
-    public int strongDamage;
-    public int bossDamage;
+    public int bulletDamage = 8;
+    public int weakDamage = 5;
+    public int strongDamage = 10;
+    public int bossDamage = 20;
     public float levelTimer = 120;
     bool iframes = false;
     int tBuffer = 1;
