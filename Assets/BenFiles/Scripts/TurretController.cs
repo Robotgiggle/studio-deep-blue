@@ -18,7 +18,8 @@ public class TurretController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        target = seekTarget(range);
+        transform.LookAt(target);
     }
 
     Transform seekTarget(float range){
