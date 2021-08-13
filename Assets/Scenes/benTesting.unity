@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 426156828}
   - component: {fileID: 426156827}
   - component: {fileID: 426156826}
+  - component: {fileID: 426156825}
   m_Layer: 0
   m_Name: dummyPlayer
   m_TagString: Untagged
@@ -235,6 +236,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &426156825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426156824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d866596d3089944959d58cd9257b4e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!65 &426156826
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -470,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97513e55ef80748dcba444eff847853e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 85
+  mouseSensitivity: 120
   playerBody: {fileID: 426156829}
   _xRotation: 0
 --- !u!1001 &909669517
