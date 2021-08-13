@@ -468,6 +468,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5729125917011362267, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5729125917011362270, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: m_Name
       value: enemyBulletSpawner
