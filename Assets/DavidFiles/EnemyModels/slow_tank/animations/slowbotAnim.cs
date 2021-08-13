@@ -6,6 +6,8 @@ public class slowbotAnim : MonoBehaviour
 {
     public Animator slowBot;
     public float speed = 0;
+    public bool punch = false;
+    public bool dead = false;
 
     void Start()
     {
@@ -26,6 +28,22 @@ public class slowbotAnim : MonoBehaviour
         } else
         {
             slowBot.SetBool("isMoving", false);
+        }
+        if (punch == true)
+        {
+            slowBot.SetBool("isPunching", true);
+        }
+        else
+        {
+            slowBot.SetBool("isPunching", false);
+        }
+        if (dead == true)
+        {
+            slowBot.SetBool("isDead", true);
+        }
+        else
+        {
+            slowBot.SetBool("isDead", false);
         }
     }
 }
