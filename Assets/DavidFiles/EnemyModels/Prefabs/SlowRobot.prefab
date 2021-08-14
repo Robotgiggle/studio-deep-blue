@@ -108,8 +108,8 @@ GameObject:
   - component: {fileID: 3565175374510709310}
   - component: {fileID: 3565175374510709305}
   m_Layer: 0
-  m_Name: weakBox
-  m_TagString: weak
+  m_Name: strongBox
+  m_TagString: strong
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
