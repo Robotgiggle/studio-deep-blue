@@ -10,8 +10,8 @@ public class TurretController : MonoBehaviour
     public float inaccuracy;
     public float range;
     Transform muzzle;
-    Transform target;
     Vector3 direction;
+    Vector3 target;
     float tbuffer;
     int displace = 1;
     // Start is called before the first frame update
@@ -27,10 +27,9 @@ public class TurretController : MonoBehaviour
     void Update()
     {
         target = seekTarget(range);
-        if(target!=null){
+        if(target!=Vector3.zero){
             transform.LookAt(target);
         }
-        transform.Rotate(2.7f,0,0);
         if(Time.time>=tbuffer){
             muzzle = transform.GetChild(1-displace);
             direction = transform.rotation.eulerAngles;
@@ -45,18 +44,28 @@ public class TurretController : MonoBehaviour
         }
     }
 
-    Transform seekTarget(float range){
+    Vector3 seekTarget(float range){
         GameObject[] allTargets = GameObject.FindGameObjectsWithTag("enemy");
         GameObject nearest = null;
-        float dist = range;
+        float maxDist = range;
+        float dist;
+        float vert;
         foreach(GameObject maybe in allTargets){
-            if(Vector3.Distance(transform.position,maybe.transform.position)<dist){
+            dist = Vector3.Distance(transform.position,maybe.transform.position);
+            vert = Mathf.Abs(maybe.transform.position.y - transform.position.y);
+            if(dist<maxDist&&vert<=Mathf.Sin(0.383972f)*dist){
                 nearest = maybe;
-                dist = Vector3.Distance(transform.position,maybe.transform.position);
+                maxDist = dist;
             }
         }
-        if(nearest==null){return null;}
-        return nearest.transform;
+        if(nearest==null){return Vector3.zero;}
+        Vector3 output = nearest.transform.position;
+        if(range==10){
+            output.y -= 0.4f;
+        }else{
+            output.y -= 0.5f;
+        }
+        return output;
     }
 
     void levelUp(){
