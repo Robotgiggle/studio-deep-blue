@@ -18,6 +18,9 @@ public class TurretController : MonoBehaviour
     void Start()
     {
         tbuffer = reloadTime;
+        if(this.name!="head_lv1"){
+            transform.parent.GetComponent<TurretCollision>().health += 7;
+        }
     }
 
     // Update is called once per frame
@@ -59,5 +62,13 @@ public class TurretController : MonoBehaviour
     void levelUp(){
         Instantiate(head2,transform.position,transform.rotation,transform.parent);
         Destroy(this.gameObject);
+    }
+    
+    void OnCollisionEnter(Collision other){
+        transform.parent.GetComponent<TurretCollision>().OnCollisionEnter(other);
+    }
+
+    void OnTriggerEnter(Collider other){
+        transform.parent.GetComponent<TurretCollision>().OnTriggerEnter(other);
     }
 }

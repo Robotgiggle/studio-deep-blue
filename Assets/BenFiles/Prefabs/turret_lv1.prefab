@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916708548883665319}
   - component: {fileID: 8993580140511735945}
+  - component: {fileID: 8345683622951151377}
   m_Layer: 0
   m_Name: turret_lv1
   m_TagString: Untagged
@@ -46,6 +47,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.5048696, z: 0.5}
   m_Center: {x: 0, y: -0.26626498, z: 0}
+--- !u!114 &8345683622951151377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019793863496483340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a297dc4fc944cd81aa843817f7332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  bulletDamage: 8
+  weakDamage: 5
+  strongDamage: 10
+  bossDamage: 20
 --- !u!1001 &2904377541147459819
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - strong
   - boss
   - enemy
+  - friendlyBullet
   layers:
   - Default
   - TransparentFX
