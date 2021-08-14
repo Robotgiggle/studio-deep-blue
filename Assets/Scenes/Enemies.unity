@@ -401,10 +401,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3158621510952695916, guid: 5fae5233c666c8e4f811a751c903eb2f, type: 3}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
     - target: {fileID: 3565175374911964456, guid: 5fae5233c666c8e4f811a751c903eb2f, type: 3}
       propertyPath: m_Name
       value: SlowRobot
