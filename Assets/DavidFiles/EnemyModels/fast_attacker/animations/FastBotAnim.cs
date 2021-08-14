@@ -16,7 +16,7 @@ public class FastBotAnim : MonoBehaviour
 
     void Update()
     {
-        //kick = get punch bool from Henry's fast enemy AI script
+        //kick = get kick bool from Henry's fast enemy AI script
         //dead = get dead bool from Henry's fast enemy AI script
         //speed = get speed variable from Henry's fast enemy AI script
         AnimCheck();

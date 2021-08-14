@@ -16,7 +16,7 @@ public class rangeBotAnim : MonoBehaviour
 
     void Update()
     {
-        //shoot = get punch bool from Henry's range enemy AI script
+        //shoot = get shoot bool from Henry's range enemy AI script
         //dead = get dead bool from Henry's range enemy AI script
         //speed = get speed variable from Henry's range enemy AI script
         AnimCheck();

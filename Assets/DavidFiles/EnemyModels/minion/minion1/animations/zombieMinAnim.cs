@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class zombieMinAnim : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator zMinion;
+    public float speed = 0;
+    public bool attack = false;
+    public bool dead = false;
+
     void Start()
     {
-        
+        zMinion = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //attack = get attack bool from Henry's minion enemy AI script
+        //dead = get dead bool from Henry's minion enemy AI script
+        //speed = get speed variable from Henry's minion enemy AI script
+        AnimCheck();
+    }
+
+    void AnimCheck()
+    {
+        if (speed > 0)
+        {
+            zMinion.SetBool("isWalking", true);
+        }
+        else
+        {
+            zMinion.SetBool("isWalking", false);
+        }
+        if (attack == true)
+        {
+            zMinion.SetBool("isAttacking", true);
+        }
+        else
+        {
+            zMinion.SetBool("isAttacking", false);
+        }
+        if (dead == true)
+        {
+            zMinion.SetBool("isDead", true);
+        }
+        else
+        {
+            zMinion.SetBool("isDead", false);
+        }
     }
 }

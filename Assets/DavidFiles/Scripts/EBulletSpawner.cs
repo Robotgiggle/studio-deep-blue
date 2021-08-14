@@ -6,6 +6,7 @@ public class EBulletSpawner : MonoBehaviour
 {
     public GameObject bullet;
     public float shotCooldown = 1f;
+    public bool isAttacking = false;
 
     float currentTime;
     float nextShotTime;
@@ -17,7 +18,8 @@ public class EBulletSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > nextShotTime)
+        //isAttacking = get shooting bool from Henry's minion enemy AI script
+        if (Time.time > nextShotTime && isAttacking == true)
         {
             nextShotTime = Time.time + shotCooldown;
             Instantiate(bullet, this.transform.position, this.transform.rotation);
