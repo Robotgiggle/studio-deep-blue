@@ -16,9 +16,9 @@ public class slowbotAnim : MonoBehaviour
     
     void Update()
     {
-        //punch = get punch bool from Henry's enemy AI script
-        //dead = get dead bool from Henry's enemy AI script
-        //speed = get speed variable from Henry's enemy AI script
+        //punch = get punch bool from Henry's slow enemy AI script
+        //dead = get dead bool from Henry's slow enemy AI script
+        //speed = get speed variable from Henry's slow enemy AI script
         AnimCheck();
     }
 
