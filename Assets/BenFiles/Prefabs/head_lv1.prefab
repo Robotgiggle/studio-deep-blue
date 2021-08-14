@@ -63,7 +63,7 @@ MonoBehaviour:
   bullet: {fileID: 4879448512616401791, guid: 925bd8d0340dd464382857cf7272ad35, type: 3}
   reloadTime: 1
   inaccuracy: 8
-  range: 10
+  range: 12
 --- !u!1 &3601254234287762691
 GameObject:
   m_ObjectHideFlags: 0
