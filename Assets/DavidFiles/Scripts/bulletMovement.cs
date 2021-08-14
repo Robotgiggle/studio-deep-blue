@@ -13,7 +13,7 @@ public class bulletMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("enemy"))
         {
             Destroy(this.gameObject);
         }
