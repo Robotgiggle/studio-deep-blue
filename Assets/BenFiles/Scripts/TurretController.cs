@@ -30,7 +30,7 @@ public class TurretController : MonoBehaviour
         if(target!=Vector3.zero){
             transform.LookAt(target);
         }
-        if(Time.time>=tbuffer){
+        if(Time.time>=tbuffer&&target!=Vector3.zero){
             muzzle = transform.GetChild(1-displace);
             direction = transform.rotation.eulerAngles;
             direction.x += Random.Range(-inaccuracy,inaccuracy);
