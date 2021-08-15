@@ -145,6 +145,7 @@ public class SpawnerController : MonoBehaviour
                             Debug.Log("enemy selection error");
                             break;
                     }
+                    tally.waveDone = (tally.waves[tally.wave].x==0&&tally.waves[tally.wave].y==0&&tally.waves[tally.wave].z==0);
                 }
             }
         }
