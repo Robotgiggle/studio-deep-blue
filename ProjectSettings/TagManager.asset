@@ -11,6 +11,7 @@ TagManager:
   - enemy
   - friendlyBullet
   - spawner
+  - token
   layers:
   - Default
   - TransparentFX
