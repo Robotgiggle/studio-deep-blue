@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2126003075866571511}
   - component: {fileID: 2126003075866571514}
   - component: {fileID: 2126003075866571509}
+  - component: {fileID: 6971889124717971687}
   m_Layer: 0
   m_Name: core
   m_TagString: Untagged
@@ -66,6 +67,22 @@ MonoBehaviour:
   strongDamage: 10
   bossDamage: 20
   levelTimer: 120
+--- !u!114 &6971889124717971687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126003075866571515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcce64029a64e486888119e3bb97dfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endless: 0
+  waves: []
+  wave: 0
+  waveDone: 0
 --- !u!1001 &2126003077029513370
 PrefabInstance:
   m_ObjectHideFlags: 0

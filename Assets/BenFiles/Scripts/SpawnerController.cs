@@ -10,12 +10,13 @@ public class SpawnerController : MonoBehaviour
     public float moveDist;
     public bool zAxis;
     RaycastHit spawnPoint;
-    bool left = false;
+    WaveTally tally;
     int mask = 1 << 3;
     int selected;
     float lBound;
     float rBound;
     float tbuffer;
+    bool left;
 
     // Start is called before the first frame update
     void Start()
@@ -30,39 +31,27 @@ public class SpawnerController : MonoBehaviour
         tbuffer = spawnRate;   
         moveSpeed += Random.Range(-4f,4f);
         spawnRate += Random.Range(-0.4f,0.4f);
+        tally = GameObject.Find("core").GetComponent<WaveTally>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(zAxis){
-            if(moveDist>=0){
-                if(transform.position.z<=rBound&&!left){
-                    transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
-                }else if(!left){
-                    left = true;
-                }else if(transform.position.z>=lBound&&left){
-                    transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
-                }else if(left){
-                    left = false;
-                }else{
-                    Debug.Log("motion error");
-                }
-            }else{
-                if(transform.position.z>=rBound&&!left){
-                    transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
-                }else if(!left){
-                    left = true;
-                }else if(transform.position.z<=lBound&&left){
-                    transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
-                }else if(left){
-                    left = false;
-                }else{
-                    Debug.Log("motion error");
-                }
-            }            
+            slideZ();           
         }else{
-            if(moveDist>=0){
+            slideX();
+        }
+        if(Time.time>=tbuffer){
+            selectSpawnable();
+            Physics.Raycast(transform.position,Vector3.down,out spawnPoint,100,mask);
+            if(selected!=3){Instantiate(spawnables[selected],spawnPoint.point,transform.rotation);}
+            tbuffer = Time.time + spawnRate;
+        }
+    }
+
+    void slideX(){
+        if(moveDist>=0){
                 if(transform.position.x<=rBound&&!left){
                     transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
                 }else if(!left){
@@ -87,8 +76,38 @@ public class SpawnerController : MonoBehaviour
                     Debug.Log("motion error");
                 }
             }
-        }
-        if(Time.time>=tbuffer){
+    }
+
+    void slideZ(){
+        if(moveDist>=0){
+                if(transform.position.z<=rBound&&!left){
+                    transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
+                }else if(!left){
+                    left = true;
+                }else if(transform.position.z>=lBound&&left){
+                    transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
+                }else if(left){
+                    left = false;
+                }else{
+                    Debug.Log("motion error");
+                }
+            }else{
+                if(transform.position.z>=rBound&&!left){
+                    transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
+                }else if(!left){
+                    left = true;
+                }else if(transform.position.z<=lBound&&left){
+                    transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
+                }else if(left){
+                    left = false;
+                }else{
+                    Debug.Log("motion error");
+                }
+            } 
+    }
+
+    void selectSpawnable(){
+        if(tally.endless){
             selected = Random.Range(1,101);
             if(selected<=50){
                 selected = 0;
@@ -96,10 +115,38 @@ public class SpawnerController : MonoBehaviour
                 selected = 1;
             }else{
                 selected = 2;
+            }                
+        }else{
+            selected = 3;
+            if(!tally.waveDone){
+                bool empty = true;
+                while(empty&&!tally.waveDone){
+                    selected = Random.Range(0,3);
+                    switch(selected){
+                        case 0:
+                            if(tally.waves[tally.wave].x!=0){
+                                empty = false;
+                                tally.waves[tally.wave].x--;
+                            }
+                            break;
+                        case 1:
+                            if(tally.waves[tally.wave].y!=0){
+                                empty = false;
+                                tally.waves[tally.wave].y--;
+                            }
+                            break;
+                        case 2:
+                            if(tally.waves[tally.wave].z!=0){
+                                empty = false;
+                                tally.waves[tally.wave].z--;
+                            }
+                            break;
+                        default:
+                            Debug.Log("enemy selection error");
+                            break;
+                    }
+                }
             }
-            Physics.Raycast(transform.position,Vector3.down,out spawnPoint,100,mask);
-            Instantiate(spawnables[selected],spawnPoint.point,transform.rotation);
-            tbuffer = Time.time + spawnRate;
         }
     }
 }

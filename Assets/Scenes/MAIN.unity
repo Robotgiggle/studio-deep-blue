@@ -656,6 +656,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: core
       objectReference: {fileID: 0}
+    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: endless
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: waves.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
 --- !u!1 &705507993
