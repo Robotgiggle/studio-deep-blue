@@ -10,6 +10,7 @@ TagManager:
   - boss
   - enemy
   - friendlyBullet
+  - spawner
   layers:
   - Default
   - TransparentFX
