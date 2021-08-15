@@ -27,7 +27,7 @@ public class MouseLockCursor : MonoBehaviour
             }
         }
         // Should be programmed to work under pressing "resume" within pause menu
-        else if (Input.GetButtonDown("Fire3") && paused)
+        else if (Input.GetButtonDown("Fire1") && paused)
         {
             LockCursor(true);
             Time.timeScale = 1;

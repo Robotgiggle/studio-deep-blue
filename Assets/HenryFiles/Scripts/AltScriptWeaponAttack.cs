@@ -28,12 +28,12 @@ public class AltScriptWeaponAttack : MonoBehaviour
             if (playerBullet != null)
             {
                 GameObject Temporary_Bullet_Handler;
-                Temporary_Bullet_Handler = Instantiate(playerBullet, firePoint.transform.position, transform.rotation) as GameObject;
-                Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 3);
+                Temporary_Bullet_Handler = Instantiate(playerBullet, firePoint.transform.position, firePoint.transform.rotation) as GameObject;
+                //Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 2);
 
                 Rigidbody Temporary_Rigid_Body;
                 Temporary_Rigid_Body = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
-                Temporary_Rigid_Body.AddForce(transform.right * bulletForwardForce * -100);
+                //Temporary_Rigid_Body.AddForce(transform.right * bulletForwardForce * -100);
             }
         }
     }
