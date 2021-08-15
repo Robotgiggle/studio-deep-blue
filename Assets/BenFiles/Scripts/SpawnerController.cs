@@ -48,6 +48,9 @@ public class SpawnerController : MonoBehaviour
             if(selected!=3){Instantiate(spawnables[selected],spawnPoint.point,transform.rotation);}
             tbuffer = Time.time + spawnRate;
         }
+        if(tally.waveDone){
+            this.gameObject.SetActive(false);
+        }
     }
 
     void slideX(){
