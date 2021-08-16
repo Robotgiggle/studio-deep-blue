@@ -1,13 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy_1_Behavior : MonoBehaviour
+public class RangeRobotScript : MonoBehaviour
 {
-    //Animation
-    private Animation m_Animation;
-    [SerializeField] private Animation m_GunShot;
-
+    public Animation m_WAnimation;
+    public Animation m_Walk;
+    public Animation m_IAnimation;
+    public Animation m_Idle;
 
     public GameObject bullet;
     public float fireRate = 7;
@@ -19,7 +19,6 @@ public class BasicEnemy_1_Behavior : MonoBehaviour
     public bool canShootE_1 = true;
     public float enemyWeaponRange = 90.0f;
     public float BulletForwardForce = 5;
-
     public float speed = 0.1f;
     public float minDist = 1f;
     public Transform target;
@@ -77,11 +76,29 @@ public class BasicEnemy_1_Behavior : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 70.0f) && (Vector3.Distance(Player.position, this.transform.position) > 10.0f))
         {
-            transform.position -= transform.forward * (1/10) * speed * Time.deltaTime;
+            transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
+            if (m_Walk)
+            {
+                m_WAnimation = GetComponent<Animation>();
+                m_WAnimation.Play();
+            }
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 10.0f) && (Vector3.Distance(Player.position, this.transform.position) > 0.0f))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
+            if (m_Walk)
+            {
+                m_WAnimation = GetComponent<Animation>();
+                m_WAnimation.Play();
+            }
+        }
+        else
+        {
+            if (m_Idle)
+            {
+                m_IAnimation = GetComponent<Animation>();
+                m_IAnimation.Play();
+            }
         }
 
         transform.LookAt(Player.position);
@@ -97,8 +114,6 @@ public class BasicEnemy_1_Behavior : MonoBehaviour
             return;
 
         float distance = Vector3.Distance(transform.position, target.position);
-
-
 
     }
 
@@ -123,8 +138,24 @@ public class BasicEnemy_1_Behavior : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-         //   canShootE_1 = true;
+            //   canShootE_1 = true;
         }
     }
 
+    private void PlayWAnimation()
+    {
+        if (m_Walk)
+        {
+            m_WAnimation = GetComponent<Animation>();
+            m_WAnimation.Play();
+        }
+    }
+    private void PlayIAnimation()
+    {
+        if (m_Walk)
+        {
+            m_WAnimation = GetComponent<Animation>();
+            m_WAnimation.Play();
+        }
+    }
 }
