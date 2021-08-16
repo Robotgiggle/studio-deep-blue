@@ -7,6 +7,9 @@ public class WeaponSound : MonoBehaviour
     private AudioSource m_AudioSource;
     [SerializeField] private AudioClip m_WeaponSound_1;
 
+    private Animation m_Animation;
+    [SerializeField] private Animation m_GunShot;
+
     private float fireCooldown = 2f;
     private float fireStart = 0;
 
@@ -22,13 +25,26 @@ public class WeaponSound : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + fireCooldown) && (!MouseLockCursor.paused))
         {
             PlayWeaponSound();
+            PlayWeaponFire();
             fireStart = Time.time;
         }
     }
 
     private void PlayWeaponSound()
     {
-        m_AudioSource.clip = m_WeaponSound_1;
-        m_AudioSource.Play();
+        if (m_WeaponSound_1 != null)
+        {
+            m_AudioSource.clip = m_WeaponSound_1;
+            m_AudioSource.Play();
+        }
+    }
+
+    private void PlayWeaponFire()
+    {
+        if (m_GunShot)
+        {
+            m_Animation = GetComponent<Animation>();
+            m_Animation.Play();
+        }
     }
 }
