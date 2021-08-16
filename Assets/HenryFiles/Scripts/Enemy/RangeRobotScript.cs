@@ -19,7 +19,7 @@ public class RangeRobotScript : MonoBehaviour
     public bool canShootE_1 = true;
     public float enemyWeaponRange = 90.0f;
     public float BulletForwardForce = 5;
-    public float speed = 0.1f;
+    public float speed = 4f;
     public float minDist = 1f;
     public Transform target;
     public float enemyRange = 40;
@@ -36,10 +36,8 @@ public class RangeRobotScript : MonoBehaviour
             if (GameObject.FindWithTag("Player") != null)
             {
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-                //canShootE_1 = true;
             }
         }
-
     }
 
     // Update is called once per frame
