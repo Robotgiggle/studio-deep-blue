@@ -68,7 +68,7 @@ public class TurretController : MonoBehaviour
         return output;
     }
 
-    void levelUp(){
+    public void levelUp(){
         Instantiate(head2,transform.position,transform.rotation,transform.parent);
         Destroy(this.gameObject);
     }

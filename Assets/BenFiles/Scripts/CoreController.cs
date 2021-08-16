@@ -85,7 +85,7 @@ public class CoreController : MonoBehaviour
         }else{
             Debug.Log("wave "+(tally.wave+1)+" completed");
             //send message to game UI to display "wave complete" text
-            //increase player's energy tokens by a flat amount
+            player.transform.GetChild(0).GetComponent<TokenManager>().reward();
         }
     }
 

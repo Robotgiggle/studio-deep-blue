@@ -613,6 +613,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 348234759}
+    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: levelTimer
       value: 120
       objectReference: {fileID: 0}
@@ -1232,6 +1236,7 @@ GameObject:
   - component: {fileID: 1475984509}
   - component: {fileID: 1475984508}
   - component: {fileID: 1475984511}
+  - component: {fileID: 1475984512}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1334,6 +1339,25 @@ MonoBehaviour:
   turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
   cooldown: 5
   range: 7
+--- !u!114 &1475984512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475984506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff426ffd0c814fe69162f0d995849be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 7
+  coreHealing: 10
+  coreHealCost: 0
+  turretUpgradeCost: 0
+  wepUpgradeCost: 0
+  waveClearReward: 0
+  tokens: 0
 --- !u!1 &1738016796
 GameObject:
   m_ObjectHideFlags: 0

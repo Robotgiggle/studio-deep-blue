@@ -24,4 +24,11 @@ public class BasicMotion : MonoBehaviour
             transform.Translate(Vector3.right*speed*Time.deltaTime);
         }
     }
+
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("token")){
+            Destroy(other.gameObject);
+            transform.GetChild(0).gameObject.GetComponent<TokenManager>().tokens++;
+        }
+    }
 }

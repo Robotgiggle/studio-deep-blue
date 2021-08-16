@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2126003075866571514}
   - component: {fileID: 2126003075866571509}
   - component: {fileID: 6971889124717971687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,12 +62,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  waveInterval: 20
   health: 100
   bulletDamage: 8
   weakDamage: 5
   strongDamage: 10
   bossDamage: 20
-  levelTimer: 120
 --- !u!114 &6971889124717971687
 MonoBehaviour:
   m_ObjectHideFlags: 0
