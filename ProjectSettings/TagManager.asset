@@ -12,6 +12,7 @@ TagManager:
   - friendlyBullet
   - spawner
   - token
+  - target
   layers:
   - Default
   - TransparentFX
