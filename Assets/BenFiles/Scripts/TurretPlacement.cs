@@ -8,7 +8,8 @@ public class TurretPlacement : MonoBehaviour
     public float cooldown;
     public float range;
     RaycastHit placePoint;
-    int mask = 1 << 3;
+    int maskA = 1 << 3;
+    int maskB = 1 << 4;
     float tbuffer;
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,13 @@ public class TurretPlacement : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Q)&&Time.time>=tbuffer){
-            if(Physics.Raycast(transform.position,transform.forward,out placePoint,range,mask)){
-                Instantiate(turret,placePoint.point,Quaternion.Euler(Vector3.zero));
-                tbuffer = Time.time + cooldown;
+            if(Physics.Raycast(transform.position,transform.forward,out placePoint,range,maskA)){
+                if(Physics.Raycast(transform.position,transform.forward,range,maskB)){
+                    Debug.Log("can't place a turret on another turret");
+                }else{
+                    Instantiate(turret,placePoint.point,Quaternion.Euler(Vector3.zero));
+                    tbuffer = Time.time + cooldown;
+                }
             }
         }
     }

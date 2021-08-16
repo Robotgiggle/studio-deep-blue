@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
   cooldown: 5
-  range: 15
+  range: 5
 --- !u!1 &1738016796
 GameObject:
   m_ObjectHideFlags: 0
