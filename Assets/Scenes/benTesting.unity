@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 896912879}
   - component: {fileID: 896912878}
   - component: {fileID: 896912881}
+  - component: {fileID: 896912882}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -605,6 +606,21 @@ MonoBehaviour:
   mouseSensitivity: 120
   playerBody: {fileID: 426156829}
   _xRotation: 0
+--- !u!114 &896912882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896912877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f281536c17e4ee68b80c7d5a01fd0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
+  cooldown: 5
+  range: 15
 --- !u!4 &1038323350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2103761500486158748, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
