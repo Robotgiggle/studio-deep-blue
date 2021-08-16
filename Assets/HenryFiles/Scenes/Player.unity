@@ -235,6 +235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 237233883, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1203779321, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: UpCurse
       value: 
@@ -251,6 +255,10 @@ PrefabInstance:
       propertyPath: DownCurseRight
       value: 
       objectReference: {fileID: 237357225}
+    - target: {fileID: 1149976198928424914, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: jumpForce
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_Name
       value: FPSController
@@ -265,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424942, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.38
+      value: 6.45
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424942, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_LocalPosition.z
