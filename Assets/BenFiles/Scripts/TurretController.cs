@@ -45,7 +45,7 @@ public class TurretController : MonoBehaviour
     }
 
     Vector3 seekTarget(float range){
-        GameObject[] allTargets = GameObject.FindGameObjectsWithTag("enemy");
+        GameObject[] allTargets = GameObject.FindGameObjectsWithTag("target");
         GameObject nearest = null;
         float maxDist = range;
         float dist;
