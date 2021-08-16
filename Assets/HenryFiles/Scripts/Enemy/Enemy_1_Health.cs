@@ -36,6 +36,7 @@ public class Enemy_1_Health : MonoBehaviour
         if (other.gameObject.tag == "bullet")
         {
             EnemyHealth = EnemyHealth - 1;
+            if(isHitEffect != null)
             Instantiate(isHitEffect, other.transform.position, other.transform.rotation);
             //Destroy(other.gameObject);
         }
