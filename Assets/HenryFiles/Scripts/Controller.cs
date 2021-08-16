@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    // public varaibles
+    // public variables
     public float moveSpeed = 3.0f;
     public float gravity = 9.81f;
     public float boostRate = 25f;
@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
 
     // Velocity y
     float _vy;
-    public float jumpForce = 20;
+    public float jumpForce = 600;
 
     public GameObject trailEffect;
     private CharacterController myController;
@@ -50,16 +50,17 @@ public class Controller : MonoBehaviour
         }*/
 
         isGrounded = Physics.Linecast(_transform.position, groundCheck.position, whatIsGround);
-        if(isGrounded)
+        if (isGrounded)
         {
             canJump = true;
         }
 
         _vy = _rigidbody.velocity.y;
 
-        if(Input.GetButtonDown("Jump") && _vy == 0f && canJump)
+        if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
         {
             DoJump();
+            Debug.Log("Jump Should be Working");
         }
         //Key must be added titled "SpeedBoost" under input in project settings
         /**
@@ -69,10 +70,10 @@ public class Controller : MonoBehaviour
             moveSpeed = 7f;
             StartCoroutine(SpeedBoostEnd());
         }*/
-        if(moveSpeed >= 7f)
+        if (moveSpeed >= 7f)
         {
-            if(trailEffect != null)
-            Instantiate(trailEffect, transform.position, transform.rotation);
+            if (trailEffect != null)
+                Instantiate(trailEffect, transform.position, transform.rotation);
         }
 
         // Determine how much should move in the z-direction
@@ -85,7 +86,7 @@ public class Controller : MonoBehaviour
         Vector3 movement = transform.TransformDirection(movementZ + movementX);
 
         // Apply gravity (so the object will fall if not grounded))
-        movementZ.y -= gravity * Time.deltaTime;
+        movement.y -= gravity * Time.deltaTime;
 
         // Actually move the character controller in the movement direction
         myController.Move(movement);
@@ -101,13 +102,13 @@ public class Controller : MonoBehaviour
     void DoJump()
     {
         // reset current vertical motion to 0 prior to jump
-        //_vy = 0f;
+        _vy = 0f;
         // add a force in the up direction
-        _rigidbody.AddForce(new Vector2(0, jumpForce));
+        _rigidbody.AddForce(new Vector3(0, jumpForce));
         canJump = false;
         // play the jump sound
-        if(jumpSFX != null)
-        PlaySound(jumpSFX);
+        if (jumpSFX != null)
+            PlaySound(jumpSFX);
     }
 
     void PlaySound(AudioClip clip)

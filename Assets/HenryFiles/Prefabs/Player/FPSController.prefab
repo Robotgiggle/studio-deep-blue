@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 3616466899093700150, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 2147483648
+      objectReference: {fileID: 0}
     - target: {fileID: 3616466899622002343, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.33
