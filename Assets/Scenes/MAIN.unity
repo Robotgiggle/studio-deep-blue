@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerB
       objectReference: {fileID: 0}
+    - target: {fileID: 1013809693549954063, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
 --- !u!1001 &573428146
@@ -595,6 +599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerC
       objectReference: {fileID: 0}
+    - target: {fileID: 1013809693549954063, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
 --- !u!1001 &644769063
@@ -607,6 +615,10 @@ PrefabInstance:
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: levelTimer
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: waveInterval
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2126003075866571511, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: m_RootOrder
@@ -678,15 +690,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: waves.Array.data[1].x
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: waves.Array.data[1].y
-      value: 18
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: waves.Array.data[1].z
-      value: 12
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: waves.Array.data[2].x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: waves.Array.data[2].y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: waves.Array.data[2].z
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
@@ -1000,6 +1024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerA
       objectReference: {fileID: 0}
+    - target: {fileID: 1013809693549954063, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
 --- !u!1001 &1260067158
@@ -1088,6 +1116,10 @@ PrefabInstance:
     - target: {fileID: 1013809693549954063, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_Name
       value: enemySpawnerD
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013809693549954063, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
@@ -1301,7 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
   cooldown: 5
-  range: 5
+  range: 7
 --- !u!1 &1738016796
 GameObject:
   m_ObjectHideFlags: 0

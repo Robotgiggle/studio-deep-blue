@@ -19,7 +19,7 @@ public class TurretController : MonoBehaviour
     {
         tbuffer = reloadTime;
         if(this.name!="head_lv1"){
-            transform.parent.GetComponent<TurretCollision>().health += 7;
+            transform.parent.GetComponent<TurretCollision>().health += 10;
         }
     }
 

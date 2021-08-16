@@ -6,18 +6,21 @@ using UnityEngine;
 public class CoreController : MonoBehaviour
 {
     public GameObject player;
+    public float waveInterval = 20;
     public int health = 100;
     public int bulletDamage = 8;
     public int weakDamage = 5;
     public int strongDamage = 10;
     public int bossDamage = 20;
-    public float levelTimer = 120;
+    float levelTimer = 240;
+    bool peacetime = false;
     bool iframes = false;
+    WaveTally tally;
     int tBuffer = 1;
     // Start is called before the first frame update
     void Start()
     {
-        
+        tally = gameObject.GetComponent<WaveTally>();       
     }
 
     // Update is called once per frame
@@ -31,10 +34,26 @@ public class CoreController : MonoBehaviour
         if(health<=0){
         	//broadcast game over message to player controller
         }
-        if(levelTimer<=0){
-        	levelTimer = 0;
-        	endLevel();
+        if(!tally.endless&&tally.waveDone&&!peacetime){
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+            if(enemies==null||enemies.Length==0){
+                endWave();
+            }else{
+                levelTimer = waveInterval;
+            }
+        }else if(!tally.endless&&!peacetime){
+            levelTimer = waveInterval;
         }
+        if(levelTimer==0){
+            if(tally.endless){
+                endLevel();
+            }else{
+                if(tally.nextWave()){
+                    peacetime = false;
+                }
+            }
+        }
+
     }
 
     void OnCollisionEnter(Collision other){
@@ -56,6 +75,18 @@ public class CoreController : MonoBehaviour
     		iframes = true;
     		Destroy(other.gameObject);
     	}
+    }
+
+    void endWave(){
+        peacetime = true;
+        if(tally.waves.Length==tally.wave+1){
+            Debug.Log("all waves completed");
+            //end game
+        }else{
+            Debug.Log("wave "+(tally.wave+1)+" completed");
+            //send message to game UI to display "wave complete" text
+            //increase player's energy tokens by a flat amount
+        }
     }
 
     void endLevel(){

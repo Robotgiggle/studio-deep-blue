@@ -13,6 +13,7 @@ public class WaveTally : MonoBehaviour
     void Start()
     {
         backup = waves;
+        Debug.Log("started wave 1");
     }
 
     // Update is called once per frame
@@ -21,7 +22,21 @@ public class WaveTally : MonoBehaviour
         if(!endless){waveDone = (waves[wave].x==0&&waves[wave].y==0&&waves[wave].z==0);}
     }
 
-    void reset(){
+    public bool nextWave(){
+        if(waves.Length>wave+1){
+            wave++;
+            SpawnerController[] spawners = Object.FindObjectsOfType<SpawnerController>(true);
+            foreach(SpawnerController c in spawners){
+                c.gameObject.SetActive(true);
+            }
+            Debug.Log("started wave "+(wave+1));
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    void resetWaves(){
         waves = backup;
     }
 }
