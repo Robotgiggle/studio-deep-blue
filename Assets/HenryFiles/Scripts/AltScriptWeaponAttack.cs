@@ -12,7 +12,6 @@ public class AltScriptWeaponAttack : MonoBehaviour
     private float fireStart = 0;
     private float fireCooldown = 2f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +24,17 @@ public class AltScriptWeaponAttack : MonoBehaviour
         if ((Input.GetButtonDown("Fire1")) && (Time.time > fireStart + fireCooldown) && !(MouseLockCursor.paused))// && (GlobalAmmo.CurrentAmmo > 0))
         {
             fireStart = Time.time;
-            if (playerBullet != null)
-            {
-                GameObject Temporary_Bullet_Handler;
-                Temporary_Bullet_Handler = Instantiate(playerBullet, firePoint.transform.position, firePoint.transform.rotation) as GameObject;
-                Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 2);
+            GameObject Temporary_Bullet_Handler;
+            Temporary_Bullet_Handler = Instantiate(playerBullet, firePoint.transform.position, transform.rotation) as GameObject;
+            Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 3);
 
-                Rigidbody Temporary_Rigid_Body;
-                Temporary_Rigid_Body = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
-                Temporary_Rigid_Body.AddForce(transform.right * bulletForwardForce * -100);
-            }
+            Rigidbody Temporary_RigidBody;
+            Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
+            Temporary_RigidBody.AddForce(transform.right * bulletForwardForce * -500);
+            /**    if (playerBullet != null)
+                {
+                    Instantiate(playerBullet, firePoint.transform.position, firePoint.transform.rotation);
+                }*/
         }
     }
 }
