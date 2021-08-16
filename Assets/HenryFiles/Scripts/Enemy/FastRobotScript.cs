@@ -109,7 +109,8 @@ public class FastRobotScript : MonoBehaviour
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
         {
-
+            m_MAnimation = GetComponent<Animation>();
+            PlayMAnimation();
             nextAttack = Time.time + 4;
         }
     }
