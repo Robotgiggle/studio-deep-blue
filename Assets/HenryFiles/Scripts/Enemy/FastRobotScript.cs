@@ -64,7 +64,7 @@ public class FastRobotScript : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 70.0f) && (Vector3.Distance(Player.position, this.transform.position) > 10.0f))
         {
-            transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
+            transform.position -= transform.forward * speed * Time.deltaTime;
             if (m_Walk)
             {
                 m_WAnimation = GetComponent<Animation>();
