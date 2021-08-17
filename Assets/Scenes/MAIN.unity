@@ -432,7 +432,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_LocalScale.x
@@ -525,7 +525,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_LocalScale.x
@@ -605,6 +605,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
+--- !u!1 &635323111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635323114}
+  - component: {fileID: 635323113}
+  - component: {fileID: 635323112}
+  m_Layer: 0
+  m_Name: manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &635323112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635323111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcce64029a64e486888119e3bb97dfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - {x: 30, y: 18, z: 12}
+  wave: 0
+  waveDone: 0
+--- !u!114 &635323113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635323111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec32fde1b55d446ab79682e539a162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 348234759}
+  waveInterval: 20
+  timer: 0
+--- !u!4 &635323114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635323111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &644769063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -626,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2126003075866571511, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2126003075866571511, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: m_LocalPosition.x
@@ -843,7 +906,7 @@ Transform:
   - {fileID: 1738016800}
   - {fileID: 1347461774}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1082238493
 GameObject:
@@ -950,7 +1013,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_LocalScale.x
@@ -1043,7 +1106,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954056, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_LocalScale.x

@@ -31,7 +31,7 @@ public class SpawnerController : MonoBehaviour
         tbuffer = spawnRate;   
         moveSpeed += Random.Range(-4f,4f);
         spawnRate += Random.Range(-0.4f,0.4f);
-        tally = GameObject.Find("core").GetComponent<WaveTally>();
+        tally = GameObject.Find("manager").GetComponent<WaveTally>();
     }
 
     // Update is called once per frame
@@ -110,46 +110,35 @@ public class SpawnerController : MonoBehaviour
     }
 
     void selectSpawnable(){
-        if(tally.endless){
-            selected = Random.Range(1,101);
-            if(selected<=50){
-                selected = 0;
-            }else if(selected<=80){
-                selected = 1;
-            }else{
-                selected = 2;
-            }                
-        }else{
-            selected = 3;
-            if(!tally.waveDone){
-                bool empty = true;
-                while(empty&&!tally.waveDone){
-                    selected = Random.Range(0,3);
-                    switch(selected){
-                        case 0:
-                            if(tally.waves[tally.wave].x!=0){
-                                empty = false;
-                                tally.waves[tally.wave].x--;
-                            }
-                            break;
-                        case 1:
-                            if(tally.waves[tally.wave].y!=0){
-                                empty = false;
-                                tally.waves[tally.wave].y--;
-                            }
-                            break;
-                        case 2:
-                            if(tally.waves[tally.wave].z!=0){
-                                empty = false;
-                                tally.waves[tally.wave].z--;
-                            }
-                            break;
-                        default:
-                            Debug.Log("enemy selection error");
-                            break;
-                    }
-                    tally.waveDone = (tally.waves[tally.wave].x==0&&tally.waves[tally.wave].y==0&&tally.waves[tally.wave].z==0);
+        selected = 3;
+        if(!tally.waveDone){
+            bool empty = true;
+            while(empty&&!tally.waveDone){
+                selected = Random.Range(0,3);
+                switch(selected){
+                    case 0:
+                        if(tally.waves[tally.wave].x!=0){
+                            empty = false;
+                            tally.waves[tally.wave].x--;
+                        }
+                        break;
+                    case 1:
+                        if(tally.waves[tally.wave].y!=0){
+                            empty = false;
+                            tally.waves[tally.wave].y--;
+                        }
+                        break;
+                    case 2:
+                        if(tally.waves[tally.wave].z!=0){
+                            empty = false;
+                            tally.waves[tally.wave].z--;
+                        }
+                        break;
+                    default:
+                        Debug.Log("enemy selection error");
+                        break;
                 }
+                tally.waveDone = (tally.waves[tally.wave].x==0&&tally.waves[tally.wave].y==0&&tally.waves[tally.wave].z==0);
             }
         }
     }
