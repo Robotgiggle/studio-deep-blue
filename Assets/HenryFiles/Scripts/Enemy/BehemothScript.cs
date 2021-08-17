@@ -2,30 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeRobotScript : MonoBehaviour
+public class BehemothScript : MonoBehaviour
 {
-
-    public GameObject bullet;
-    public float fireRate = 7;
-    public float nextFire;
     public Transform Player;
-    public Transform rightGun;
-    public Transform leftGun;
-    public bool isRangedEnemy;
-    public bool canShootE_1 = true;
-    public float enemyWeaponRange = 90.0f;
-    public float BulletForwardForce = 5;
     public float speed = 4f;
-    public float minDist = 1f;
+    public float nextAttack;
+    public bool canAttack = true;
+    public bool isAttacking = true;
     public Transform target;
-    public float enemyRange = 40;
-
+    public float enemyAttackRange = 7.0f;
     // Start is called before the first frame update
     void Start()
     {
-        nextFire = 0;
-        canShootE_1 = true;
-        // if no target specified, assume the player
         if (Player == null)
         {
 
@@ -70,19 +58,15 @@ public class RangeRobotScript : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 70.0f) && (Vector3.Distance(Player.position, this.transform.position) > 10.0f))
         {
-            transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
+            transform.position -= transform.forward * speed * Time.deltaTime;
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 10.0f) && (Vector3.Distance(Player.position, this.transform.position) > 0.0f))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
-        else
-        {
-
-        }
 
         transform.LookAt(Player.position);
-        CheckIfTimeToFire();
+        CheckIfTimeToAttack();
 
         transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
@@ -97,28 +81,11 @@ public class RangeRobotScript : MonoBehaviour
 
     }
 
-    void CheckIfTimeToFire()
+    void CheckIfTimeToAttack()
     {
-        if (Time.time > nextFire && canShootE_1 == true && (Vector3.Distance(Player.position, transform.position) < enemyWeaponRange))
+        if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
         {
-
-            if (bullet != null && isRangedEnemy)
-            {
-                Instantiate(bullet, rightGun.transform.position, rightGun.transform.rotation);
-                Instantiate(bullet, leftGun.transform.position, leftGun.transform.rotation);
-
-                nextFire = Time.time + 4;
-
-                loadEnemyWeapon();
-            }
-        }
-    }
-
-    void loadEnemyWeapon()
-    {
-        if (Time.time > nextFire)
-        {
-            //   canShootE_1 = true;
+            nextAttack = Time.time + 4;
         }
     }
 }

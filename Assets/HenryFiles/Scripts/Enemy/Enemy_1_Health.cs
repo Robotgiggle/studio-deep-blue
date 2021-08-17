@@ -7,8 +7,7 @@ public class Enemy_1_Health : MonoBehaviour
     public int EnemyHealth = 20;
     public GameObject isHitEffect;
     public bool hasPlayed = false;
-    public Animation m_Animation;
-    public Animation m_Death;
+    public bool isDead;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +44,7 @@ public class Enemy_1_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /**
         if (EnemyHealth <= 0 && m_Death.isPlaying == false)
         {
             m_Animation = GetComponent<Animation>();
@@ -62,6 +62,6 @@ public class Enemy_1_Health : MonoBehaviour
         if(EnemyHealth <= 0 && hasPlayed == true)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 }

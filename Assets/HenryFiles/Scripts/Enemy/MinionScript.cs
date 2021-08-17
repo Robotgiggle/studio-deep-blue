@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class MinionScript : MonoBehaviour
 {
-    public Animation m_WAnimation;
-    public Animation m_Walk;
-    public Animation m_IAnimation;
-    public Animation m_Idle;
-    public Animation m_MAnimation;
-    public Animation m_Melee;
     public Transform Player;
     public float speed = 4f;
     public float nextAttack;
     public bool canAttack = true;
+    public bool isAttacking = true;
     public Transform target;
     public float enemyAttackRange = 7.0f;
     // Start is called before the first frame update
@@ -64,28 +59,10 @@ public class MinionScript : MonoBehaviour
         if ((Vector3.Distance(Player.position, this.transform.position) < 70.0f) && (Vector3.Distance(Player.position, this.transform.position) > 10.0f))
         {
             transform.position -= transform.forward * speed * Time.deltaTime;
-            if (m_Walk)
-            {
-                m_WAnimation = GetComponent<Animation>();
-                m_WAnimation.Play();
-            }
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 10.0f) && (Vector3.Distance(Player.position, this.transform.position) > 0.0f))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
-            if (m_Walk)
-            {
-                m_WAnimation = GetComponent<Animation>();
-                m_WAnimation.Play();
-            }
-        }
-        else
-        {
-            if (m_Idle)
-            {
-                m_IAnimation = GetComponent<Animation>();
-                m_IAnimation.Play();
-            }
         }
 
         transform.LookAt(Player.position);
@@ -108,35 +85,7 @@ public class MinionScript : MonoBehaviour
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
         {
-            m_MAnimation = GetComponent<Animation>();
-            PlayMAnimation();
             nextAttack = Time.time + 4;
-        }
-    }
-
-    private void PlayMAnimation()
-    {
-        if (m_Melee)
-        {
-            m_MAnimation = GetComponent<Animation>();
-            m_MAnimation.Play();
-        }
-    }
-
-    private void PlayWAnimation()
-    {
-        if (m_Walk)
-        {
-            m_WAnimation = GetComponent<Animation>();
-            m_WAnimation.Play();
-        }
-    }
-    private void PlayIAnimation()
-    {
-        if (m_Idle)
-        {
-            m_IAnimation = GetComponent<Animation>();
-            m_IAnimation.Play();
         }
     }
 }
