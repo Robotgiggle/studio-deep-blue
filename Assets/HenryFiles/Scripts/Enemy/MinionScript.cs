@@ -11,6 +11,7 @@ public class MinionScript : MonoBehaviour
     public bool isAttacking = true;
     public Transform target;
     public float enemyAttackRange = 7.0f;
+    public GameObject meleeObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,9 +69,9 @@ public class MinionScript : MonoBehaviour
         transform.LookAt(Player.position);
         CheckIfTimeToAttack();
 
-        transform.Rotate(new Vector3(0, -180, 0), Space.Self);
+        //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
-        transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
+        //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
 
         //Movement
 
@@ -85,7 +86,16 @@ public class MinionScript : MonoBehaviour
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
         {
+            isAttacking = true;
+            meleeObject.SetActive(true);
             nextAttack = Time.time + 4;
+            StartCoroutine(meleeEnd());
         }
+    }
+
+    IEnumerator meleeEnd()
+    {
+        yield return new WaitForSeconds(2f);
+        meleeObject.SetActive(false);
     }
 }

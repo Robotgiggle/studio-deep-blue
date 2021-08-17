@@ -13,6 +13,7 @@ public class RangeRobotScript : MonoBehaviour
     public Transform leftGun;
     public bool isRangedEnemy;
     public bool canShootE_1 = true;
+    public bool isShooting;
     public float enemyWeaponRange = 90.0f;
     public float BulletForwardForce = 5;
     public float speed = 4f;
@@ -106,7 +107,7 @@ public class RangeRobotScript : MonoBehaviour
             {
                 Instantiate(bullet, rightGun.transform.position, rightGun.transform.rotation);
                 Instantiate(bullet, leftGun.transform.position, leftGun.transform.rotation);
-
+                isShooting = true;
                 nextFire = Time.time + 4;
 
                 loadEnemyWeapon();
