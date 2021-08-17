@@ -7,8 +7,8 @@ public class FastRobotScript : MonoBehaviour
     public Transform Player;
     public float speed = 4f;
     public float nextAttack;
-    public bool canAttack = true;
-    public bool isAttacking = true;
+    public bool canAttack = true; //true;
+    public bool isAttacking;
     public Transform target;
     public float enemyAttackRange = 2.0f;
     public GameObject meleeObject;
@@ -58,11 +58,11 @@ public class FastRobotScript : MonoBehaviour
         Vector3 displacement = Player.position - transform.position;
         displacement = displacement.normalized;
 
-        if ((Vector3.Distance(Player.position, this.transform.position) > 70.0f) && (Vector3.Distance(Player.position, this.transform.position) > 80.0f))
+        if ((Vector3.Distance(Player.position, this.transform.position) > 70.0f) || (Vector3.Distance(Player.position, this.transform.position) < 4.0f))
         {
             transform.position -= transform.forward * speed * Time.deltaTime;
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 15.0f) && (Vector3.Distance(Player.position, this.transform.position) > 5.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 35.0f) && (Vector3.Distance(Player.position, this.transform.position) > 4.0f))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
@@ -70,6 +70,17 @@ public class FastRobotScript : MonoBehaviour
         transform.LookAt(Player.position);
         CheckIfTimeToAttack();
 
+
+        if((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
+        {
+            isAttacking = false;
+            speed = 4f;
+        }
+        else
+        {
+            isAttacking = true;
+            speed = 0f;
+        }
         //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
         //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
@@ -87,18 +98,17 @@ public class FastRobotScript : MonoBehaviour
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
         {
-            isAttacking = true;
-            meleeObject.SetActive(true);
-            nextAttack = Time.time + 4;
+            //isAttacking = true;
+            //meleeObject.SetActive(true);
+            nextAttack = Time.time + 40;
             StartCoroutine(meleeEnd());
 
         }
-    }
-
-    IEnumerator meleeEnd()
-    {
-        yield return new WaitForSeconds(2f);
-        isAttacking = false;
-        meleeObject.SetActive(false);
+        IEnumerator meleeEnd()
+        {
+            yield return new WaitForSeconds(2f);
+            //isAttacking = false;
+            //meleeObject.SetActive(false);
+        }
     }
 }
