@@ -19,7 +19,7 @@ public class rangeBotAnimationScript : MonoBehaviour
         //shoot = get shoot bool from Henry's range enemy AI script
         //dead = get dead bool from Henry's range enemy AI script
         //speed = get speed variable from Henry's range enemy AI script
-        shoot = GetComponentInParent<RangeRobotScript>().canShootE_1;
+        shoot = GetComponentInParent<RangeRobotScript>().isShooting;
         dead = GetComponentInParent<Enemy_1_Health>().isDead;
         speed = GetComponentInParent<RangeRobotScript>().speed;
         AnimCheck();
