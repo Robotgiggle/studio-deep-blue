@@ -62,7 +62,7 @@ public class BehemothScript : MonoBehaviour
         {
             transform.position -= transform.forward * speed * Time.deltaTime;
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 10.0f) && (Vector3.Distance(Player.position, this.transform.position) > 0.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 80.0f) && (Vector3.Distance(Player.position, this.transform.position) > 5.0f))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }

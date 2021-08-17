@@ -57,12 +57,12 @@ public class SlowRobotScript : MonoBehaviour
 
         Vector3 displacement = Player.position - transform.position;
         displacement = displacement.normalized;
-
-        if ((Vector3.Distance(Player.position, this.transform.position) < 70.0f) && (Vector3.Distance(Player.position, this.transform.position) > 10.0f))
+        
+        if ((Vector3.Distance(Player.position, this.transform.position) > 50.0f) && (Vector3.Distance(Player.position, this.transform.position) > 10.0f))
         {
             transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 10.0f) && (Vector3.Distance(Player.position, this.transform.position) > 0.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 500.0f) && (Vector3.Distance(Player.position, this.transform.position) > 4.0f))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
