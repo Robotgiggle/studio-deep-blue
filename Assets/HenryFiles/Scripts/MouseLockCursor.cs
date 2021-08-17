@@ -6,7 +6,6 @@ public class MouseLockCursor : MonoBehaviour
 {
     public bool isCursorLock = true;
     public static bool paused = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +19,22 @@ public class MouseLockCursor : MonoBehaviour
         {
             if(!paused)
             {
-                LockCursor(false);
+                /**LockCursor(false);
                 Time.timeScale = 0;
                 paused = true;
-                Debug.Log("Paused");  
+                Debug.Log("Paused");  */
             }
+        }
+    }
+
+    public void pause()
+    {
+        if (!paused)
+        {
+            LockCursor(false);
+            Time.timeScale = 0;
+            paused = true;
+            Debug.Log("Paused");
         }
     }
 
@@ -48,7 +58,7 @@ public class MouseLockCursor : MonoBehaviour
         else
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
 

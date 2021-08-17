@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isGamePaused = false;
     public GameObject HUD;
     public GameObject pauseMenu;
+    public GameObject cursor;
 
     void Update()
     {
@@ -30,12 +31,14 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        cursor.GetComponent<MouseLockCursor>().Unpause();
         HUD.SetActive(true);
     }
     
     void PauseGame()
     {
         pauseMenu.SetActive(true);
+        cursor.GetComponent<MouseLockCursor>().pause();
         HUD.SetActive(false);
         Time.timeScale = 0f;
         isGamePaused = true;
