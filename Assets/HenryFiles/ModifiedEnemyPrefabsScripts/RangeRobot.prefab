@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3565613899607819660}
   - component: {fileID: 3565613899607819661}
   - component: {fileID: 2138797190490184845}
-  - component: {fileID: 757091152963984726}
+  - component: {fileID: 1557538361245794267}
   m_Layer: 0
   m_Name: RangeRobot
   m_TagString: enemy
@@ -144,7 +144,7 @@ MonoBehaviour:
   isHitEffect: {fileID: 0}
   hasPlayed: 0
   isDead: 0
---- !u!114 &757091152963984726
+--- !u!114 &1557538361245794267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,13 +153,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3565613899607819659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b840f78bf53440a42b3707d7a703c61d, type: 3}
+  m_Script: {fileID: 11500000, guid: 83c3f2810a5066943b74489e1149ba1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeBot: {fileID: 0}
-  speed: 0
-  shoot: 0
-  dead: 0
+  bullet: {fileID: 0}
+  fireRate: 7
+  nextFire: 0
+  Player: {fileID: 0}
+  rightGun: {fileID: 0}
+  leftGun: {fileID: 0}
+  isRangedEnemy: 0
+  canShootE_1: 1
+  isShooting: 0
+  enemyWeaponRange: 90
+  BulletForwardForce: 5
+  speed: 4
+  minDist: 1
+  target: {fileID: 0}
+  enemyRange: 40
 --- !u!95 &3565613900162070960
 Animator:
   serializedVersion: 3
@@ -179,7 +190,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3565613900162070927
+--- !u!114 &4958771361938260650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,23 +199,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4448134913573446895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c3f2810a5066943b74489e1149ba1b, type: 3}
+  m_Script: {fileID: 11500000, guid: b840f78bf53440a42b3707d7a703c61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  fireRate: 7
-  nextFire: 0
-  Player: {fileID: 0}
-  rightGun: {fileID: 0}
-  leftGun: {fileID: 0}
-  isRangedEnemy: 0
-  canShootE_1: 1
-  enemyWeaponRange: 90
-  BulletForwardForce: 5
-  speed: 4
-  minDist: 1
-  target: {fileID: 0}
-  enemyRange: 40
+  rangeBot: {fileID: 0}
+  speed: 0
+  shoot: 0
+  dead: 0
 --- !u!1001 &3565613898872904126
 PrefabInstance:
   m_ObjectHideFlags: 0
