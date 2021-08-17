@@ -11,7 +11,7 @@ public class bulletMovement : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider col)
     {
         //if (other.gameObject.CompareTag("enemy"))
         //{
@@ -21,6 +21,13 @@ public class bulletMovement : MonoBehaviour
         //{
         //    Destroy(this.gameObject);
         //}
-        Destroy(this.gameObject);
+        if (col.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("NeverMind");
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
