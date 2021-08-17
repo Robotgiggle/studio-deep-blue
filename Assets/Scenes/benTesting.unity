@@ -518,7 +518,6 @@ GameObject:
   - component: {fileID: 896912879}
   - component: {fileID: 896912878}
   - component: {fileID: 896912881}
-  - component: {fileID: 896912882}
   - component: {fileID: 896912883}
   m_Layer: 0
   m_Name: Main Camera
@@ -607,21 +606,6 @@ MonoBehaviour:
   mouseSensitivity: 120
   playerBody: {fileID: 426156829}
   _xRotation: 0
---- !u!114 &896912882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896912877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f281536c17e4ee68b80c7d5a01fd0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
-  cooldown: 1
-  range: 15
 --- !u!114 &896912883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,9 +618,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff426ffd0c814fe69162f0d995849be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
+  cooldown: 5
   range: 15
-  coreHealing: 10
   coreHealCost: 0
+  turretPlaceCost: 0
   turretUpgradeCost: 0
   wepUpgradeCost: 0
   waveClearReward: 0
