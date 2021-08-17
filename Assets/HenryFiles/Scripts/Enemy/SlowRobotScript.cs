@@ -5,12 +5,12 @@ using UnityEngine;
 public class SlowRobotScript : MonoBehaviour
 {
     public Transform Player;
-    public float speed = 4f;
+    public float speed = 1f;
     public float nextAttack;
     public bool canAttack = true;
     public bool isAttacking = true;
     public Transform target;
-    public float enemyAttackRange = 7.0f;
+    public float enemyAttackRange = 3.0f;
     public GameObject meleeObject;
 
     // Start is called before the first frame update
@@ -58,13 +58,19 @@ public class SlowRobotScript : MonoBehaviour
         Vector3 displacement = Player.position - transform.position;
         displacement = displacement.normalized;
         
-        if ((Vector3.Distance(Player.position, this.transform.position) > 50.0f) && (Vector3.Distance(Player.position, this.transform.position) > 10.0f))
+        if ((Vector3.Distance(Player.position, this.transform.position) < 50.0f) && (Vector3.Distance(Player.position, this.transform.position) > 40.0f))
         {
-            transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
+            speed = 0f;
+            //transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 500.0f) && (Vector3.Distance(Player.position, this.transform.position) > 4.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 20.0f) && (Vector3.Distance(Player.position, this.transform.position) > 4.0f))
         {
+            speed = 1f;
             transform.position += transform.forward * speed * Time.deltaTime;
+        }
+        else
+        {
+            
         }
 
         transform.LookAt(Player.position);
