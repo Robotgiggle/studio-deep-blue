@@ -71,7 +71,7 @@ public class RangeRobotScript : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 15.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-            transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
+            transform.position -= transform.forward * speed * Time.deltaTime;
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && (Vector3.Distance(Player.position, this.transform.position) > 15.0f))
         {
@@ -85,9 +85,9 @@ public class RangeRobotScript : MonoBehaviour
         transform.LookAt(Player.position);
         CheckIfTimeToFire();
 
-        transform.Rotate(new Vector3(0, -180, 0), Space.Self);
+        //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
-        transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
+        //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
 
         //Movement
 

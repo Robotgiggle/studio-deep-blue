@@ -98,6 +98,7 @@ public class SlowRobotScript : MonoBehaviour
     IEnumerator meleeEnd()
     {
         yield return new WaitForSeconds(2f);
+        isAttacking = false;
         meleeObject.SetActive(false);
     }
 }
