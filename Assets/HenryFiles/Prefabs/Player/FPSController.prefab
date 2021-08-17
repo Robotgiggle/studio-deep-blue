@@ -88,6 +88,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149976198646538961}
     m_Modifications:
+    - target: {fileID: 7066379408659250545, guid: c6d53207195b5c14b858d50f298db4c9, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066379408659250547, guid: c6d53207195b5c14b858d50f298db4c9, type: 3}
       propertyPath: m_Name
       value: Crosshairs
@@ -291,15 +295,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700106, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.590291
+      value: 8.756924
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700106, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.03
+      value: 10.45
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700106, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.5
+      value: 3.396896
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700106, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_LocalRotation.w

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
-
+    public GameObject HUD;
     public GameObject pauseMenu;
 
     void Update()
@@ -30,11 +30,13 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        HUD.SetActive(true);
     }
     
     void PauseGame()
     {
         pauseMenu.SetActive(true);
+        HUD.SetActive(false);
         Time.timeScale = 0f;
         isGamePaused = true;
     }
