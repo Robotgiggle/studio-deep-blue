@@ -9,8 +9,6 @@ public class BulletSpawner : MonoBehaviour
     public float shotCooldown = 1f;
     //public GameObject animationCoordinator;
     //public bool canAnimate = false;
-
-    private float fireCooldown = 2f;
     private float fireStart = 0;
     float currentTime;
     float nextShotTime;
@@ -23,7 +21,7 @@ public class BulletSpawner : MonoBehaviour
     void Update()
     {
         //canAnimate = animationCoordinator.GetComponent<WeaponSound>().canAnimate;
-        if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + fireCooldown))// && canAnimate)
+        if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + shotCooldown))// && canAnimate)
         {
             fireStart = Time.time;
              //nextShotTime = Time.time + shotCooldown;
