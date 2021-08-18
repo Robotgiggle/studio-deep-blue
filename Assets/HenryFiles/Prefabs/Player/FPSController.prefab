@@ -82,7 +82,6 @@ MonoBehaviour:
   bullet: {fileID: 4879448512616401791, guid: 7b3402fbc572fef4f8c8c2104f72913f, type: 3}
   bulletSpawnPoint: {fileID: 1149976199491297088}
   shotCooldown: 1
-  animationCoordinator: {fileID: 0}
 --- !u!1001 &1729401875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,8 +347,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700107, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: m_Height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616466899093700107, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616466899093700107, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: m_Center.y
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700146, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: LevelToLoad
@@ -382,6 +389,10 @@ PrefabInstance:
     - target: {fileID: 3616466899093700150, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: whatIsGround.m_Bits
       value: 2147483648
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616466899093700151, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899622002340, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_TagString
