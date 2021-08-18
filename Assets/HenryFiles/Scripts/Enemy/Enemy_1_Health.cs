@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_1_Health : MonoBehaviour
 {
-    public int EnemyHealth = 20;
+    public int EnemyHealth = 4;
     public GameObject isHitEffect;
     public GameObject deathEffect;
     public bool hasPlayed = false;
