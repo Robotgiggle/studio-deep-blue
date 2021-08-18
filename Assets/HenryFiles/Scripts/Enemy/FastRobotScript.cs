@@ -12,6 +12,7 @@ public class FastRobotScript : MonoBehaviour
     public Transform target;
     public float enemyAttackRange = 2.0f;
     public GameObject meleeObject;
+    public bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,8 @@ public class FastRobotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dead = GetComponent<Enemy_1_Health>().isDead;
+
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)
@@ -93,30 +96,29 @@ public class FastRobotScript : MonoBehaviour
         Vector3 displacement = Player.position - transform.position;
         displacement = displacement.normalized;
 
-        if ((Vector3.Distance(Player.position, this.transform.position) < 3.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(Player.position, this.transform.position) < 0.2f) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-            speed = 7f;
+            speed = 3f;
             transform.position -= transform.forward * speed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && (Vector3.Distance(Player.position, this.transform.position) > 35.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > 2.0f))
         {
-            speed = 4f;
+            speed = 5f;
             transform.position += transform.forward * speed * Time.deltaTime;
-            transform.LookAt(Player.position);
+            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
 
         }
         else
         {
+            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             speed = 0f;
         }
-
-        transform.LookAt(Player.position);
         //CheckIfTimeToAttack();
 
 
-        if((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
+        if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
         {
             isAttacking = false;
             speed = 4f;
