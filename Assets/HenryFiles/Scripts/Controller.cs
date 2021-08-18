@@ -24,6 +24,7 @@ public class Controller : MonoBehaviour
     public bool isGrounded = false;
     public bool canJump = false;
     int _playerLayer;
+    public Vector3 jump;
 
     //SFX
     AudioSource _audio;
@@ -38,6 +39,8 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
         myController = gameObject.GetComponent<CharacterController>();
     }
 
@@ -48,7 +51,6 @@ public class Controller : MonoBehaviour
         {
 
         }*/
-        Debug.Log("my y: "+transform.position.y);
 
         isGrounded = Physics.Linecast(_transform.position, groundCheck.position, whatIsGround);
         if (isGrounded)
@@ -56,7 +58,7 @@ public class Controller : MonoBehaviour
             canJump = true;
         }
 
-        _vy = _rigidbody.velocity.y;
+        //_vy = _rigidbody.velocity.y;
 
         if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
         {
@@ -105,7 +107,8 @@ public class Controller : MonoBehaviour
         // reset current vertical motion to 0 prior to jump
         _vy = 0f;
         // add a force in the up direction
-        _rigidbody.AddForce(new Vector3(0, jumpForce));
+        _rigidbody.AddForce(jump * jumpForce, ForceMode.Impulse);
+        //_rigidbody.AddForce(new Vector3(0, jumpForce));
         canJump = false;
         // play the jump sound
         if (jumpSFX != null)
