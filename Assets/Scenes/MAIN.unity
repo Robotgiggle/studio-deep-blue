@@ -219,6 +219,32 @@ Transform:
   m_Father: {fileID: 928789008}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &155589881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149976198646538964, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+  m_PrefabInstance: {fileID: 243293469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &155589886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155589881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff426ffd0c814fe69162f0d995849be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
+  cooldown: 5
+  range: 7
+  coreHealCost: 0
+  turretPlaceCost: 0
+  turretUpgradeCost: 0
+  wepUpgradeCost: 0
+  waveClearReward: 0
+  tokens: 0
 --- !u!1001 &243293469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,9 +252,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 793108953, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1149976198646538964, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_Name

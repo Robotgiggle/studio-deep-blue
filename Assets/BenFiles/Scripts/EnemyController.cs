@@ -60,6 +60,9 @@ public class EnemyController : MonoBehaviour
         if(Vector3.Distance(transform.position,target)>stayBack){
             transform.Translate(Vector3.forward*speed*Time.deltaTime);
         }
+        if(Vector3.Distance(transform.position,target)<stayBack-1&&ranged){
+            transform.Translate(Vector3.back*speed*Time.deltaTime);
+        }
         //attack target
         if(ranged){
             if(Vector3.Distance(transform.position,target)<=stayBack+0.6&&Time.time>=tBuffer){

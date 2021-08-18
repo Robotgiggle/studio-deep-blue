@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: b5dfdbbe3d1049146909fbcea7f3d05f
+guid: 1a20f82268a175f4b839026f6a482ff0
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Throw Object
+    second: Run Right
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -40,11 +40,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Throw Object
+      name: Run Right
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 146
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

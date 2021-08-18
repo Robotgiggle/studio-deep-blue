@@ -27,6 +27,10 @@ public class TurretCollision : MonoBehaviour
         }
     }
 
+    public void takeDamage(int damage){
+        health -= damage;
+    }
+
     public void OnCollisionEnter(Collision other){
         if(!iframes){
             if(other.gameObject.CompareTag("weak")){
