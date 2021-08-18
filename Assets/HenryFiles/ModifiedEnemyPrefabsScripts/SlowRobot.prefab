@@ -150,6 +150,7 @@ MonoBehaviour:
   isAttacking: 1
   target: {fileID: 0}
   enemyAttackRange: 7
+  meleeObject: {fileID: 0}
 --- !u!1 &5303511078383908532
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slowBot
       objectReference: {fileID: 0}
+    - target: {fileID: 2106145266610383287, guid: 39dbd56b00de4a445baad9b4c763f12d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 5c5084c638f2ced4dbf0df7d538aa4a1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39dbd56b00de4a445baad9b4c763f12d, type: 3}
 --- !u!1 &2622069871399826448 stripped

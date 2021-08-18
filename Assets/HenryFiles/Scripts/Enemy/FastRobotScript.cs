@@ -24,12 +24,47 @@ public class FastRobotScript : MonoBehaviour
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
+
+        if (target == null)
+        {
+
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Player == null)
+        {
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+
+            if (GameObject.FindWithTag("Player") == null)
+            {
+                Object.Destroy(gameObject);
+            }
+        }
+
+        if (Player == null)
+        {
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+
+            if (GameObject.FindWithTag("Player") == null)
+            {
+                Object.Destroy(gameObject);
+            }
+        }
+
+        if (Player != null)
         {
             if (GameObject.FindWithTag("Player") != null)
             {
@@ -90,7 +125,7 @@ public class FastRobotScript : MonoBehaviour
         if (target == null)
             return;
 
-        float distance = Vector3.Distance(transform.position, target.position);
+        //float distance = Vector3.Distance(transform.position, target.position);
 
     }
 

@@ -253,6 +253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: behemothBot
       objectReference: {fileID: 0}
+    - target: {fileID: 2106145266610383287, guid: c94c8bd8e1ce5094fb6e37a59b7403f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 886950d363b893d4c9eda548138f2da1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c94c8bd8e1ce5094fb6e37a59b7403f6, type: 3}
 --- !u!1 &1396710890431184938 stripped

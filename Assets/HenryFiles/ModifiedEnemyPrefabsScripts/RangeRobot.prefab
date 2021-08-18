@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rangeBot
       objectReference: {fileID: 0}
+    - target: {fileID: 2106145266610383287, guid: 9e7e6bd0f20accf46aa358ad60bb6704, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: ea82ca49c166384408f1b52ade2e974c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7e6bd0f20accf46aa358ad60bb6704, type: 3}
 --- !u!1 &4448134913573446895 stripped
