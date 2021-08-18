@@ -82,6 +82,7 @@ MonoBehaviour:
   bullet: {fileID: 4879448512616401791, guid: 925bd8d0340dd464382857cf7272ad35, type: 3}
   bulletSpawnPoint: {fileID: 1149976199491297088}
   shotCooldown: 1
+  animationCoordinator: {fileID: 0}
 --- !u!1001 &1729401875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,6 +283,10 @@ PrefabInstance:
       propertyPath: m_GunShot
       value: 
       objectReference: {fileID: 237002369}
+    - target: {fileID: 3616466898474353310, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3616466898839094069, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.423
@@ -342,6 +347,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3616466899093700107, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700146, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: LevelToLoad
       value: MAIN
@@ -349,6 +358,10 @@ PrefabInstance:
     - target: {fileID: 3616466899093700147, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_Name
       value: FPSController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616466899093700149, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700150, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: jumpForce
