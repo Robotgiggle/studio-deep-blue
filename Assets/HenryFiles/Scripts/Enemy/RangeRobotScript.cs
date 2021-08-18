@@ -94,7 +94,7 @@ public class RangeRobotScript : MonoBehaviour
         if (target == null)
             return;
 
-        float distance = Vector3.Distance(transform.position, target.position);
+        //float distance = Vector3.Distance(transform.position, target.position);
 
     }
 
