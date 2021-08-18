@@ -7,7 +7,7 @@ public class BulletSpawner : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletSpawnPoint;
     public float shotCooldown = 1f;
-    public GameObject animationCoordinator;
+    //public GameObject animationCoordinator;
     //public bool canAnimate = false;
 
     private float fireCooldown = 2f;
