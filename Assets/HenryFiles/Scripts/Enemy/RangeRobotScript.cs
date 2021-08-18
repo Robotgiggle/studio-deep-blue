@@ -6,11 +6,9 @@ public class RangeRobotScript : MonoBehaviour
 {
 
     //public GameObject bullet;
-    public float fireRate = 4;
+    public float fireRate = 5;
     public float nextFire;
-    public float relockRate = 7;
-    public float nextLock;
-    public Transform Player;
+    public Transform whatIsTarget;//Player;
     public Transform rightGun;
     public Transform leftGun;
     public bool isRangedEnemy = true;
@@ -27,16 +25,14 @@ public class RangeRobotScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nextLock = 0f;
-        nextFire = 0;
         canShootE_1 = true;
         // if no target specified, assume the player
-        if (Player == null)
+        if (whatIsTarget == null)
         {
 
             if (GameObject.FindWithTag("Player") != null)
             {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+                whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
     }
@@ -44,47 +40,48 @@ public class RangeRobotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player == null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
 
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
-        }
-
-        if (Player != null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
-        }
-
-        Vector3 displacement = Player.position - transform.position;
+        Vector3 displacement = whatIsTarget.position - transform.position;
         displacement = displacement.normalized;
 
-        if ((Vector3.Distance(Player.position, this.transform.position) < 15.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if (whatIsTarget == null)
+        {
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+
+            if (GameObject.FindWithTag("Player") == null)
+            {
+                Object.Destroy(gameObject);
+            }
+        }
+
+        if (whatIsTarget != null)
+        {
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+
+            if (GameObject.FindWithTag("Player") == null)
+            {
+                Object.Destroy(gameObject);
+            }
+        }
+
+        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 25.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
             speed = 7f;
             transform.position -= transform.forward * speed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+            transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && (Vector3.Distance(Player.position, this.transform.position) > 35.0f))
+        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 100.0f) && (Vector3.Distance(whatIsTarget.position, this.transform.position) > 35.0f))
         {
             speed = 4f;
             transform.position += transform.forward * speed * Time.deltaTime;
-            transform.LookAt(Player.position);
+            transform.LookAt(whatIsTarget.position);
 
         }
         else
@@ -104,19 +101,18 @@ public class RangeRobotScript : MonoBehaviour
 
     void CheckIfTimeToFire()
     {
-        if (Time.time > nextFire && canShootE_1 == true && (Vector3.Distance(Player.position, transform.position) < enemyWeaponRange))
+        if (Time.time > nextFire && (Vector3.Distance(whatIsTarget.position, transform.position) < enemyWeaponRange))
         {
-
             if (isRangedEnemy)
             {
                 isShooting = true;
                 nextFire = Time.time + fireRate;
-                canShootE_1 = false;
-                loadEnemyWeapon();
+                //canShootE_1 = false;
+                //loadEnemyWeapon();
             }
         }
     }
-
+    /**
     void loadEnemyWeapon()
     {
         if (Time.time > nextFire)
@@ -127,5 +123,5 @@ public class RangeRobotScript : MonoBehaviour
         {
             isShooting = false;
         }
-    }
+    }*/
 }
