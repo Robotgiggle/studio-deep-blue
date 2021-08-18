@@ -169,9 +169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 4
+  EnemyHealth: 10
+  TokensDropped: 3
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
+  token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
 --- !u!1 &5303511078383908532
