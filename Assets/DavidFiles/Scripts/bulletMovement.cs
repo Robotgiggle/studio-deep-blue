@@ -6,6 +6,19 @@ public class bulletMovement : MonoBehaviour
 {
     public float speed = 10f;
     public float lifeTime = 3f;
+    public Transform spawnSource;
+
+    void Start()
+    {
+        if (spawnSource == null)
+        {
+            if (GameObject.FindWithTag("playerBulletSpawner") != null)
+            {
+                spawnSource = GameObject.FindWithTag("playerBulletSpawner").GetComponent<Transform>();
+            }
+        }
+        this.transform.position = spawnSource.transform.position;
+    }
 
     void Update()
     {
