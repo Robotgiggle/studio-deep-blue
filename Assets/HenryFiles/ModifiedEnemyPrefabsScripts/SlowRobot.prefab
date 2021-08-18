@@ -152,6 +152,11 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyAttackRange: 7
   meleeObject: {fileID: 0}
+  dead: 0
+  enemyIsMelee: 1
+  stayBack: 0
+  attackCooldown: 0
+  attackDamage: 0
 --- !u!114 &-6796440148366384506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 20
+  EnemyHealth: 5
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
   hasPlayed: 0

@@ -13,6 +13,13 @@ public class SlowRobotScript : MonoBehaviour
     public float enemyAttackRange = 2.0f;
     public GameObject meleeObject;
     public bool dead = false;
+    public bool enemyIsMelee = true;
+    float tBuffer;
+    Vector3 muzzle;
+    public float stayBack;
+    int mask = 1 << 6;
+    public float attackCooldown;
+    public float attackDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -128,13 +135,31 @@ public class SlowRobotScript : MonoBehaviour
             isAttacking = true;
             speed = 0f;
         }
-        //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
-        //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
-        //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
 
-        //Movement
+        if (enemyIsMelee)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(muzzle, transform.forward, out hit, stayBack + 0.1f, mask) && Time.time >= tBuffer)
+            {
+                Debug.Log("hit the " + hit.transform.gameObject.name);
+                if (hit.transform.gameObject.name == "core")
+                {
+                    hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage));
+                    if (gameObject.name == "Minion(Clone)")
+                    {
+                        Destroy(gameObject, 0.3f);
+                    }
+                }
+                else if (hit.transform.gameObject.tag == "Player")
+                {
+                    //damage player
+                }
+                tBuffer = Time.time + attackCooldown;
+            }
+        }
+            //Movement
 
-        if (target == null)
+            if (target == null)
             return;
 
         //float distance = Vector3.Distance(transform.position, target.position);
