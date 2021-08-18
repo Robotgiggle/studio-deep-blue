@@ -35,7 +35,7 @@ public class Enemy_1_Health : MonoBehaviour
         // EnemyHealth = EnemyHealth - 1;
         if (other.gameObject.tag == "friendlyBullet")
         {
-            EnemyHealth = EnemyHealth - 1;
+            EnemyHealth = EnemyHealth - 2;
             if(isHitEffect != null)
             Instantiate(isHitEffect, other.transform.position, other.transform.rotation);
             //Destroy(other.gameObject);
