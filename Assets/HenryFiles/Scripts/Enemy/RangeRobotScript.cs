@@ -5,13 +5,15 @@ using UnityEngine;
 public class RangeRobotScript : MonoBehaviour
 {
 
-    public GameObject bullet;
-    public float fireRate = 7;
+    //public GameObject bullet;
+    public float fireRate = 4;
     public float nextFire;
+    public float relockRate = 7;
+    public float nextLock;
     public Transform Player;
     public Transform rightGun;
     public Transform leftGun;
-    public bool isRangedEnemy;
+    public bool isRangedEnemy = true;
     public bool canShootE_1 = true;
     public bool isShooting;
     public float enemyWeaponRange = 15.0f;
@@ -20,10 +22,12 @@ public class RangeRobotScript : MonoBehaviour
     public float minDist = 1f;
     public Transform target;
     public float enemyRange = 40;
+    public bool isTargetingPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
+        nextLock = 0f;
         nextFire = 0;
         canShootE_1 = true;
         // if no target specified, assume the player
@@ -71,26 +75,24 @@ public class RangeRobotScript : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 15.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-            speed = 4f;
+            speed = 7f;
             transform.position -= transform.forward * speed * Time.deltaTime;
+            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+            //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && (Vector3.Distance(Player.position, this.transform.position) > 35.0f))
         {
             speed = 4f;
             transform.position += transform.forward * speed * Time.deltaTime;
+            transform.LookAt(Player.position);
+
         }
         else
         {
             speed = 0f;
         }
 
-        transform.LookAt(Player.position);
         CheckIfTimeToFire();
-
-        //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
-        //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
-        //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
-
         //Movement
 
         if (target == null)
@@ -105,12 +107,10 @@ public class RangeRobotScript : MonoBehaviour
         if (Time.time > nextFire && canShootE_1 == true && (Vector3.Distance(Player.position, transform.position) < enemyWeaponRange))
         {
 
-            if (bullet != null && isRangedEnemy)
+            if (isRangedEnemy)
             {
-                //Instantiate(bullet, rightGun.transform.position, rightGun.transform.rotation);
-                //Instantiate(bullet, leftGun.transform.position, leftGun.transform.rotation);
                 isShooting = true;
-                nextFire = Time.time + 4;
+                nextFire = Time.time + fireRate;
                 canShootE_1 = false;
                 loadEnemyWeapon();
             }

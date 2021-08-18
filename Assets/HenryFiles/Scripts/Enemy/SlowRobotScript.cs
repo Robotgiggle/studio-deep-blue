@@ -57,24 +57,28 @@ public class SlowRobotScript : MonoBehaviour
 
         Vector3 displacement = Player.position - transform.position;
         displacement = displacement.normalized;
-        
-        if ((Vector3.Distance(Player.position, this.transform.position) < 50.0f) && (Vector3.Distance(Player.position, this.transform.position) > 40.0f))
+
+        if ((Vector3.Distance(Player.position, this.transform.position) < 15.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-            speed = 0f;
-            //transform.position -= transform.forward * (1 / 10) * speed * Time.deltaTime;
+            speed = 7f;
+            transform.position -= transform.forward * speed * Time.deltaTime;
+            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+            //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 20.0f) && (Vector3.Distance(Player.position, this.transform.position) > 4.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && (Vector3.Distance(Player.position, this.transform.position) > 35.0f))
         {
-            speed = 1f;
+            speed = 4f;
             transform.position += transform.forward * speed * Time.deltaTime;
+            transform.LookAt(Player.position);
+
         }
         else
         {
-            
+            speed = 0f;
         }
 
         transform.LookAt(Player.position);
-        CheckIfTimeToAttack();
+        //CheckIfTimeToAttack();
 
         //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
