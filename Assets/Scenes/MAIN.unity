@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 793108953, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: shotCooldown
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198646538966, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_ClearFlags
@@ -950,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1781307417}
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: levelTimer
       value: 120
