@@ -14,7 +14,7 @@ public class RangeRobotScript : MonoBehaviour
     public bool isRangedEnemy;
     public bool canShootE_1 = true;
     public bool isShooting;
-    public float enemyWeaponRange = 90.0f;
+    public float enemyWeaponRange = 15.0f;
     public float BulletForwardForce = 5;
     public float speed = 4f;
     public float minDist = 1f;
@@ -71,15 +71,17 @@ public class RangeRobotScript : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 15.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
+            speed = 4f;
             transform.position -= transform.forward * speed * Time.deltaTime;
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && (Vector3.Distance(Player.position, this.transform.position) > 15.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && (Vector3.Distance(Player.position, this.transform.position) > 35.0f))
         {
+            speed = 4f;
             transform.position += transform.forward * speed * Time.deltaTime;
         }
         else
         {
-
+            speed = 0f;
         }
 
         transform.LookAt(Player.position);
@@ -105,11 +107,11 @@ public class RangeRobotScript : MonoBehaviour
 
             if (bullet != null && isRangedEnemy)
             {
-                Instantiate(bullet, rightGun.transform.position, rightGun.transform.rotation);
-                Instantiate(bullet, leftGun.transform.position, leftGun.transform.rotation);
+                //Instantiate(bullet, rightGun.transform.position, rightGun.transform.rotation);
+                //Instantiate(bullet, leftGun.transform.position, leftGun.transform.rotation);
                 isShooting = true;
                 nextFire = Time.time + 4;
-
+                canShootE_1 = false;
                 loadEnemyWeapon();
             }
         }
@@ -119,7 +121,11 @@ public class RangeRobotScript : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            //   canShootE_1 = true;
+               canShootE_1 = true;
+        }
+        else
+        {
+            isShooting = false;
         }
     }
 }

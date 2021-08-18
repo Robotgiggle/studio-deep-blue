@@ -19,6 +19,7 @@ public class EBulletSpawner : MonoBehaviour
     void Update()
     {
         //isAttacking = get shooting bool from Henry's minion enemy AI script
+        isAttacking = GetComponentInParent<RangeRobotScript>().isShooting;
         if (Time.time > nextShotTime && isAttacking == true)
         {
             nextShotTime = Time.time + shotCooldown;
