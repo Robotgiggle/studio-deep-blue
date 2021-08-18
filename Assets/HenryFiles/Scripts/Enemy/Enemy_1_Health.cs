@@ -32,13 +32,13 @@ public class Enemy_1_Health : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // EnemyHealth = EnemyHealth - 1;
         if (other.gameObject.tag == "friendlyBullet")
         {
-            EnemyHealth = EnemyHealth - 2;
+            EnemyHealth--;
+            //player bullet does more damage than turret bullet
+            if(other.gameObject.name=="playerBullet(Clone)"){EnemyHealth--;}
             if(isHitEffect != null)
             Instantiate(isHitEffect, other.transform.position, other.transform.rotation);
-            //Destroy(other.gameObject);
         }
     }
 

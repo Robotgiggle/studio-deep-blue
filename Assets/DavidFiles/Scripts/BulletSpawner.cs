@@ -11,6 +11,7 @@ public class BulletSpawner : MonoBehaviour
     RaycastHit target;
     float currentTime;
     float nextShotTime;
+    int mask = 1 << 3;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class BulletSpawner : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + shotCooldown))// && canAnimate)
         {
-            Physics.Raycast(transform.parent.position,transform.parent.forward,out target,100);
+            Physics.Raycast(transform.parent.position,transform.parent.forward,out target,100,mask);
             direction = Quaternion.LookRotation((target.point-transform.position),Vector3.up);
             fireStart = Time.time;
             Instantiate(bullet,transform.position,direction);

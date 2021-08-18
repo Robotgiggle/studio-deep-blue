@@ -2727,7 +2727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {x: 20, y: 12, z: 8}
+  - {x: 20, y: 20, z: 10}
   wave: 0
   waveDone: 0
 --- !u!1 &1978392078
@@ -2740,7 +2740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978392080}
   - component: {fileID: 1978392079}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wallT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
