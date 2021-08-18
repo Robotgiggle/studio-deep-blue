@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3230508398417321279}
   - component: {fileID: 3230508398417321278}
+  - component: {fileID: 75202033}
   m_Layer: 0
   m_Name: RangeRobot
   m_TagString: enemy
@@ -86,6 +87,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &75202033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230508398417321272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29de3e85783d840299fb6bd9c7af6128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 6227191756223470177, guid: 53645f66558a3604384fe255e4c515a5, type: 3}
+  attackCooldown: 3
+  attackDamage: 8
+  attackHeight: 1
+  sightRadius: 10
+  stayBack: 25
+  speed: 3
+  ranged: 1
 --- !u!1 &3969478538059833874
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
         muzzle = transform.position;
         muzzle.y += attackHeight;
         //reduce distraction-by-player radius if enemy is near the core
-        if(Vector3.Distance(transform.position,core.transform.position)<=4){
+        if(Vector3.Distance(transform.position,core.transform.position)<=stayBack+2){
             sightRadius = 3;
         }
         //select target and move towards it
@@ -58,6 +58,9 @@ public class EnemyController : MonoBehaviour
                 Debug.Log("hit the "+hit.transform.gameObject.name);
                 if(hit.transform.gameObject.name=="core"){
                     hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage));
+                    if(gameObject.name=="Minion(Clone)"){
+                        Destroy(gameObject,0.3f);
+                    }
                 }else if(hit.transform.gameObject.tag=="Player"){
                     //damage player
                 }
