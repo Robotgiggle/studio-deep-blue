@@ -163,7 +163,7 @@ MonoBehaviour:
   playerLogTransform: {fileID: 0}
   rightGun: {fileID: 0}
   leftGun: {fileID: 0}
-  isRangedEnemy: 0
+  isRangedEnemy: 1
   canShootE_1: 1
   isShooting: 0
   enemyWeaponRange: 90
