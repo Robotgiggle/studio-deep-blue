@@ -58,6 +58,8 @@ public class CoreController : MonoBehaviour
     		health -= bulletDamage;
     		iframes = true;
     		Destroy(other.gameObject);
-    	}
+    	}else if(other.gameObject.CompareTag("bullet")){
+            Destroy(other.gameObject);
+        }
     }
 }

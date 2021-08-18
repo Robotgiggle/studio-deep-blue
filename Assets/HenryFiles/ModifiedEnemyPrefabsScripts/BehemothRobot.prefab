@@ -106,7 +106,7 @@ MonoBehaviour:
   canAttack: 1
   isAttacking: 1
   target: {fileID: 0}
-  enemyAttackRange: 7
+  enemyAttackRange: 8
   meleeObject: {fileID: 0}
   dead: 0
 --- !u!114 &1995175062803124647

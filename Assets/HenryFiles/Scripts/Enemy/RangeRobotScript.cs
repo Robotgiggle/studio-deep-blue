@@ -21,7 +21,6 @@ public class RangeRobotScript : MonoBehaviour
     float actualSpeed;
     public float minDist = 1f;
     public Transform target;
-    public float enemyRange = 40;
     public bool isTargetingPlayer;
 
     public bool dead = false;
@@ -102,14 +101,14 @@ public class RangeRobotScript : MonoBehaviour
             }
         }
 
-        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 25.0f) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < enemyWeaponRange - 1) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
             actualSpeed = speed * 1.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         } 
-        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(whatIsTarget.position, this.transform.position) > 35.0f))
+        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange))
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;

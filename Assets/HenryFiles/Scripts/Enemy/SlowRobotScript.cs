@@ -68,6 +68,15 @@ public class SlowRobotScript : MonoBehaviour
         Vector3 displacement = Player.position - transform.position;
         displacement = displacement.normalized;
 
+        if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
+        {
+            isAttacking = false;
+        }
+        else
+        {
+            isAttacking = true;
+        }
+
         if ((Vector3.Distance(Player.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
             actualSpeed = speed * 0.75f;
@@ -75,31 +84,20 @@ public class SlowRobotScript : MonoBehaviour
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > 3.0f))
+        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > enemyAttackRange))
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
 
         }
-        else
+        else if (isAttacking)
         {
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = 0f;
         }
         //CheckIfTimeToAttack();
 
-
-        if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
-        {
-            isAttacking = false;
-            actualSpeed = speed;
-        }
-        else
-        {
-            isAttacking = true;
-            actualSpeed = 0f;
-        }
 
         if (enemyIsMelee)
         {

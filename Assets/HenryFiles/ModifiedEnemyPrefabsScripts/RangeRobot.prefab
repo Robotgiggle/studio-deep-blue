@@ -166,12 +166,11 @@ MonoBehaviour:
   isRangedEnemy: 1
   canShootE_1: 1
   isShooting: 0
-  enemyWeaponRange: 90
+  enemyWeaponRange: 22
   BulletForwardForce: 5
   speed: 4
   minDist: 1
   target: {fileID: 0}
-  enemyRange: 40
   isTargetingPlayer: 0
   dead: 0
 --- !u!95 &3565613900162070960
