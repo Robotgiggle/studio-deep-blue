@@ -8,7 +8,8 @@ public class RangeRobotScript : MonoBehaviour
     //public GameObject bullet;
     public float fireRate = 5;
     public float nextFire;
-    public Transform whatIsTarget;//Player;
+    public Transform whatIsTarget;
+    public Transform playerLogTransform;
     public Transform rightGun;
     public Transform leftGun;
     public bool isRangedEnemy = true;
@@ -30,9 +31,13 @@ public class RangeRobotScript : MonoBehaviour
         if (whatIsTarget == null)
         {
             //"coreTargetTag"
+            if (GameObject.FindWithTag("coreTargetTag") != null)
+            {
+                whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
+            }
             if (GameObject.FindWithTag("Player") != null)
             {
-                whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
+                playerLogTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
     }
@@ -40,33 +45,57 @@ public class RangeRobotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Vector3 displacement = whatIsTarget.position - transform.position;
         displacement = displacement.normalized;
 
         if (whatIsTarget == null)
         {
-            if (GameObject.FindWithTag("Player") != null)
+            if ((GameObject.FindWithTag("coreTargetTag") != null) && ((Vector3.Distance(whatIsTarget.position, this.transform.position) > 25.0f)))
+            {
+                whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
+            }
+            else if ((GameObject.FindWithTag("Player") != null) && ((Vector3.Distance(playerLogTransform.position, this.transform.position) < 25.0f)))
             {
                 whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+            if (GameObject.FindWithTag("coreTargetTag") == null)
+            {
+                Object.Destroy(gameObject);
+            }
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                playerLogTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
 
             if (GameObject.FindWithTag("Player") == null)
             {
-                Object.Destroy(gameObject);
+                //Object.Destroy(gameObject);
             }
         }
 
         if (whatIsTarget != null)
         {
-            if (GameObject.FindWithTag("Player") != null)
+            if ((GameObject.FindWithTag("coreTargetTag") != null) && ((Vector3.Distance(whatIsTarget.position, this.transform.position) > 30.0f)))
+            {
+                whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
+            }
+            else if ((GameObject.FindWithTag("Player") != null) && ((Vector3.Distance(playerLogTransform.position, this.transform.position) < 25.0f)))
             {
                 whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+            if (GameObject.FindWithTag("coreTargetTag") == null)
+            {
+                Object.Destroy(gameObject);
+            }
+
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                playerLogTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
 
             if (GameObject.FindWithTag("Player") == null)
             {
-                Object.Destroy(gameObject);
+                //Object.Destroy(gameObject);
             }
         }
 
@@ -81,11 +110,12 @@ public class RangeRobotScript : MonoBehaviour
         {
             speed = 4f;
             transform.position += transform.forward * speed * Time.deltaTime;
-            transform.LookAt(whatIsTarget.position);
+            transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
 
         }
         else
         {
+            transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             speed = 0f;
         }
 

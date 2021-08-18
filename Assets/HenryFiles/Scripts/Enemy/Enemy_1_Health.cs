@@ -32,7 +32,7 @@ public class Enemy_1_Health : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // EnemyHealth = EnemyHealth - 1;
-        if (other.gameObject.tag == "bullet")
+        if (other.gameObject.tag == "friendlyBullet")
         {
             EnemyHealth = EnemyHealth - 1;
             if(isHitEffect != null)
