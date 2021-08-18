@@ -900,7 +900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0491ed5b308d54e4b998a0cb4777a979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HUD: {fileID: 0}
   pauseMenu: {fileID: 910036660}
+  cursor: {fileID: 0}
 --- !u!4 &1285575521
 Transform:
   m_ObjectHideFlags: 0
