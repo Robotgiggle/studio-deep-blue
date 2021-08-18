@@ -29,7 +29,7 @@ public class RangeRobotScript : MonoBehaviour
         // if no target specified, assume the player
         if (whatIsTarget == null)
         {
-
+            //"coreTargetTag"
             if (GameObject.FindWithTag("Player") != null)
             {
                 whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
