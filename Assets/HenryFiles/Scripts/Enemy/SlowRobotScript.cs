@@ -76,7 +76,7 @@ public class SlowRobotScript : MonoBehaviour
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > 3.0f))
         {
-            speed = 4f;
+            speed = 1f;
             transform.position += transform.forward * speed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
 
@@ -92,7 +92,7 @@ public class SlowRobotScript : MonoBehaviour
         if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
         {
             isAttacking = false;
-            speed = 4f;
+            speed = 1f;
         }
         else
         {
@@ -102,6 +102,7 @@ public class SlowRobotScript : MonoBehaviour
 
         if (enemyIsMelee)
         {
+            
             RaycastHit hit;
             if (Physics.Raycast(muzzle, transform.forward, out hit, stayBack + 0.1f, mask) && Time.time >= tBuffer)
             {
@@ -117,6 +118,7 @@ public class SlowRobotScript : MonoBehaviour
                 else if (hit.transform.gameObject.tag == "Player")
                 {
                     //damage player
+                    hit.transform.gameObject.GetComponentInParent<HealthScript>().healthPoints -= 2;
                 }
                 tBuffer = Time.time + attackCooldown;
             }
