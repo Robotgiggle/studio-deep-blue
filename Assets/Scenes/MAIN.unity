@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 793108953, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: shotCooldown
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1149976198646538966, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_ClearFlags
       value: 1
