@@ -26,7 +26,7 @@ public class BulletSpawner : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + fireCooldown))// && canAnimate)
         {
             fireStart = Time.time;
-            //nextShotTime = Time.time + shotCooldown;
+             //nextShotTime = Time.time + shotCooldown;
             Instantiate(bullet, bulletSpawnPoint.transform.position, this.transform.rotation);
         }
     }
