@@ -5,11 +5,10 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     public GameObject bullet;
-    public GameObject bulletSpawnPoint;
     public float shotCooldown = 1f;
-    //public GameObject animationCoordinator;
-    //public bool canAnimate = false;
     private float fireStart = 0;
+    Quaternion direction;
+    RaycastHit target;
     float currentTime;
     float nextShotTime;
 
@@ -20,12 +19,12 @@ public class BulletSpawner : MonoBehaviour
 
     void Update()
     {
-        //canAnimate = animationCoordinator.GetComponent<WeaponSound>().canAnimate;
         if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + shotCooldown))// && canAnimate)
         {
+            Physics.Raycast(transform.parent.position,transform.parent.forward,out target,100);
+            direction = Quaternion.LookRotation((target.point-transform.position),Vector3.up);
             fireStart = Time.time;
-             //nextShotTime = Time.time + shotCooldown;
-            Instantiate(bullet, bulletSpawnPoint.transform.position, this.transform.rotation);
+            Instantiate(bullet,transform.position,direction);
         }
     }
 }
