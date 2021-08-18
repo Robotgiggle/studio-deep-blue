@@ -68,6 +68,15 @@ MonoBehaviour:
   wepUpgradeCost: 0
   waveClearReward: 0
   tokens: 0
+--- !u!45 &2913866678677469875
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149976198646538964}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: f531e09e2ad2fb440b4eed7605863143, type: 2}
 --- !u!111 &237002369
 Animation:
   m_ObjectHideFlags: 0
