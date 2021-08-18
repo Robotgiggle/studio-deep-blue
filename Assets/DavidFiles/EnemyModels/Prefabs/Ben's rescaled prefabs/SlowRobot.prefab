@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077708652682119172}
   - component: {fileID: 466721352325838145}
+  - component: {fileID: 1122440033}
   m_Layer: 0
   m_Name: SlowRobot
   m_TagString: enemy
@@ -85,6 +86,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1122440033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077708652682119173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29de3e85783d840299fb6bd9c7af6128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  attackCooldown: 2.2
+  attackDamage: 10
+  attackHeight: 0.65
+  sightRadius: 9
+  stayBack: 1.8
+  speed: 2.2
+  ranged: 0
 --- !u!1 &3292005019885836270
 GameObject:
   m_ObjectHideFlags: 0

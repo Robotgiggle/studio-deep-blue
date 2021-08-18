@@ -8,9 +8,9 @@ public class CoreController : MonoBehaviour
     public GameObject player;
     public int health = 100;
     public int bulletDamage = 8;
-    public int weakDamage = 5;
-    public int strongDamage = 10;
-    public int bossDamage = 20;
+    //public int weakDamage = 5;
+    //public int strongDamage = 10;
+    //public int bossDamage = 20;
     bool iframes = false;
     int tBuffer = 1;
     // Start is called before the first frame update
@@ -31,6 +31,14 @@ public class CoreController : MonoBehaviour
         }
     }
 
+    public void takeDamage(int damage){
+        if(!iframes){
+            health -= damage;
+            iframes = true;
+        }
+    }
+
+    /*
     void OnCollisionEnter(Collision other){
     	if(!iframes){
     		if(other.gameObject.CompareTag("weak")){
@@ -43,6 +51,7 @@ public class CoreController : MonoBehaviour
     		iframes = true;
     	}
     }
+    */
 
     void OnTriggerEnter(Collider other){
     	if(other.gameObject.CompareTag("bullet")&&!iframes){

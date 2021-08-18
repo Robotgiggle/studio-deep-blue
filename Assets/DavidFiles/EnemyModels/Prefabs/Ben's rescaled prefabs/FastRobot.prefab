@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1767879392589557839}
   - component: {fileID: 1767879392589557824}
+  - component: {fileID: 1047968923390713402}
   m_Layer: 0
   m_Name: FastRobot
   m_TagString: enemy
@@ -85,6 +86,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1047968923390713402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767879392589557838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29de3e85783d840299fb6bd9c7af6128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  attackCooldown: 2
+  attackDamage: 5
+  attackHeight: 1.4
+  sightRadius: 10
+  stayBack: 1.4
+  speed: 4.5
+  ranged: 0
 --- !u!1 &2535506662794758657
 GameObject:
   m_ObjectHideFlags: 0
