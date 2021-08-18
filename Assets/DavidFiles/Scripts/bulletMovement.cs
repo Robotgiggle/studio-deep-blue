@@ -6,10 +6,11 @@ public class bulletMovement : MonoBehaviour
 {
     public float speed = 10f;
     public float lifeTime = 3f;
-    public Transform spawnSource;
+    //public Transform spawnSource;
 
     void Start()
     {
+        /*
         if (spawnSource == null)
         {
             if (GameObject.FindWithTag("playerBulletSpawner") != null)
@@ -18,6 +19,7 @@ public class bulletMovement : MonoBehaviour
             }
         }
         this.transform.position = spawnSource.transform.position;
+        */
     }
 
     void Update()
