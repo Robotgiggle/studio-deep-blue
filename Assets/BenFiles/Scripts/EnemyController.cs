@@ -5,11 +5,14 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public GameObject projectile;
+    public GameObject energyToken;
+    public int tokensDropped;
     public float attackCooldown;
     public float attackDamage;
     public float attackHeight;
     public float sightRadius;
     public float stayBack;
+    public float health;
     public float speed;
     public bool ranged;
     GameObject player;
@@ -31,6 +34,17 @@ public class EnemyController : MonoBehaviour
     {
         muzzle = transform.position;
         muzzle.y += attackHeight;
+        //check if dead
+        if(health<=0){
+            tokensDropped += Random.Range(-1,2);
+            for(int i=0;i<tokensDropped;i++){
+                Vector3 pos = transform.position;
+                pos.x += Random.Range(-0.2f,0.2f);
+                pos.z += Random.Range(-0.2f,0.2f);
+                Instantiate(energyToken,pos,transform.rotation);
+            }
+            Destroy(gameObject);
+        }
         //reduce distraction-by-player radius if enemy is near the core
         if(Vector3.Distance(transform.position,core.transform.position)<=stayBack+2){
             sightRadius = 3;
@@ -72,6 +86,13 @@ public class EnemyController : MonoBehaviour
                 }
                 tBuffer = Time.time + attackCooldown;
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("friendlyBullet")){
+            health -= 5;
+            Destroy(other.gameObject);
         }
     }
 }

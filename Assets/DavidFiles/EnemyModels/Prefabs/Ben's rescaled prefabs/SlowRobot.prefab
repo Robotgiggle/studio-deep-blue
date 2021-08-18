@@ -99,11 +99,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
+  energyToken: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
+  tokensDropped: 3
   attackCooldown: 2.2
   attackDamage: 10
   attackHeight: 0.65
   sightRadius: 9
   stayBack: 1.8
+  health: 25
   speed: 2.2
   ranged: 0
 --- !u!1 &3292005019885836270
