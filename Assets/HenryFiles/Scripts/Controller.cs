@@ -115,4 +115,11 @@ public class Controller : MonoBehaviour
     {
         _audio.PlayOneShot(clip);
     }
+
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("token")){
+            Destroy(other.gameObject);
+            transform.GetChild(0).gameObject.GetComponent<TokenManager>().tokens++;
+        }
+    }
 }
