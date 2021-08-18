@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnergyToken : MonoBehaviour
 {
     public float speed;
+    public float despawnTime;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject,20f);
+        Destroy(gameObject,despawnTime);
     }
 
     // Update is called once per frame

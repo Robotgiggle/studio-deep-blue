@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  despawnTime: 100
 --- !u!1001 &2103761499518659618
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -41,10 +41,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4434574
-  m_Height: 1.4204848
+  m_Radius: 0.6
+  m_Height: 1.5386055
   m_Direction: 1
-  m_Center: {x: 0, y: -0.28320265, z: 0}
+  m_Center: {x: 0, y: -0.22414231, z: 0}
 --- !u!1 &3078459951682861729
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 6
-  TokensDropped: 3
+  TokensDropped: 4
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
   token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
@@ -170,7 +170,7 @@ MonoBehaviour:
   isShooting: 0
   enemyWeaponRange: 22
   BulletForwardForce: 5
-  speed: 4
+  speed: 3.5
   minDist: 1
   target: {fileID: 0}
   isTargetingPlayer: 0

@@ -101,9 +101,9 @@ public class RangeRobotScript : MonoBehaviour
             }
         }
 
-        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < enemyWeaponRange - 1) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < enemyWeaponRange - 5) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-            actualSpeed = speed * 1.75f;
+            actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
