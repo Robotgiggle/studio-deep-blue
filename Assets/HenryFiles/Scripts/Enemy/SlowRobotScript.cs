@@ -61,32 +61,6 @@ public class SlowRobotScript : MonoBehaviour
             }
         }
 
-        if (Player == null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
-        }
-
-        if (Player != null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
-        }
-
         if (Player != null)
         {
             if (GameObject.FindWithTag("Player") != null)
