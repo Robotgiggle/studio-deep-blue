@@ -32,15 +32,6 @@ public class SlowRobotScript : MonoBehaviour
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
-
-        if (target == null)
-        {
-
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-        }
     }
 
     // Update is called once per frame
