@@ -47,6 +47,27 @@ MonoBehaviour:
   DownCurse: {fileID: 7066379409471276301}
   UpCurseRight: {fileID: 7066379410443030405}
   DownCurseRight: {fileID: 7066379410557767963}
+--- !u!114 &6639076485172911761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149976198646538964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff426ffd0c814fe69162f0d995849be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
+  cooldown: 5
+  range: 7
+  coreHealCost: 0
+  turretPlaceCost: 0
+  turretUpgradeCost: 0
+  wepUpgradeCost: 0
+  waveClearReward: 0
+  tokens: 0
 --- !u!111 &237002369
 Animation:
   m_ObjectHideFlags: 0
@@ -462,6 +483,11 @@ PrefabInstance:
     - {fileID: 4451188353070237503, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
     - {fileID: 3616466898474353296, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+--- !u!1 &1149976198646538964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3616466898839094064, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+  m_PrefabInstance: {fileID: 4451188353172791780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1149976198646538961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3616466898839094069, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
