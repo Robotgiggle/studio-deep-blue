@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   health: 100
-  bulletDamage: 8
+  bulletDamage: 4
 --- !u!1 &6815701763677603636
 GameObject:
   m_ObjectHideFlags: 0
