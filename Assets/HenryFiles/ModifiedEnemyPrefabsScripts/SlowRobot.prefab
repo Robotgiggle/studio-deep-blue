@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2927937301453062671}
   - component: {fileID: 3606748798658740042}
   - component: {fileID: 6291567247913900254}
-  - component: {fileID: -6796440148366384506}
+  - component: {fileID: 3684679873328632377}
   m_Layer: 0
   m_Name: SlowRobot
   m_TagString: enemy
@@ -145,23 +145,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-<<<<<<< HEAD
-  speed: 1
-=======
-  speed: 1.4
->>>>>>> 843ac516a82dd93747a383d5315f9de1645bdd68
+  speed: 4
   nextAttack: 0
   canAttack: 1
   isAttacking: 1
   target: {fileID: 0}
-  enemyAttackRange: 5
+  enemyAttackRange: 7
   meleeObject: {fileID: 0}
   dead: 0
   enemyIsMelee: 1
   stayBack: 0
   attackCooldown: 0
   attackDamage: 0
---- !u!114 &-6796440148366384506
+--- !u!114 &3684679873328632377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 10
+  EnemyHealth: 4
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
   hasPlayed: 0
