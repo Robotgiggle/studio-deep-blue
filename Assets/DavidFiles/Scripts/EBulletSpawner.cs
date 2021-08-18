@@ -18,6 +18,10 @@ public class EBulletSpawner : MonoBehaviour
 
     void Update()
     {
+        if(GetComponentInParent<RangeRobotScript>().whatIsTarget != null)
+        {
+            transform.LookAt(new Vector3(GetComponentInParent<RangeRobotScript>().whatIsTarget.position.x, GetComponentInParent<RangeRobotScript>().whatIsTarget.transform.position.y, GetComponentInParent<RangeRobotScript>().whatIsTarget.transform.position.z));
+        }
         //isAttacking = get shooting bool from Henry's minion enemy AI script
         isAttacking = GetComponentInParent<RangeRobotScript>().isShooting;
         if (Time.time > nextShotTime && isAttacking == true)

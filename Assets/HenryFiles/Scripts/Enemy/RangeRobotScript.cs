@@ -75,7 +75,7 @@ public class RangeRobotScript : MonoBehaviour
 
         if (whatIsTarget != null)
         {
-            if ((GameObject.FindWithTag("coreTargetTag") != null) && ((Vector3.Distance(whatIsTarget.position, this.transform.position) > 30.0f)))
+            if ((GameObject.FindWithTag("coreTargetTag") != null) && ((Vector3.Distance(whatIsTarget.position, this.transform.position)) > 30.0f && ((Vector3.Distance(playerLogTransform.position, this.transform.position) > 25.0f))))
             {
                 whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
