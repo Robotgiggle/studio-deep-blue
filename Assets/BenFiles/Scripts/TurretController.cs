@@ -72,6 +72,10 @@ public class TurretController : MonoBehaviour
         Instantiate(head2,transform.position,transform.rotation,transform.parent);
         Destroy(this.gameObject);
     }
+
+    public void takeDamage(int damage){
+        transform.parent.GetComponent<TurretCollision>().health -= damage;
+    }
     
     void OnCollisionEnter(Collision other){
         transform.parent.GetComponent<TurretCollision>().OnCollisionEnter(other);
