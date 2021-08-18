@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  speed: 4
+  speed: 3
   nextAttack: 0
   canAttack: 1
   isAttacking: 1
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 20
   isHitEffect: {fileID: 0}
+  deathEffect: {fileID: 0}
   hasPlayed: 0
   isDead: 0
 --- !u!95 &4768197775557824069
