@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[1]
       value: 
-      objectReference: {fileID: 2927937301453062670, guid: e39669b2c9aae3d489ce0d98d0015e37, type: 3}
+      objectReference: {fileID: 2927937301453062670, guid: c5e36b62f1b6cf94db7db85f868d399d, type: 3}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[2]
       value: 
@@ -717,7 +717,7 @@ PrefabInstance:
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[1]
       value: 
-      objectReference: {fileID: 2927937301453062670, guid: e39669b2c9aae3d489ce0d98d0015e37, type: 3}
+      objectReference: {fileID: 2927937301453062670, guid: c5e36b62f1b6cf94db7db85f868d399d, type: 3}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[2]
       value: 
@@ -2139,7 +2139,7 @@ PrefabInstance:
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[1]
       value: 
-      objectReference: {fileID: 2927937301453062670, guid: e39669b2c9aae3d489ce0d98d0015e37, type: 3}
+      objectReference: {fileID: 2927937301453062670, guid: c5e36b62f1b6cf94db7db85f868d399d, type: 3}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[2]
       value: 
@@ -2381,7 +2381,7 @@ PrefabInstance:
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[1]
       value: 
-      objectReference: {fileID: 2927937301453062670, guid: e39669b2c9aae3d489ce0d98d0015e37, type: 3}
+      objectReference: {fileID: 2927937301453062670, guid: c5e36b62f1b6cf94db7db85f868d399d, type: 3}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[2]
       value: 
