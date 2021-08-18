@@ -48,6 +48,7 @@ public class Controller : MonoBehaviour
         {
 
         }*/
+        Debug.Log("my y: "+transform.position.y);
 
         isGrounded = Physics.Linecast(_transform.position, groundCheck.position, whatIsGround);
         if (isGrounded)
