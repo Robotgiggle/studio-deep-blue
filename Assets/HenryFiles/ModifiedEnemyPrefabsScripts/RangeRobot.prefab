@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 20
   isHitEffect: {fileID: 0}
+  deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
   hasPlayed: 0
   isDead: 0
 --- !u!114 &1557538361245794267
@@ -156,10 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c3f2810a5066943b74489e1149ba1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
   fireRate: 7
   nextFire: 0
-  Player: {fileID: 0}
+  whatIsTarget: {fileID: 0}
+  playerLogTransform: {fileID: 0}
   rightGun: {fileID: 0}
   leftGun: {fileID: 0}
   isRangedEnemy: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   minDist: 1
   target: {fileID: 0}
   enemyRange: 40
+  isTargetingPlayer: 0
 --- !u!95 &3565613900162070960
 Animator:
   serializedVersion: 3

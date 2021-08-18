@@ -24,7 +24,7 @@ public class EBulletSpawner : MonoBehaviour
         }
         //isAttacking = get shooting bool from Henry's minion enemy AI script
         isAttacking = GetComponentInParent<RangeRobotScript>().isShooting;
-        if (Time.time > nextShotTime && isAttacking == true)
+        if (Time.time > nextShotTime && isAttacking == true && GetComponentInParent<Enemy_1_Health>().isDead != true)
         {
             nextShotTime = Time.time + shotCooldown;
             Instantiate(bullet, this.transform.position, this.transform.rotation);

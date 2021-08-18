@@ -23,6 +23,7 @@ public class RangeRobotScript : MonoBehaviour
     public float enemyRange = 40;
     public bool isTargetingPlayer;
 
+    public bool dead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,7 @@ public class RangeRobotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dead = GetComponent<Enemy_1_Health>().isDead;
         Vector3 displacement = whatIsTarget.position - transform.position;
         displacement = displacement.normalized;
 
@@ -99,14 +101,14 @@ public class RangeRobotScript : MonoBehaviour
             }
         }
 
-        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 25.0f))// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 25.0f) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
             speed = 7f;
             transform.position -= transform.forward * speed * Time.deltaTime;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
-        }
-        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 100.0f) && (Vector3.Distance(whatIsTarget.position, this.transform.position) > 35.0f))
+        } 
+        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(whatIsTarget.position, this.transform.position) > 35.0f))
         {
             speed = 4f;
             transform.position += transform.forward * speed * Time.deltaTime;

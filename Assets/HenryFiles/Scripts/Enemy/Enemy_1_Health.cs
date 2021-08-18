@@ -6,6 +6,7 @@ public class Enemy_1_Health : MonoBehaviour
 {
     public int EnemyHealth = 20;
     public GameObject isHitEffect;
+    public GameObject deathEffect;
     public bool hasPlayed = false;
     public bool isDead;
     // Start is called before the first frame update
@@ -43,25 +44,21 @@ public class Enemy_1_Health : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        /**
-        if (EnemyHealth <= 0 && m_Death.isPlaying == false)
+    { 
+        if (EnemyHealth <= 0)
         {
-            m_Animation = GetComponent<Animation>();
-            m_Animation.Play();
-            //GlobalEnemies.CurrentEnemies -= 1;
-            //Destroy(this.gameObject);
-            //SpawnGameObjects.NumberEnemies -= 1;
+            isDead = true;
+            StartCoroutine(despawn());
+
         }
 
-        if(m_Death.isPlaying == false)
+        IEnumerator despawn()
         {
-            hasPlayed = true;
-        }
+            yield return new WaitForSeconds(5f);
+            if (deathEffect != null)
+            Instantiate(deathEffect, this.transform.position, this.transform.rotation);
 
-        if(EnemyHealth <= 0 && hasPlayed == true)
-        {
-            Destroy(this.gameObject);
-        }*/
+            Destroy(gameObject);
+        }
     }
 }
