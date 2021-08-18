@@ -39,8 +39,8 @@ public class EnemyController : MonoBehaviour
             tokensDropped += Random.Range(-1,2);
             for(int i=0;i<tokensDropped;i++){
                 Vector3 pos = transform.position;
-                pos.x += Random.Range(-0.2,0.2);
-                pos.z += Random.Range(-0.2,0.2);
+                pos.x += Random.Range(-0.2f,0.2f);
+                pos.z += Random.Range(-0.2f,0.2f);
                 Instantiate(energyToken,pos,transform.rotation);
             }
             Destroy(gameObject);
