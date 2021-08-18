@@ -979,7 +979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd9436b2fffdf8d4b8f6990268151937, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd9436b2fffdf8d4b8f6990268151937, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1041,6 +1041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7461a64674eb7294882e70de4eb4dab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Anim: {fileID: 0}
+  gunLevel: 0
 --- !u!95 &1857978061
 Animator:
   serializedVersion: 3
