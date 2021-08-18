@@ -194,6 +194,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: tokens
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: coreHealCost
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: turretPlaceCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: waveClearReward
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: turretUpgradeCost
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 7066379408858644074, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 10.299999

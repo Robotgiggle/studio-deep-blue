@@ -48,6 +48,7 @@ public class Enemy_1_Health : MonoBehaviour
         if (EnemyHealth <= 0)
         {
             isDead = true;
+            Destroy(transform.GetChild(2).gameObject);
             StartCoroutine(despawn());
 
         }
