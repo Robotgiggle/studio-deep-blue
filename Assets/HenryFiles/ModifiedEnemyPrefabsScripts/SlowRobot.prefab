@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  speed: 0.001
+  speed: 0.8
   nextAttack: 0
   canAttack: 1
   isAttacking: 1

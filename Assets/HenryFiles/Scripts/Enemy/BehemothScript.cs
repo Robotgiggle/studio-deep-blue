@@ -6,6 +6,7 @@ public class BehemothScript : MonoBehaviour
 {
     public Transform Player;
     public float speed = 4f;
+    float actualSpeed;
     public float nextAttack;
     public bool canAttack = true; //true;
     public bool isAttacking;
@@ -63,22 +64,22 @@ public class BehemothScript : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-            speed = 3f;
-            transform.position -= transform.forward * speed * Time.deltaTime;
+            actualSpeed = speed * 0.75f;
+            transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > 3.0f))
         {
-            speed = 4f;
-            transform.position += transform.forward * speed * Time.deltaTime;
+            actualSpeed = speed;
+            transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
 
         }
         else
         {
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
-            speed = 0f;
+            actualSpeed = 0f;
         }
         //CheckIfTimeToAttack();
 
@@ -86,12 +87,12 @@ public class BehemothScript : MonoBehaviour
         if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
         {
             isAttacking = false;
-            speed = 4f;
+            actualSpeed = speed;
         }
         else
         {
             isAttacking = true;
-            speed = 0f;
+            actualSpeed = 0f;
         }
         //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
