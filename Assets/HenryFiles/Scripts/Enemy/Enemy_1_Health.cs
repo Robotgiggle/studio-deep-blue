@@ -55,7 +55,7 @@ public class Enemy_1_Health : MonoBehaviour
 
         IEnumerator despawn()
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2.5f);
             if (deathEffect != null)
             Instantiate(deathEffect, this.transform.position, this.transform.rotation);
             TokensDropped += Random.Range(-1,2);
