@@ -44,8 +44,9 @@ public class SpawnerController : MonoBehaviour
         }
         if(Time.time>=tbuffer){
             selectSpawnable();
-            Physics.Raycast(transform.position,Vector3.down,out spawnPoint,100,mask);
-            if(selected!=3){Instantiate(spawnables[selected],spawnPoint.point,transform.rotation);}
+            if(Physics.Raycast(transform.position,Vector3.down,out spawnPoint,100,mask)){
+                if(selected!=3){Instantiate(spawnables[selected],spawnPoint.point,transform.rotation);}
+            }
             tbuffer = Time.time + spawnRate;
         }
         if(tally.waveDone){
