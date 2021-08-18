@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnRate
-      value: 1.2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnables.Array.data[0]
@@ -712,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnRate
-      value: 1.2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnable
@@ -949,7 +949,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: health
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: player
@@ -2134,7 +2134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnRate
-      value: 1.2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnable
@@ -2380,7 +2380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnRate
-      value: 1.2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnable
@@ -2709,7 +2709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {x: 20, y: 20, z: 10}
+  - {x: 30, y: 30, z: 20}
   wave: 0
   waveDone: 0
 --- !u!1 &1978392078
