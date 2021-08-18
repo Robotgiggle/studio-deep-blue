@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        core = GameObject.Find("core");
+        core = GameObject.Find("coreTarget");
         tBuffer = attackCooldown;
     }
 
@@ -49,7 +49,13 @@ public class EnemyController : MonoBehaviour
         //attack target
         if(ranged){
             if(Vector3.Distance(transform.position,target)<=stayBack+0.6&&Time.time>=tBuffer){
-                Instantiate(projectile,muzzle,transform.rotation);
+                Quaternion shotDirection;
+                if(Vector3.Distance(transform.position,player.transform.position)<=sightRadius){
+                    shotDirection = Quaternion.LookRotation((player.transform.position-transform.position),Vector3.up);
+                }else{
+                    shotDirection = Quaternion.LookRotation((core.transform.position-transform.position),Vector3.up);
+                }
+                Instantiate(projectile,muzzle,shotDirection);
                 tBuffer = Time.time + attackCooldown;
             }
         }else{
