@@ -14,7 +14,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            /*
             if (isGamePaused)
             {
                 ResumeGame();
@@ -23,16 +22,16 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
-            */
-            PauseGame();
         }
     }
     
     public void ResumeGame()
     {
+        isGamePaused = false;
         pauseMenu.SetActive(false);
         cursor.GetComponent<MouseLockCursor>().Unpause();
         HUD.SetActive(true);
+        Time.timeScale = 1f;
     }
     
     void PauseGame()
@@ -47,6 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void MMenu()
     {
         pauseMenu.SetActive(false);
+        isGamePaused = false;
         Time.timeScale = 1f;
         isGamePaused = false;
         SceneManager.LoadScene(0);
