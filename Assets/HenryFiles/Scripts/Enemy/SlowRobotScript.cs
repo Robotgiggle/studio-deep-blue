@@ -86,13 +86,8 @@ public class SlowRobotScript : MonoBehaviour
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > enemyAttackRange))
         {
-<<<<<<< HEAD
-            speed = 1f;
-            transform.position += transform.forward * speed * Time.deltaTime;
-=======
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
->>>>>>> 843ac516a82dd93747a383d5315f9de1645bdd68
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
 
         }
@@ -104,20 +99,6 @@ public class SlowRobotScript : MonoBehaviour
         //CheckIfTimeToAttack();
 
 
-<<<<<<< HEAD
-        if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
-        {
-            isAttacking = false;
-            speed = 1f;
-        }
-        else
-        {
-            isAttacking = true;
-            speed = 0f;
-        }
-
-=======
->>>>>>> 843ac516a82dd93747a383d5315f9de1645bdd68
         if (enemyIsMelee)
         {
             

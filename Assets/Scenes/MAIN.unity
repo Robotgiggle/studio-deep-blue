@@ -131,20 +131,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 793108953, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: test
-      value: 
-      objectReference: {fileID: 5855527927826334561, guid: ff6329990b0694b04878618b5ec99517, type: 3}
-    - target: {fileID: 793108953, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4879448512616401791, guid: 7b3402fbc572fef4f8c8c2104f72913f, type: 3}
-    - target: {fileID: 793108953, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: shotCooldown
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149976198646538966, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_Name
@@ -195,44 +183,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: tokens
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: coreHealCost
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: turretPlaceCost
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: waveClearReward
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: turretUpgradeCost
-      value: 16
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 7066379408858644074, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 10.299999
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066379409471276302, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -11.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066379410220280160, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+    - target: {fileID: 7066379410005521312, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066379410443030406, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 10.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066379410557767940, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -11
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
@@ -2528,20 +2492,6 @@ Transform:
   m_Father: {fileID: 928789008}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1678222004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1149976198646538964, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-  m_PrefabInstance: {fileID: 6981184}
-  m_PrefabAsset: {fileID: 0}
---- !u!45 &1678222010
-Skybox:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678222004}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: f531e09e2ad2fb440b4eed7605863143, type: 2}
 --- !u!1 &1738016796
 GameObject:
   m_ObjectHideFlags: 0

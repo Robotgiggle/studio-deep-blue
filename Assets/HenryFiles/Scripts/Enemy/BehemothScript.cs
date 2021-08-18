@@ -73,25 +73,15 @@ public class BehemothScript : MonoBehaviour
 
         if ((Vector3.Distance(Player.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-<<<<<<< HEAD
-            speed = 1f;
-            transform.position -= transform.forward * speed * Time.deltaTime;
-=======
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
->>>>>>> 843ac516a82dd93747a383d5315f9de1645bdd68
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > enemyAttackRange))
         {
-<<<<<<< HEAD
-            speed = 1f;
-            transform.position += transform.forward * speed * Time.deltaTime;
-=======
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
->>>>>>> 843ac516a82dd93747a383d5315f9de1645bdd68
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
 
         }
@@ -103,19 +93,6 @@ public class BehemothScript : MonoBehaviour
         //CheckIfTimeToAttack();
 
 
-<<<<<<< HEAD
-        if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
-        {
-            isAttacking = false;
-            speed = 1f;
-        }
-        else
-        {
-            isAttacking = true;
-            speed = 0f;
-        }
-=======
->>>>>>> 843ac516a82dd93747a383d5315f9de1645bdd68
         //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
         //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);

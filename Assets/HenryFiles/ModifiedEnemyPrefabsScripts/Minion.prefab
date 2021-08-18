@@ -116,8 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 2
+  TokensDropped: 1
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 0}
+  token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
 --- !u!95 &4768197775557824069

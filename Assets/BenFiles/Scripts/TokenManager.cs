@@ -46,6 +46,7 @@ public class TokenManager : MonoBehaviour
                     Debug.Log("can't place a turret on an existing object");
                 }else if(tokens>=turretPlaceCost){
                     Instantiate(turret,target.point,Quaternion.Euler(Vector3.zero));
+                    turretPlaceCost++;
                     tbuffer = Time.time + cooldown;
                 }
             }
