@@ -5,10 +5,16 @@ using UnityEngine;
 public class EnemyBulletMovement : MonoBehaviour
 {
     public float speed = 10f;
+    public float lifeTime = 5f;
 
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        lifeTime-=Time.deltaTime;
+        if(lifeTime <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)

@@ -13,6 +13,7 @@ TagManager:
   - spawner
   - token
   - target
+  - coreTargetTag
   layers:
   - Default
   - TransparentFX
