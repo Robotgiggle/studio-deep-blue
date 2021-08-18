@@ -12,7 +12,7 @@ public class WeaponSound : MonoBehaviour
 
     private float fireCooldown = 2f;
     private float fireStart = 0;
-
+    //public bool canAnimate = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,7 @@ public class WeaponSound : MonoBehaviour
         {
             PlayWeaponSound();
             PlayWeaponFire();
+            //canAnimate = true;
             fireStart = Time.time;
         }
     }
@@ -45,6 +46,7 @@ public class WeaponSound : MonoBehaviour
         {
             m_Animation = GetComponent<Animation>();
             m_Animation.Play();
+            //canAnimate = false;
         }
     }
 }
