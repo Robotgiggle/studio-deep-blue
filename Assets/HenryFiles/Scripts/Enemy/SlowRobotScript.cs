@@ -26,7 +26,6 @@ public class SlowRobotScript : MonoBehaviour
     {
         if (Player == null)
         {
-
             if (GameObject.FindWithTag("Player") != null)
             {
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();

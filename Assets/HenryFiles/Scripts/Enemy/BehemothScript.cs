@@ -25,15 +25,6 @@ public class BehemothScript : MonoBehaviour
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
-
-        if (target == null)
-        {
-
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-        }
     }
 
     // Update is called once per frame
@@ -42,32 +33,6 @@ public class BehemothScript : MonoBehaviour
         dead = GetComponent<Enemy_1_Health>().isDead;
 
         if (Player == null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
-        }
-
-        if (Player == null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
-        }
-
-        if (Player != null)
         {
             if (GameObject.FindWithTag("Player") != null)
             {
