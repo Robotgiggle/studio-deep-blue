@@ -14,7 +14,7 @@ public class GlobalPlayerHealth : MonoBehaviour
     void Start()
     {
         CurrentHealth = 0;
-        CurrentHealth += 20;
+        CurrentHealth += 100;
     }
 
     // Update is called once per frame

@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,10 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
 
-    //public enum deathAction { loadLevelWhenDead, doNothingWhenDead };
+    public enum deathAction { loadLevelWhenDead, doNothingWhenDead };
 
-    public float healthPoints = 20f;
-    public float respawnHealthPoints = 20f;      //base health points
+    public float healthPoints = 100f;
+    public float respawnHealthPoints = 100f;      //base health points
     public float regenDelay;
     float tBuffer;
 
@@ -17,14 +18,13 @@ public class HealthScript : MonoBehaviour
 
     public GameObject explosionPrefab;
 
-    //public deathAction onLivesGone = deathAction.doNothingWhenDead;
+    public deathAction onLivesGone = deathAction.doNothingWhenDead;
 
     public string LevelToLoad = "";
 
     private Vector3 respawnPosition;
     private Quaternion respawnRotation;
-
-
+    public GameObject cursor;
 
 
     // Use this for initialization
@@ -36,6 +36,7 @@ public class HealthScript : MonoBehaviour
 
         if (LevelToLoad == "") // default to current scene 
         {
+            //cursor.GetComponent<MouseLockCursor>().pause();
             //SceneManager.LoadScene(0);
         }
         tBuffer = regenDelay;
@@ -66,7 +67,7 @@ public class HealthScript : MonoBehaviour
             else
             { // here is where you do stuff once ALL lives are gone)
                 isAlive = false;
-                /**
+                
                 switch (onLivesGone)
                 {
                     case deathAction.loadLevelWhenDead:
@@ -75,7 +76,7 @@ public class HealthScript : MonoBehaviour
                     case deathAction.doNothingWhenDead:
                         // do nothing, death must be handled in another way elsewhere
                         break;
-                }*/
+                }
                 Destroy(gameObject);
             }
         }
