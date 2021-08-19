@@ -27,7 +27,11 @@ public class PlayerJump : MonoBehaviour
 
     IEnumerator jump(){
         mainMotion.gravity = -9.81f;
-        yield return new WaitForSeconds(jumpTime);
+        yield return new WaitForSeconds(jumpTime*0.8f);
+        mainMotion.gravity = -4.9f;
+        yield return new WaitForSeconds(jumpTime*0.2f);
+        mainMotion.gravity = 4.9f;
+        yield return new WaitForSeconds(jumpTime*0.2f);
         mainMotion.gravity = 9.81f;
     }
 }
