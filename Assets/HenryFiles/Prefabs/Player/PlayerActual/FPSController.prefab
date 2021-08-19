@@ -37,6 +37,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3616466898474353297, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: weaponToTrack
+      value: 
+      objectReference: {fileID: 1149976199491297088}
     - target: {fileID: 3616466899093700106, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -106,5 +110,10 @@ PrefabInstance:
 --- !u!4 &612261123835610258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3871683935720744310, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+  m_PrefabInstance: {fileID: 4451188353172791780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1149976199491297088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3616466899622002340, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
   m_PrefabInstance: {fileID: 4451188353172791780}
   m_PrefabAsset: {fileID: 0}
