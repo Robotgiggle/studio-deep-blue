@@ -1035,6 +1035,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
+      propertyPath: coreSlider
+      value: 
+      objectReference: {fileID: 1187536063}
+    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: levelTimer
       value: 120
       objectReference: {fileID: 0}
@@ -2132,6 +2136,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1187536063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2001890028, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+  m_PrefabInstance: {fileID: 358087551}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1206697833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2833,6 +2848,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1995175062803124644, guid: 4bf59701ebcbb504ca22032067b9744f, type: 3}
+      propertyPath: core
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2279794436604396401, guid: 4bf59701ebcbb504ca22032067b9744f, type: 3}
       propertyPath: m_Name
       value: BehemothRobot
