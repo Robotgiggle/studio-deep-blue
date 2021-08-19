@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 3616466899093700146}
   - component: {fileID: 4451188353070237503}
   m_Layer: 30
-  m_Name: FPSController
+  m_Name: FPSController_3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCursorLock: 1
+  pauseTest: 0
 --- !u!114 &3616466899093700105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +186,7 @@ MonoBehaviour:
   MaximumX: 90
   smooth: 0
   smoothTime: 5
+  testCursorLock: 0
 --- !u!114 &3616466899093700150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +211,7 @@ MonoBehaviour:
   groundCheck: {fileID: 3616466899622002343}
   isGrounded: 0
   canJump: 0
+  jump: {x: 0, y: 0, z: 0}
   jumpSFX: {fileID: 0}
 --- !u!54 &3616466899093700151
 Rigidbody:
@@ -350,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 20
   respawnHealthPoints: 20
+  regenDelay: 0
   numberOfLives: 1
   isAlive: 1
   explosionPrefab: {fileID: 0}
@@ -377,6 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3616466899622002343}
+  - component: {fileID: 7933552955542306102}
   m_Layer: 30
   m_Name: firePoint
   m_TagString: Untagged
@@ -392,12 +397,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3616466899622002340}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.017999887, y: -0.3050003, z: 1.7848003}
+  m_LocalPosition: {x: 0.017999887, y: -0.3050003, z: 1.419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3616466898839094069}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7933552955542306102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3616466899622002340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a40e17a8630524c98bd904e0bb4625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4879448512616401791, guid: 7b3402fbc572fef4f8c8c2104f72913f, type: 3}
+  shotCooldown: 1
 --- !u!65 &3616466898474353310
 BoxCollider:
   m_ObjectHideFlags: 0

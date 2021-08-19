@@ -98,32 +98,26 @@ public class BehemothScript : MonoBehaviour
         //perform motion
         if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(target.position, this.transform.position) > 200.0f))
         {
-<<<<<<< HEAD
             speed = 1f;
             transform.position -= transform.forward * speed * Time.deltaTime;
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
-=======
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
->>>>>>> 5ef9ad2e7c66852f750493a2e87a17798eaf1a30
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
-<<<<<<< HEAD
             speed = 1f;
             transform.position += transform.forward * speed * Time.deltaTime;
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
-=======
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
->>>>>>> 5ef9ad2e7c66852f750493a2e87a17798eaf1a30
 
         }
         else if (isAttacking)
@@ -132,18 +126,12 @@ public class BehemothScript : MonoBehaviour
             actualSpeed = 0f;
         }
 
-<<<<<<< HEAD
         if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
-=======
         if (!dead)
->>>>>>> 5ef9ad2e7c66852f750493a2e87a17798eaf1a30
         {
             StartCoroutine(meleeAttack());
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5ef9ad2e7c66852f750493a2e87a17798eaf1a30
         //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
         //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);

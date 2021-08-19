@@ -105,17 +105,14 @@ public class SlowRobotScript : MonoBehaviour
         }
         else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
-<<<<<<< HEAD
             speed = 1f;
             transform.position += transform.forward * speed * Time.deltaTime;
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
-=======
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
->>>>>>> 5ef9ad2e7c66852f750493a2e87a17798eaf1a30
 
         }
         else if (isAttacking)
@@ -125,23 +122,18 @@ public class SlowRobotScript : MonoBehaviour
         }
 
 
-<<<<<<< HEAD
         if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
         {
             isAttacking = false;
             speed = 1f;
         }
         else
-=======
         if (!dead)
->>>>>>> 5ef9ad2e7c66852f750493a2e87a17798eaf1a30
         {
             StartCoroutine(meleeAttack());
         }
 
-<<<<<<< HEAD
-        if (enemyIsMelee)
-=======
+        //if (enemyIsMelee)
         //float distance = Vector3.Distance(transform.position, target.position);
 
     }
@@ -149,7 +141,6 @@ public class SlowRobotScript : MonoBehaviour
     IEnumerator meleeAttack()
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(target.position, transform.position) < enemyAttackRange))
->>>>>>> 5ef9ad2e7c66852f750493a2e87a17798eaf1a30
         {
             nextAttack = Time.time + attackCooldown;
             yield return new WaitForSeconds(attackCooldown-0.9f);
