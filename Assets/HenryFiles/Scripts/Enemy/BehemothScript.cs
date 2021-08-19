@@ -58,14 +58,14 @@ public class BehemothScript : MonoBehaviour
             target = Player;
             this.transform.position = new Vector3(Player.transform.position.x, Player.position.y + 20f, Player.position.z);
             isTeleporting = true;
-            timeToTeleport = 50f;
+            timeToTeleport = 20f;
         }
         else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 35.0f))
         {
             target = Player;
             this.transform.position = new Vector3(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
             isTeleporting = true;
-            timeToTeleport = 50f;
+            timeToTeleport = 20f;
         }
 
         if(this.GetComponent<Rigidbody>().velocity.y == 0)
