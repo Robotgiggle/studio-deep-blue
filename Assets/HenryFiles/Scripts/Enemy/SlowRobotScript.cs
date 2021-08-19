@@ -27,7 +27,7 @@ public class SlowRobotScript : MonoBehaviour
     void Start()
     {
         playerRange = enemyAttackRange;
-        coreRange = enemyAttackRange * 0.7f;
+        coreRange = enemyAttackRange * 0.6f;
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)
@@ -87,7 +87,7 @@ public class SlowRobotScript : MonoBehaviour
             enemyAttackRange = coreRange;
         }
         //select whether to attack or move
-        if ((Vector3.Distance(target.position, transform.position) > enemyAttackRange))
+        if (Vector3.Distance(target.position, transform.position) > enemyAttackRange)
         {
             isAttacking = false;
         }
@@ -121,13 +121,6 @@ public class SlowRobotScript : MonoBehaviour
             actualSpeed = 0f;
         }
 
-
-        if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
-        {
-            isAttacking = false;
-            speed = 1f;
-        }
-        else
         if (!dead)
         {
             StartCoroutine(meleeAttack());
