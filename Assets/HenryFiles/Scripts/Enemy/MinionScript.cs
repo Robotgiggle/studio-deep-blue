@@ -150,7 +150,7 @@ public class MinionScript : MonoBehaviour
                     /*
                     if (gameObject.name == "Minion(Clone)")
                     {
-                        Destroy(gameObject, 0.3f);
+                        GetComponent<Enemy_1_Health>().EnemyHealth -= 2;
                     }
                     */
                 }

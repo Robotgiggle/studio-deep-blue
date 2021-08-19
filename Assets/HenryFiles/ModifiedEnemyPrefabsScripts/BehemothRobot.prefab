@@ -101,14 +101,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  core: {fileID: 0}
   speed: 3
   canAttack: 1
   isAttacking: 1
-  target: {fileID: 0}
   enemyAttackRange: 8
+  sightRange: 12
   meleeObject: {fileID: 0}
   dead: 0
-  attackCooldown: 3.8
+  attackCooldown: 3.87
   attackDamage: 20
 --- !u!114 &1995175062803124647
 MonoBehaviour:
