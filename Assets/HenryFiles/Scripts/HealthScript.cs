@@ -84,13 +84,13 @@ public class HealthScript : MonoBehaviour
     public void ApplyDamage(float amount)
     {
         healthPoints = healthPoints - amount;
-        //GlobalHealth.CurrentHealth -= (int) amount;
+        GlobalPlayerHealth.CurrentHealth -= (int) amount;
     }
 
     public void ApplyHeal(float amount)
     {
         healthPoints = healthPoints + amount;
-        //GlobalHealth.CurrentHealth += (int) amount;
+        GlobalPlayerHealth.CurrentHealth += (int) amount;
     }
 
     public void ApplyBonusLife(int amount)
