@@ -16,9 +16,9 @@ public class zombieMinAnim : MonoBehaviour
 
     void Update()
     {
-        //attack = get attack bool from Henry's minion enemy AI script
-        //dead = get dead bool from Henry's minion enemy AI script
-        //speed = get speed variable from Henry's minion enemy AI script
+        attack = GetComponentInParent<MinionScript>().isAttacking;
+        dead = GetComponentInParent<Enemy_1_Health>().isDead;
+        speed = GetComponentInParent<MinionScript>().speed;
         AnimCheck();
     }
 

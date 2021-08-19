@@ -95,14 +95,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  speed: 1
-  nextAttack: 0
+  speed: 4.5
   canAttack: 1
   isAttacking: 1
   target: {fileID: 0}
-  enemyAttackRange: 2
+  enemyAttackRange: 3
   meleeObject: {fileID: 0}
   dead: 0
+  attackCooldown: 1.15
+  attackDamage: 2
 --- !u!114 &3580755694612672943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +142,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4768197775557824068
+--- !u!114 &3294579588271370872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,17 +151,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5687311085777171216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 606a2f01596db064b92bb7411e119508, type: 3}
+  m_Script: {fileID: 11500000, guid: f33ca95e67835ca4aba8c84a2f868b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  speed: 4
-  nextAttack: 0
-  canAttack: 1
-  isAttacking: 1
-  target: {fileID: 0}
-  enemyAttackRange: 7
-  meleeObject: {fileID: 0}
+  zMinion: {fileID: 0}
+  speed: 0
+  attack: 0
   dead: 0
 --- !u!1 &6802054865929949625
 GameObject:
@@ -203,10 +199,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.349114
-  m_Height: 1.1226735
+  m_Radius: 0.5
+  m_Height: 1.2138516
   m_Direction: 1
-  m_Center: {x: 0, y: 0.002912083, z: 0}
+  m_Center: {x: 0, y: 0.0485013, z: 0}
 --- !u!1001 &4768197775557824065
 PrefabInstance:
   m_ObjectHideFlags: 0

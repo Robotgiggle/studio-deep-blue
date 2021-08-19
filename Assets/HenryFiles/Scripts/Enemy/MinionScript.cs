@@ -7,13 +7,18 @@ public class MinionScript : MonoBehaviour
     public Transform Player;
     public float speed = 4f;
     float actualSpeed;
-    public float nextAttack;
+    float nextAttack;
     public bool canAttack = true; //true;
     public bool isAttacking;
     public Transform target;
     public float enemyAttackRange = 2.0f;
     public GameObject meleeObject;
     public bool dead = false;
+    float tBuffer;
+    Vector3 muzzle;
+    int mask = 1 << 6;
+    public float attackCooldown;
+    public float attackDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +37,7 @@ public class MinionScript : MonoBehaviour
     void Update()
     {
         dead = GetComponent<Enemy_1_Health>().isDead;
+        if(!dead){muzzle = transform.GetChild(2).position;}
 
         if (Player == null)
         {
@@ -90,8 +96,11 @@ public class MinionScript : MonoBehaviour
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = 0f;
         }
-        //CheckIfTimeToAttack();
 
+        if (!dead)
+        {
+            StartCoroutine(meleeAttack());
+        }
 
         //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
         //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
@@ -106,21 +115,30 @@ public class MinionScript : MonoBehaviour
 
     }
 
-    void CheckIfTimeToAttack()
+    IEnumerator meleeAttack()
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
         {
-            //isAttacking = true;
-            //meleeObject.SetActive(true);
-            nextAttack = Time.time + 40;
-            StartCoroutine(meleeEnd());
-
-        }
-        IEnumerator meleeEnd()
-        {
-            yield return new WaitForSeconds(2f);
-            //isAttacking = false;
-            //meleeObject.SetActive(false);
+            nextAttack = Time.time + attackCooldown;
+            yield return new WaitForSeconds(attackCooldown-0.6f);
+            RaycastHit hit;
+            if (Physics.Raycast(muzzle,transform.forward,out hit,enemyAttackRange+0.5f, mask))
+            {
+                Debug.Log("hit the " + hit.transform.gameObject.name);
+                if (hit.transform.gameObject.name == "core")
+                {
+                    hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage));
+                    if (gameObject.name == "Minion(Clone)")
+                    {
+                        Destroy(gameObject, 0.3f);
+                    }
+                }
+                else if (hit.transform.gameObject.tag == "Player")
+                {
+                    hit.transform.gameObject.GetComponent<HealthScript>().healthPoints -= attackDamage;
+                }
+            }
+            yield return new WaitForSeconds(0.6f);
         }
     }
 }
