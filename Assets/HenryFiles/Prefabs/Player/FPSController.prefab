@@ -1100,7 +1100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700146, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: regenDelay
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700146, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: LevelToLoad
