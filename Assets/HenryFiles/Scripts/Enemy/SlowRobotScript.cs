@@ -7,7 +7,7 @@ public class SlowRobotScript : MonoBehaviour
     public Transform Player;
     public float speed = 4f;
     float actualSpeed;
-    public float nextAttack;
+    float nextAttack;
     public bool canAttack = true; //true;
     public bool isAttacking;
     public Transform target;
@@ -17,7 +17,6 @@ public class SlowRobotScript : MonoBehaviour
     public bool enemyIsMelee = true;
     float tBuffer;
     Vector3 muzzle;
-    public float stayBack;
     int mask = 1 << 6;
     public float attackCooldown;
     public float attackDamage;
@@ -25,6 +24,7 @@ public class SlowRobotScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tBuffer = attackCooldown;
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)
@@ -38,6 +38,7 @@ public class SlowRobotScript : MonoBehaviour
     void Update()
     {
         dead = GetComponent<Enemy_1_Health>().isDead;
+        if(!dead){muzzle = transform.GetChild(2).position;}
 
         if (Player == null)
         {
@@ -96,14 +97,29 @@ public class SlowRobotScript : MonoBehaviour
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = 0f;
         }
-        //CheckIfTimeToAttack();
 
 
-        if (enemyIsMelee)
+        if (enemyIsMelee&&!dead)
         {
-            
+            StartCoroutine(meleeDelay());
+        }
+            //Movement
+
+            if (target == null)
+            return;
+
+        //float distance = Vector3.Distance(transform.position, target.position);
+
+    }
+
+    IEnumerator meleeDelay()
+    {
+        if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
+        {
+            nextAttack = Time.time + attackCooldown;
+            yield return new WaitForSeconds(attackCooldown-0.9f);
             RaycastHit hit;
-            if (Physics.Raycast(muzzle, transform.forward, out hit, stayBack + 0.1f, mask) && Time.time >= tBuffer)
+            if (Physics.Raycast(muzzle,transform.forward,out hit,enemyAttackRange+0.5f, mask))
             {
                 Debug.Log("hit the " + hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name == "core")
@@ -116,36 +132,15 @@ public class SlowRobotScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {
-                    //damage player
-                    hit.transform.gameObject.GetComponentInParent<HealthScript>().healthPoints -= 2;
+                    hit.transform.gameObject.GetComponent<HealthScript>().healthPoints -= attackDamage;
                 }
-                tBuffer = Time.time + attackCooldown;
             }
+            yield return new WaitForSeconds(0.9f);
         }
-            //Movement
-
-            if (target == null)
-            return;
-
-        //float distance = Vector3.Distance(transform.position, target.position);
-
     }
 
     void CheckIfTimeToAttack()
     {
-        if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
-        {
-            //isAttacking = true;
-            //meleeObject.SetActive(true);
-            nextAttack = Time.time + 40;
-            StartCoroutine(meleeEnd());
-
-        }
-        IEnumerator meleeEnd()
-        {
-            yield return new WaitForSeconds(2f);
-            //isAttacking = false;
-            //meleeObject.SetActive(false);
-        }
+        
     }
 }
