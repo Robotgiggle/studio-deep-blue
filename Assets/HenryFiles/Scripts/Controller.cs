@@ -60,17 +60,18 @@ public class Controller : MonoBehaviour
         }
 
         //_vy = _rigidbody.velocity.y;
-        if (Input.GetButtonDown("Jump") && jp == true)
+        if (Input.GetButtonDown("Jump") && jp.groundTouch == true)
         {
-            DoJump();
+            //DoJump();
             Debug.Log("Jumping");
+            transform.Translate(Vector3.forward * Time.deltaTime * jumpForce);
         }
 
-        if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
-        {
-            DoJump();
-            Debug.Log("Jump Should be Working");
-        }
+        //if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
+        //{
+        //    DoJump();
+        //    Debug.Log("Jump Should be Working");
+        //}
         //Key must be added titled "SpeedBoost" under input in project settings
         /**
         if(Time.time > nextSpeedBoost && (Input.GetButtonDown("SpeedBoost")))
