@@ -13,6 +13,7 @@ public class WeaponSound : MonoBehaviour
     private float fireCooldown = 1f;
     private float fireStart = 0;
     public bool canAnimate = true;
+    public GameObject weaponToTrack;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class WeaponSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + fireCooldown) && (!MouseLockCursor.paused))
+        if (weaponToTrack.GetComponent<BulletSpawner>().isFiring)// Input.GetButtonDown("Fire1") && (Time.time > fireStart + fireCooldown) && (!MouseLockCursor.paused))
         {
             PlayWeaponSound();
             PlayWeaponFire();
