@@ -18,17 +18,17 @@ public class RangeRobotScript : MonoBehaviour
     public float enemyWeaponRange = 15.0f;
     public float BulletForwardForce = 5;
     public float speed = 4f;
-    float actualSpeed;
+    public float actualSpeed;
     public float minDist = 1f;
     public Transform target;
     public bool isTargetingPlayer;
+    public float distanceToPlayer;
     public bool dead = false;
-    WaveTally tally;
+    public bool doWalkingAnimation;
+    public bool enemyIsInRange;
     // Start is called before the first frame update
     void Start()
     {
-        tally = GameObject.Find("manager").GetComponent<WaveTally>();
-        speed += tally.wave * 0.3f;
         canShootE_1 = true;
         // if no target specified, assume the player
         if (whatIsTarget == null)
@@ -48,9 +48,18 @@ public class RangeRobotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        distanceToPlayer = (Vector3.Distance(playerLogTransform.position, this.transform.position));
         dead = GetComponent<Enemy_1_Health>().isDead;
         Vector3 displacement = whatIsTarget.position - transform.position;
         displacement = displacement.normalized;
+        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) <= enemyWeaponRange))
+        {
+            enemyIsInRange = true;
+        }
+        else
+        {
+            enemyIsInRange = false;
+        }
 
         if (whatIsTarget == null)
         {
@@ -103,24 +112,31 @@ public class RangeRobotScript : MonoBehaviour
             }
         }
 
-        if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < enemyWeaponRange - 5) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(playerLogTransform.position, this.transform.position) < enemyWeaponRange) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
+            speed = 4;
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
-            //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
-        } 
-        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange + 5))
+            transform.LookAt(new Vector3(playerLogTransform.position.x, transform.position.y, playerLogTransform.position.z));
+            doWalkingAnimation = true;
+            Debug.Log("IsBackingAwayFromPlayer");
+        }
+        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange + 2) && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange))
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
+            doWalkingAnimation = true;
+            Debug.Log("IsMovingTowardsTarget");
 
         }
         else
         {
+            doWalkingAnimation = false;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             actualSpeed = 0f;
+            speed = 0f;
+            Debug.Log("IsIDLE");
         }
 
         CheckIfTimeToFire();

@@ -8,6 +8,7 @@ public class rangeBotAnimationScript : MonoBehaviour
     public float speed = 0;
     public bool shoot = false;
     public bool dead = false;
+    public bool doWalking = false;
 
     void Start()
     {
@@ -22,20 +23,21 @@ public class rangeBotAnimationScript : MonoBehaviour
         shoot = GetComponentInParent<RangeRobotScript>().isShooting;
         dead = GetComponentInParent<Enemy_1_Health>().isDead;
         speed = GetComponentInParent<RangeRobotScript>().speed;
+        //doWalking = GetComponentInParent<RangeRobotScript>().doWalkingAnimation;
         AnimCheck();
     }
 
     void AnimCheck()
     {
-        if (speed > 0)
+        if (speed > 0 || doWalking)
         {
             rangeBot.SetBool("isWalking", true);
         }
-        else
+        else if(!doWalking)
         {
             rangeBot.SetBool("isWalking", false);
         }
-        if (shoot == true)
+        if (shoot == true && !doWalking)
         {
             rangeBot.SetBool("isShooting", true);
         }
