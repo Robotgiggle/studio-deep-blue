@@ -16,6 +16,7 @@ TagManager:
   - coreTargetTag
   - playerBulletSpawner
   - ground
+  - turret
   layers:
   - Default
   - TransparentFX

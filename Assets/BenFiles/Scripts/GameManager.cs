@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject player;
     public float waveInterval = 20;
+    GameObject player;
     WaveTally tally;
     bool peacetime;
     float tBuffer;
@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         tally = gameObject.GetComponent<WaveTally>(); 
         timer = waveInterval;
     }
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("wave "+(tally.wave+1)+" completed");
             //send message to game UI to display "wave complete" text
             player.transform.GetChild(0).GetComponent<TokenManager>().reward();
+            player.transform.GetChild(0).GetComponent<TokenManager>().coreHealCost += 5;
         }
     }
 }
