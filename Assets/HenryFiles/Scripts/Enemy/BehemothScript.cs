@@ -26,6 +26,7 @@ public class BehemothScript : MonoBehaviour
     // Teleport Variables
     public bool isTeleporting;
     public float timeToTeleport = 20f;
+    public float airToGroundTimer = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -53,22 +54,34 @@ public class BehemothScript : MonoBehaviour
     void Update()
     {
         timeToTeleport -= Time.deltaTime;
-        if(timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) > 35.0f))
+        if(timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) > 10.0f))
         {
+            airToGroundTimer = 3f;
             target = Player;
             this.transform.position = new Vector3(Player.transform.position.x, Player.position.y + 20f, Player.position.z);
             isTeleporting = true;
             timeToTeleport = 20f;
         }
-        else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 35.0f))
+        else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 10.0f))
         {
+            airToGroundTimer = 3f;
             target = Player;
-            this.transform.position = new Vector3(Player.transform.position.x + Random.Range(7.0f, 15.0f), Player.position.y + 20f, Player.position.z);
+            this.transform.position = new Vector3(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
             isTeleporting = true;
             timeToTeleport = 20f;
+
         }
 
-        if(this.GetComponent<Rigidbody>().velocity.y == 0)
+        if(isTeleporting)
+        {
+            airToGroundTimer -= Time.deltaTime;
+            if (Vector3.Distance(core.position, this.transform.position) <= 10.0f)
+            {
+                timeToTeleport = 1f;
+            }
+        }
+
+        if(airToGroundTimer <= 0)
         {
             isTeleporting = false;
         }
