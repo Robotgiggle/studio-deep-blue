@@ -72,6 +72,7 @@ public class TokenManager : MonoBehaviour
 
     public void reward(){
         tokens += waveClearReward;
+        waveClearReward += 5;
     }
 
     IEnumerator buttonBlink(int button){

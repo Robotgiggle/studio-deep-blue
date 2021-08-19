@@ -26,7 +26,7 @@ public class WaveTally : MonoBehaviour
             wave++;
             SpawnerController[] spawners = Object.FindObjectsOfType<SpawnerController>(true);
             foreach(SpawnerController c in spawners){
-                c.spawnRate *= 0.86f;
+                c.spawnRate *= 0.65f;
                 c.gameObject.SetActive(true);
             }
             Debug.Log("started wave "+(wave+1));
