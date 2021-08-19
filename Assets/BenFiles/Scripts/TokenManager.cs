@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TokenManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class TokenManager : MonoBehaviour
     public int waveClearReward;
     public int tokens;
     RaycastHit target;
+    Transform buttons;
     int maskA = 1 << 3;
     int maskB = 1 << 4;
     int maskC = 1 << 6;
@@ -21,12 +23,16 @@ public class TokenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        buttons = GameObject.Find("PanelT").transform;
         tbuffer = cooldown;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //ui integration
+        buttons.GetChild(1).gameObject.GetComponent<Text>().text = tokens.ToString().PadLeft(2,'0');
+        //token abilities
         if(Input.GetKey(KeyCode.E)){
             Vector3 source = transform.position;
             source += transform.forward * 0.5f;
