@@ -28,12 +28,14 @@ public class TokenManager : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButtonDown(1)){
-            if(Physics.Raycast(transform.position,transform.forward,out target,range,maskC)){
+            Vector3 source = transform.position;
+            source += transform.forward * 0.5f;
+            if(Physics.Raycast(source,transform.forward,out target,range,maskC)){
                 if(target.transform.gameObject.name=="core"&&tokens>=coreHealCost){
                     tokens -= coreHealCost;
                     CoreController core = target.transform.gameObject.GetComponent<CoreController>();
                     core.health += 10;
-                    if(core.health>100){core.health = 100;}
+                    if(core.health>200){core.health = 200;}
                 }else if(target.transform.gameObject.name=="head_lv1"&&tokens>=turretUpgradeCost){
                     tokens -= turretUpgradeCost;
                     target.transform.gameObject.GetComponent<TurretController>().levelUp();
@@ -46,6 +48,8 @@ public class TokenManager : MonoBehaviour
                     Debug.Log("can't place a turret on an existing object");
                 }else if(tokens>=turretPlaceCost){
                     Instantiate(turret,target.point,Quaternion.Euler(Vector3.zero));
+                    tokens -= turretPlaceCost;
+                    turretPlaceCost++;
                     tbuffer = Time.time + cooldown;
                 }
             }

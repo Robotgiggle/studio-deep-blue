@@ -11,11 +11,11 @@ public class BulletSpawner : MonoBehaviour
     RaycastHit target;
     float currentTime;
     float nextShotTime;
-    int mask = 1 << 3;
+    int mask;
 
     void Start()
     {
-
+        mask = LayerMask.GetMask("Default","Terrain");
     }
 
     void Update()

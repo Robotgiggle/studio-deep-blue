@@ -5,34 +5,42 @@ using UnityEngine;
 public class FastRobotScript : MonoBehaviour
 {
     public Transform Player;
+    public Transform core;
     public float speed = 4f;
-    public float actualSpeed;
-    public float nextAttack;
+    float actualSpeed;
+    float nextAttack;
     public bool canAttack = true; //true;
     public bool isAttacking;
-    public Transform target;
+    Transform target;
     public float enemyAttackRange = 2.0f;
+    public float sightRange;
     public GameObject meleeObject;
     public bool dead = false;
+    Vector3 muzzle;
+    int mask = 1 << 6;
+    public float attackCooldown;
+    public float attackDamage;
+    float playerRange;
+    float coreRange;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerRange = enemyAttackRange;
+        coreRange = enemyAttackRange * 0.7f;
         if (Player == null)
         {
-
             if (GameObject.FindWithTag("Player") != null)
             {
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
 
-        if (target == null)
+        if (core == null)
         {
-
-            if (GameObject.FindWithTag("Player") != null)
+            if (GameObject.FindWithTag("coreTargetTag") != null)
             {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+                core = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
         }
     }
@@ -41,19 +49,7 @@ public class FastRobotScript : MonoBehaviour
     void Update()
     {
         dead = GetComponent<Enemy_1_Health>().isDead;
-
-        if (Player == null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
-        }
+        if(!dead){muzzle = transform.GetChild(2).position;}
 
         if (Player == null)
         {
@@ -80,24 +76,18 @@ public class FastRobotScript : MonoBehaviour
                 Object.Destroy(gameObject);
             }
         }
-
-        if (Player != null)
-        {
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                Object.Destroy(gameObject);
-            }
+        //if near the core, shrink sightRange
+        if(Vector3.Distance(core.position,transform.position)<5.5f){sightRange = 6;}
+        //select core or player as target
+        if(Vector3.Distance(Player.position,transform.position)<sightRange){
+            target = Player;
+            enemyAttackRange = playerRange;
+        }else{
+            target = core;
+            enemyAttackRange = coreRange;
         }
-
-        Vector3 displacement = Player.position - transform.position;
-        displacement = displacement.normalized;
-
-        if ((Vector3.Distance(Player.position, transform.position) > enemyAttackRange))
+        //select whether to attack or move
+        if ((Vector3.Distance(target.position, transform.position) > enemyAttackRange))
         {
             isAttacking = false;
         }
@@ -105,28 +95,31 @@ public class FastRobotScript : MonoBehaviour
         {
             isAttacking = true;
         }
-
-        if ((Vector3.Distance(Player.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        //perform motion
+        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(target.position, this.transform.position) > 200.0f))
         {
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
-        else if ((Vector3.Distance(Player.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(Player.position, this.transform.position) > enemyAttackRange))
+        else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
 
         }
         else if (isAttacking)
         {
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
             actualSpeed = 0f;
         }
-        //CheckIfTimeToAttack();
-
+        
+        if (!dead)
+        {
+            StartCoroutine(meleeAttack());
+        }
 
         
         //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
@@ -135,28 +128,35 @@ public class FastRobotScript : MonoBehaviour
 
         //Movement
 
-        if (target == null)
-            return;
 
         //float distance = Vector3.Distance(transform.position, target.position);
 
     }
 
-    void CheckIfTimeToAttack()
+    IEnumerator meleeAttack()
     {
-        if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
+        if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(target.position, transform.position) < enemyAttackRange))
         {
-            //isAttacking = true;
-            //meleeObject.SetActive(true);
-            nextAttack = Time.time + 40;
-            StartCoroutine(meleeEnd());
-
-        }
-        IEnumerator meleeEnd()
-        {
-            yield return new WaitForSeconds(2f);
-            //isAttacking = false;
-            //meleeObject.SetActive(false);
+            nextAttack = Time.time + attackCooldown;
+            yield return new WaitForSeconds(attackCooldown-1.2f);
+            RaycastHit hit;
+            if (Physics.Raycast(muzzle,transform.forward,out hit,enemyAttackRange+0.5f, mask))
+            {
+                Debug.Log("hit the " + hit.transform.gameObject.name);
+                if (hit.transform.gameObject.name == "core")
+                {
+                    hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage));
+                    if (gameObject.name == "Minion(Clone)")
+                    {
+                        Destroy(gameObject, 0.3f);
+                    }
+                }
+                else if (hit.transform.gameObject.tag == "Player")
+                {
+                    hit.transform.gameObject.GetComponent<HealthScript>().healthPoints -= attackDamage;
+                }
+            }
+            yield return new WaitForSeconds(1.2f);
         }
     }
 }

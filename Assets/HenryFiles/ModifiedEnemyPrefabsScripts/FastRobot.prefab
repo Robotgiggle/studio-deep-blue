@@ -145,15 +145,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  core: {fileID: 0}
   speed: 5
-  actualSpeed: 0
-  nextAttack: 0
   canAttack: 1
   isAttacking: 0
-  target: {fileID: 0}
   enemyAttackRange: 3.5
+  sightRange: 15
   meleeObject: {fileID: 0}
   dead: 0
+  attackCooldown: 2
+  attackDamage: 5
 --- !u!114 &3613469927105874121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,8 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 6
+  TokensDropped: 3
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
+  token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
 --- !u!1 &7768538467978203899

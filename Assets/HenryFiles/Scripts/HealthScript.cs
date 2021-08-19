@@ -9,6 +9,8 @@ public class HealthScript : MonoBehaviour
 
     public float healthPoints = 20f;
     public float respawnHealthPoints = 20f;      //base health points
+    public float regenDelay;
+    float tBuffer;
 
     public int numberOfLives = 1;                   //lives and variables for respawning
     public bool isAlive = true;
@@ -23,6 +25,8 @@ public class HealthScript : MonoBehaviour
     private Quaternion respawnRotation;
 
 
+
+
     // Use this for initialization
     void Start()
     {
@@ -34,11 +38,16 @@ public class HealthScript : MonoBehaviour
         {
             //SceneManager.LoadScene(0);
         }
+        tBuffer = regenDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Time.time>=tBuffer&&healthPoints<respawnHealthPoints){
+            healthPoints++;
+            tBuffer = Time.time + regenDelay;
+        }
         if (healthPoints <= 0)
         {               // if the object is 'dead'
             numberOfLives--;                    // decrement # of lives, update lives GUI
@@ -93,5 +102,11 @@ public class HealthScript : MonoBehaviour
     {
         respawnPosition = newRespawnPosition;
         respawnRotation = newRespawnRotation;
+    }
+
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("bullet")){
+            healthPoints -= 4;
+        }
     }
 }

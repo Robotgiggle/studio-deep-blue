@@ -5,14 +5,21 @@ using UnityEngine;
 public class Enemy_1_Health : MonoBehaviour
 {
     public int EnemyHealth = 4;
+    public int TokensDropped;
     public GameObject isHitEffect;
     public GameObject deathEffect;
+    public GameObject token;
     public bool hasPlayed = false;
     public bool isDead;
+    float spread;
     // Start is called before the first frame update
     void Start()
     {
-
+        if(EnemyHealth>16){
+            spread = 0.9f;
+        }else{
+            spread = 0.5f;
+        }
     }
 
     public void DeductPoints(int damageAmount)
@@ -34,9 +41,7 @@ public class Enemy_1_Health : MonoBehaviour
     {
         if (other.gameObject.tag == "friendlyBullet")
         {
-            EnemyHealth--;
-            //player bullet does more damage than turret bullet
-            if(other.gameObject.name=="playerBullet(Clone)"){EnemyHealth--;}
+            EnemyHealth -= 2;
             if(isHitEffect != null)
             Instantiate(isHitEffect, other.transform.position, other.transform.rotation);
         }
@@ -45,7 +50,10 @@ public class Enemy_1_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if (EnemyHealth <= 0)
+        if (transform.position.y<0){
+            Destroy(gameObject);
+        }
+        if (EnemyHealth <= 0&&!isDead)
         {
             isDead = true;
             Destroy(transform.GetChild(2).gameObject);
@@ -55,10 +63,17 @@ public class Enemy_1_Health : MonoBehaviour
 
         IEnumerator despawn()
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2.5f);
             if (deathEffect != null)
             Instantiate(deathEffect, this.transform.position, this.transform.rotation);
-
+            TokensDropped += Random.Range(-1,2);
+            for(int i=0;i<TokensDropped;i++){
+                Vector3 dropPoint = transform.position;
+                dropPoint.x += Random.Range(-spread,spread);
+                dropPoint.z += Random.Range(-spread,spread);
+                dropPoint.y++;
+                Instantiate(token,dropPoint,transform.rotation);
+            }
             Destroy(gameObject);
         }
     }

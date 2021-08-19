@@ -41,10 +41,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4434574
-  m_Height: 1.4204848
+  m_Radius: 0.6
+  m_Height: 1.5386055
   m_Direction: 1
-  m_Center: {x: 0, y: -0.28320265, z: 0}
+  m_Center: {x: 0, y: -0.22414231, z: 0}
 --- !u!1 &3078459951682861729
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,8 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 6
+  TokensDropped: 4
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
+  token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
 --- !u!114 &1557538361245794267
@@ -286,6 +288,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3565613899607819660}
     m_Modifications:
+    - target: {fileID: 5729125917011362245, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
+      propertyPath: shotCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5729125917011362266, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: m_RootOrder
       value: 3
