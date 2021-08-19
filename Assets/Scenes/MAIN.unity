@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InternalHealth: 0
-  HealthDisplay: {fileID: 0}
+  HealthDisplay: {fileID: 562140603}
 --- !u!4 &55345485
 Transform:
   m_ObjectHideFlags: 0
@@ -660,6 +660,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476694964}
   m_CullTransparentMesh: 1
+--- !u!1 &562140603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7066379409860137673, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+  m_PrefabInstance: {fileID: 358087551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &573428146
 PrefabInstance:
   m_ObjectHideFlags: 0
