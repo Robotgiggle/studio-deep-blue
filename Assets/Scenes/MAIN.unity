@@ -1028,26 +1028,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: health
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1023204403}
-    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: coreSlider
-      value: 
-      objectReference: {fileID: 1681206369}
-    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: levelTimer
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waveInterval
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2126003075866571511, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1095,50 +1075,6 @@ PrefabInstance:
     - target: {fileID: 2126003075866571515, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: m_Name
       value: core
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: endless
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[0].x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[0].y
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[0].z
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[1].x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[1].y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[1].z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[2].x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[2].y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971889124717971687, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
-      propertyPath: waves.Array.data[2].z
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
@@ -3076,17 +3012,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454963103}
   m_CullTransparentMesh: 1
---- !u!114 &1681206369 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2001890028, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-  m_PrefabInstance: {fileID: 358087551}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1738016796
 GameObject:
   m_ObjectHideFlags: 0

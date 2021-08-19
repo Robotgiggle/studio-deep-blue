@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("wave "+(tally.wave+1)+" completed");
             //send message to game UI to display "wave complete" text
             player.transform.GetChild(0).GetComponent<TokenManager>().reward();
-            player.transform.GetChild(0).GetComponent<TokenManager>().coreHealCost += 5;
         }
     }
 }
