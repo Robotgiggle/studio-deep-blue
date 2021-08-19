@@ -72,6 +72,7 @@ public class TokenManager : MonoBehaviour
 
     public void reward(){
         tokens += waveClearReward;
+        coreHealCost += waveClearReward / 5;
         waveClearReward += 5;
     }
 

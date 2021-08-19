@@ -1563,7 +1563,7 @@ MonoBehaviour:
   coreHealCost: 5
   turretPlaceCost: 5
   turretUpgradeCost: 10
-  waveClearReward: 10
+  waveClearReward: 15
   tokens: 0
 --- !u!114 &1528699814
 MonoBehaviour:
