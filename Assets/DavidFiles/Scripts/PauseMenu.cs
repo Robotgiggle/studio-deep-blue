@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
     
-    void PauseGame()
+    public void PauseGame()
     {
         pauseMenu.SetActive(true);
         cursor.GetComponent<MouseLockCursor>().pause();

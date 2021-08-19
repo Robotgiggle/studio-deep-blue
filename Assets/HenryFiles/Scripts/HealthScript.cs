@@ -24,7 +24,7 @@ public class HealthScript : MonoBehaviour
 
     private Vector3 respawnPosition;
     private Quaternion respawnRotation;
-    public GameObject cursor;
+    public GameObject pausemenu;
 
     public GameObject deathHUD;
     public GameObject HUD;
@@ -81,7 +81,8 @@ public class HealthScript : MonoBehaviour
                         // do nothing, death must be handled in another way elsewhere
                         break;
                 }
-                Destroy(gameObject);
+                //pausemenu.GetComponent<PauseMenu>().PauseGame();
+                //Destroy(gameObject);
             }
         }
     }
