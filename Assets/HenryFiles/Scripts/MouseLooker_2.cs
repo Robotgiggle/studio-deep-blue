@@ -12,6 +12,8 @@ public class MouseLooker_2 : MonoBehaviour
     public bool smooth;
     public float smoothTime = 5f;
 
+    public bool testCursorLock;
+
     //internal private variables
     private Quaternion m_CharacterTargetRot;
     private Quaternion m_CameraTargetRot;
@@ -41,31 +43,37 @@ public class MouseLooker_2 : MonoBehaviour
         if (!MouseLockCursor.paused)
         {
             LookRotation();
-
+            Debug.Log("Camera Is Rotating");
             // if ESCAPE key is pressed, then unlock the cursor
             if (Input.GetButtonDown("Cancel"))
             {
+                testCursorLock = false;
                 LockCursor(false);
-            }
+            } 
 
             // if the player fires, then relock the cursor
             if (Input.GetButtonDown("Fire1"))
             {
+                testCursorLock = true;
                 LockCursor(true);
             }
         }
     }
-
+     
     private void LockCursor(bool isLocked)
     {
         if(isLocked)
         {
+            testCursorLock = false;
+
             // make the mouse pointer invisible
             Cursor.visible = false; 
             Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
+            testCursorLock = true;
+
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
