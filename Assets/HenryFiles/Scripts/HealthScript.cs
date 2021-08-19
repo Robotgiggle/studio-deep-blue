@@ -16,6 +16,7 @@ public class HealthScript : MonoBehaviour
 
     public int numberOfLives = 1;                   //lives and variables for respawning
     public bool isAlive = true;
+    public bool coreDeath;
 
     public GameObject explosionPrefab;
 

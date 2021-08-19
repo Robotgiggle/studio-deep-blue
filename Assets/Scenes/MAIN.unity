@@ -1035,7 +1035,7 @@ PrefabInstance:
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023204403}
     - target: {fileID: 2126003075866571509, guid: e0dbc8bca596b448ca317a0c83d6b463, type: 3}
       propertyPath: coreSlider
       value: 

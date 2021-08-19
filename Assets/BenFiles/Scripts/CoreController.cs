@@ -6,18 +6,19 @@ using UnityEngine.UI;
 
 public class CoreController : MonoBehaviour
 {
-    public GameObject player;
     public int health;
     public int bulletDamage = 8;
     //public int weakDamage = 5;
     //public int strongDamage = 10;
     //public int bossDamage = 20;
+    HealthScript player;
     bool iframes = false;
     Slider coreSlider;
     int tBuffer = 1;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("FPSController").GetComponent<HealthScript>();
         coreSlider = GameObject.Find("CoreSlider").GetComponent<Slider>();
     }
 
@@ -30,7 +31,8 @@ public class CoreController : MonoBehaviour
         	iframes = false;
         }
         if(health<=0){
-        	//broadcast game over message to player controller
+            player.coreDeath = true;
+        	player.healthPoints = 0;
         }
     }
 
