@@ -108,7 +108,7 @@ public class RangeRobotScript : MonoBehaviour
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         } 
-        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange))
+        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange + 5))
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
