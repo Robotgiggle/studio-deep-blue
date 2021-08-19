@@ -103,7 +103,7 @@ public class MinionScript : MonoBehaviour
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
             //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
-        else if ((Vector3.Distance(target.position, this.transform.position) < 100.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
+        else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
