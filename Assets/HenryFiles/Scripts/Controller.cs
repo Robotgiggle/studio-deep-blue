@@ -13,19 +13,19 @@ public class Controller : MonoBehaviour
 
     // Velocity y
     float _vy;
-    public float jumpForce = 600;
+    //public float jumpForce = 600;
 
     public GameObject trailEffect;
     private CharacterController myController;
 
     public int whatIsGround = 1 << 3;
-    public Transform groundCheck;
+    //public Transform groundCheck;
     Transform _transform;
     Rigidbody _rigidbody;
     public bool isGrounded = false;
-    public bool canJump = false;
+    //public bool canJump = false;
     int _playerLayer;
-    public Vector3 jump;
+    //public Vector3 jump;
 
     //SFX
     AudioSource _audio;
@@ -41,7 +41,7 @@ public class Controller : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 2.0f, 0.0f);
+        //jump = new Vector3(0.0f, 2.0f, 0.0f);
         myController = gameObject.GetComponent<CharacterController>();
     }
 
@@ -53,6 +53,7 @@ public class Controller : MonoBehaviour
 
         }*/
 
+        /*
         isGrounded = Physics.Linecast(_transform.position, groundCheck.position, whatIsGround);
         if (isGrounded)
         {
@@ -66,6 +67,7 @@ public class Controller : MonoBehaviour
             Debug.Log("Jumping");
             transform.Translate(Vector3.up * Time.deltaTime * jumpForce);
         }
+        */
 
         //if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
         //{
@@ -108,6 +110,7 @@ public class Controller : MonoBehaviour
         moveSpeed = 3f;
     }
 
+    /*
     // make the player jump
     void DoJump()
     {
@@ -121,6 +124,7 @@ public class Controller : MonoBehaviour
         if (jumpSFX != null)
             PlaySound(jumpSFX);
     }
+    */
 
     void PlaySound(AudioClip clip)
     {
