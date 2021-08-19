@@ -11,11 +11,14 @@ public class Enemy_1_Health : MonoBehaviour
     public GameObject token;
     public bool hasPlayed = false;
     public bool isDead;
+    WaveTally tally;
     float spread;
     // Start is called before the first frame update
     void Start()
     {
-        if(EnemyHealth>16){
+        tally = GameObject.Find("manager").GetComponent<WaveTally>();
+        EnemyHealth += tally.wave * 6;
+        if(EnemyHealth>75){
             spread = 0.9f;
         }else{
             spread = 0.5f;
