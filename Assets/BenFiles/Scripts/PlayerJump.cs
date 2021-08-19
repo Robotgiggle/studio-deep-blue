@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerJump : MonoBehaviour
+{
+    public float jumpTime;
+    Controller mainMotion;
+    Vector3 aboveGround;
+    Vector3 belowGround;
+    // Start is called before the first frame update
+    void Start()
+    {
+        mainMotion = GetComponent<Controller>();
+        aboveGround = transform.GetChild(1).position;
+        belowGround = aboveGround;
+        belowGround.y -= 0.5f;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetButtonDown("Jump")&&Physics.Linecast(aboveGround,belowGround,8)){
+            StartCoroutine(jump());
+        }
+    }
+
+    IEnumerator jump(){
+        mainMotion.gravity = -9.81f;
+        yield return new WaitForSeconds(jumpTime);
+        mainMotion.gravity = 9.81f;
+    }
+}
