@@ -43,7 +43,7 @@ public class MouseLooker_2 : MonoBehaviour
         if (!MouseLockCursor.paused)
         {
             LookRotation();
-            Debug.Log("Camera Is Rotating");
+            //Debug.Log("Camera Is Rotating");
             // if ESCAPE key is pressed, then unlock the cursor
             if (Input.GetButtonDown("Cancel"))
             {

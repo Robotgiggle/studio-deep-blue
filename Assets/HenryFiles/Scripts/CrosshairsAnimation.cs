@@ -9,7 +9,7 @@ public class CrosshairsAnimation : MonoBehaviour
     public GameObject UpCurseRight;
     public GameObject DownCurseRight;
     private float firestart = 0f;
-    private float firecooldown = 2.0f;
+    private float firecooldown = 0.2f;
 
     // Start is called before the first frame update
     void Start()
