@@ -69,6 +69,7 @@ Transform:
   - {fileID: 8809634034694853091}
   - {fileID: 6763982605284524484}
   - {fileID: 3550923275281672436}
+  - {fileID: 4615691606998376924}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,6 +112,11 @@ MonoBehaviour:
   dead: 0
   attackCooldown: 3.87
   attackDamage: 20
+  isTeleporting: 0
+  timeToTeleport: 20
+  airToGroundTimer: 3
+  teleportEffect: {fileID: 6762739612620203999, guid: f282d2751f3eb204f9faa0083e2b2e9a, type: 3}
+  teleportEffectPoint: {fileID: 8826801112249880433}
 --- !u!114 &1995175062803124647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +211,36 @@ CapsuleCollider:
   m_Height: 1.7017769
   m_Direction: 1
   m_Center: {x: 0, y: 0.06551178, z: 0}
+--- !u!1 &8826801112249880433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4615691606998376924}
+  m_Layer: 5
+  m_Name: teleportEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4615691606998376924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826801112249880433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2279794436604396407}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &43272794048418266
 PrefabInstance:
   m_ObjectHideFlags: 0

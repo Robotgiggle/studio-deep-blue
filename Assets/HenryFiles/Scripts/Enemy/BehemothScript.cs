@@ -26,7 +26,9 @@ public class BehemothScript : MonoBehaviour
     // Teleport Variables
     public bool isTeleporting;
     public float timeToTeleport = 20f;
-    public float airToGroundTimer = 3f;
+    public float airToGroundTimer = 2f;
+    public GameObject teleportEffect;
+    public GameObject teleportEffectPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -54,21 +56,41 @@ public class BehemothScript : MonoBehaviour
     void Update()
     {
         timeToTeleport -= Time.deltaTime;
-        if(timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) > 10.0f))
+        if(timeToTeleport <= 0)// && (Vector3.Distance(core.position, this.transform.position) > 10.0f))
         {
-            airToGroundTimer = 3f;
-            target = Player;
-            this.transform.position = new Vector3(Player.transform.position.x, Player.position.y + 20f, Player.position.z);
-            isTeleporting = true;
-            timeToTeleport = 20f;
-        }
+            Instantiate(teleportEffect, teleportEffectPoint.transform.position, teleportEffectPoint.transform.rotation); //new Vector3(this.transform.position.x, this.transform.position.y, Player.position.z), this.transform.rotation);
+            StartCoroutine(teleport());
+
+        }/*
         else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 10.0f))
         {
-            airToGroundTimer = 3f;
-            target = Player;
-            this.transform.position = new Vector3(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
-            isTeleporting = true;
-            timeToTeleport = 20f;
+            Instantiate(teleportEffect, new Vector3(this.transform.position.x, this.transform.position.y + 2, Player.position.z), this.transform.rotation);
+            StartCoroutine(teleport());
+        }*/
+
+        IEnumerator teleport()
+        {
+            yield return new WaitForSeconds(0.5f);
+            if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) > 10.0f))
+            {
+                airToGroundTimer = 2f;
+                target = Player;
+                this.transform.position = new Vector3(Player.transform.position.x, Player.position.y + 20f, Player.position.z);
+                Instantiate(teleportEffect, teleportEffectPoint.transform.position, teleportEffectPoint.transform.rotation);
+                //Instantiate(teleportEffect, new Vector3(this.transform.position.x, this.transform.position.y + 2, Player.position.z), this.transform.rotation);
+                isTeleporting = true;
+                timeToTeleport = 20f;
+            }
+            else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 10.0f))
+            {
+                airToGroundTimer = 2f;
+                target = Player;
+                this.transform.position = new Vector3(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
+                Instantiate(teleportEffect, teleportEffectPoint.transform.position, teleportEffectPoint.transform.rotation);
+                //Instantiate(teleportEffect, new Vector3(this.transform.position.x, this.transform.position.y + 2, Player.position.z), this.transform.rotation);
+                isTeleporting = true;
+                timeToTeleport = 20f;
+            }
 
         }
 
