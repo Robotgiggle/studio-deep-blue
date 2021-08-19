@@ -26,7 +26,7 @@ public class EnemyBulletMovement : MonoBehaviour
 
         if (other.gameObject.GetComponent<HealthScript>() != null && other.gameObject.tag == "Player")
         {   // if the hit object has the Health script on it, deal damage
-            GlobalPlayerHealth.CurrentHealth -= damageToPlayer;
+            //GlobalPlayerHealth.CurrentHealth -= damageToPlayer;
             other.gameObject.GetComponent<HealthScript>().ApplyDamage(damageToPlayer);
 
             // Destroy(this.gameObject);

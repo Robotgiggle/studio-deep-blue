@@ -112,7 +112,7 @@ public class HealthScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("bullet")){
-            healthPoints -= 4;
+            //healthPoints -= 4;
         }
     }
 }
