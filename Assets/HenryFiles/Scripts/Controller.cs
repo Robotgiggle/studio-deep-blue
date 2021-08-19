@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     public float gravity = 9.81f;
     public float boostRate = 25f;
     public float nextSpeedBoost;
+    public JumpCheck jp;
 
     // Velocity y
     float _vy;
@@ -59,6 +60,11 @@ public class Controller : MonoBehaviour
         }
 
         //_vy = _rigidbody.velocity.y;
+        if (Input.GetButtonDown("Jump") && jp == true)
+        {
+            DoJump();
+            Debug.Log("Jumping");
+        }
 
         if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
         {

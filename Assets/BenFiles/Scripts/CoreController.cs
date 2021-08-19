@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoreController : MonoBehaviour
 {
     public GameObject player;
-    public int health = 100;
+    public Slider coreSlider;
+    public int health;
     public int bulletDamage = 8;
     //public int weakDamage = 5;
     //public int strongDamage = 10;
@@ -22,6 +24,7 @@ public class CoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        coreSlider.value = health;
         if(Time.time>tBuffer){
         	tBuffer++;
         	iframes = false;
