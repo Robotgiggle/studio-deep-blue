@@ -16,7 +16,6 @@ public class FastRobotScript : MonoBehaviour
     public float sightRange;
     public GameObject meleeObject;
     public bool dead = false;
-    float tBuffer;
     Vector3 muzzle;
     int mask = 1 << 6;
     public float attackCooldown;
@@ -31,7 +30,6 @@ public class FastRobotScript : MonoBehaviour
         coreRange = enemyAttackRange * 0.7f;
         if (Player == null)
         {
-
             if (GameObject.FindWithTag("Player") != null)
             {
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -40,7 +38,6 @@ public class FastRobotScript : MonoBehaviour
 
         if (core == null)
         {
-
             if (GameObject.FindWithTag("coreTargetTag") != null)
             {
                 core = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
