@@ -28,7 +28,10 @@ public class TokenManager : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButtonDown(1)){
-            if(Physics.Raycast(transform.position,transform.forward,out target,range,maskC)){
+            Vector3 source = transform.position;
+            source += transform.forward * 0.5f;
+            if(Physics.Raycast(source,transform.forward,out target,range,maskC)){
+                Debug.Log(target.transform.gameObject.name);
                 if(target.transform.gameObject.name=="core"&&tokens>=coreHealCost){
                     tokens -= coreHealCost;
                     CoreController core = target.transform.gameObject.GetComponent<CoreController>();
