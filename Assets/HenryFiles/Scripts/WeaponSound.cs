@@ -12,7 +12,7 @@ public class WeaponSound : MonoBehaviour
 
     private float fireCooldown = 1f;
     private float fireStart = 0;
-    //public bool canAnimate = true;
+    public bool canAnimate = true;
     // Start is called before the first frame update
     void Start()
     {

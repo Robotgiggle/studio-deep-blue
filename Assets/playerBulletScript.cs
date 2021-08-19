@@ -19,7 +19,7 @@ public class playerBulletScript : MonoBehaviour
             }
         }
         this.transform.position = spawnSource.transform.position;
-        
+        this.transform.rotation = spawnSource.transform.rotation;
     }
 
     void Update()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
+    public GameObject muzzleToLock;
     public GameObject bullet;
     public float shotCooldown = 1f;
     private float fireStart = 0;
@@ -20,12 +21,14 @@ public class BulletSpawner : MonoBehaviour
 
     void Update()
     {
+        this.transform.position = new Vector3(muzzleToLock.transform.position.x, muzzleToLock.transform.position.y, muzzleToLock.transform.position.z);
+
         if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + shotCooldown))// && canAnimate)
         {
             Physics.Raycast(transform.parent.position,transform.parent.forward,out target,100,mask);
             direction = Quaternion.LookRotation((target.point-transform.position),Vector3.up);
             fireStart = Time.time;
-            Instantiate(bullet,transform.position,direction);
+            Instantiate(bullet, transform.position, transform.rotation);//direction);
         }
     }
 }
