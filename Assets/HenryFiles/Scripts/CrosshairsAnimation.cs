@@ -26,7 +26,7 @@ public class CrosshairsAnimation : MonoBehaviour
         UpCurseRight.GetComponent<Animation>();
         UpCurseRight.GetComponent<Animation>().Play();
         DownCurseRight.GetComponent<Animation>();
-        DownCurseRight.GetComponent<Animation>();
+        DownCurseRight.GetComponent<Animation>().Play();
     }
 
     // Update is called once per frame
