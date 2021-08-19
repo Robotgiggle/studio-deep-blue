@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
@@ -28,9 +29,11 @@ public class HealthScript : MonoBehaviour
 
     public GameObject deathHUD;
     public GameObject HUD;
+    Slider healthSlider;
     // Use this for initialization
     void Start()
     {
+        healthSlider = HUD.transform.GetChild(0).GetChild(1).GetComponent<Slider>();
         // store initial position as respawn location
         respawnPosition = transform.position;
         respawnRotation = transform.rotation;
@@ -46,6 +49,7 @@ public class HealthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthSlider.value = healthPoints;
         if(Time.time>=tBuffer&&healthPoints<respawnHealthPoints){
             //healthPoints++;
             tBuffer = Time.time + regenDelay;
