@@ -109,4 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 8330934493140401955, guid: 9ef28a8eec4e943ebb552670a71f0022, type: 3}
-  spawnCooldown: 3
+  spawnCooldown: 2.5

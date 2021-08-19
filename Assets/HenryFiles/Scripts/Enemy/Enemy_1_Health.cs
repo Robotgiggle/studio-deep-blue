@@ -11,10 +11,15 @@ public class Enemy_1_Health : MonoBehaviour
     public GameObject token;
     public bool hasPlayed = false;
     public bool isDead;
+    float spread;
     // Start is called before the first frame update
     void Start()
     {
-
+        if(EnemyHealth>16){
+            spread = 0.9f;
+        }else{
+            spread = 0.5f;
+        }
     }
 
     public void DeductPoints(int damageAmount)
@@ -61,8 +66,8 @@ public class Enemy_1_Health : MonoBehaviour
             TokensDropped += Random.Range(-1,2);
             for(int i=0;i<TokensDropped;i++){
                 Vector3 dropPoint = transform.position;
-                dropPoint.x += Random.Range(-0.5f,0.5f);
-                dropPoint.z += Random.Range(-0.5f,0.5f);
+                dropPoint.x += Random.Range(-spread,spread);
+                dropPoint.z += Random.Range(-spread,spread);
                 Instantiate(token,dropPoint,transform.rotation);
             }
             Destroy(gameObject);

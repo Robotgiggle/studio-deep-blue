@@ -170,7 +170,7 @@ MonoBehaviour:
   isShooting: 0
   enemyWeaponRange: 22
   BulletForwardForce: 5
-  speed: 3.5
+  speed: 4
   minDist: 1
   target: {fileID: 0}
   isTargetingPlayer: 0

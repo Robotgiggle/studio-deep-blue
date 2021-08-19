@@ -21,7 +21,7 @@ public class BehemothAnimationScript : MonoBehaviour
         //speed = get speed variable from Henry's behemoth enemy AI script
         punch = GetComponentInParent<BehemothScript>().isAttacking;
         dead = GetComponentInParent<Enemy_1_Health>().isDead;
-        speed = GetComponentInParent<RangeRobotScript>().speed;
+        speed = GetComponentInParent<BehemothScript>().speed;
 
         AnimCheck();
     }
