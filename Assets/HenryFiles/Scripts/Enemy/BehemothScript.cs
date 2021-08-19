@@ -29,7 +29,8 @@ public class BehemothScript : MonoBehaviour
     public float airToGroundTimer = 2f;
     public GameObject teleportEffect;
     public GameObject teleportEffectPoint;
-
+    public AudioClip teleportSound;
+    public AudioClip teleportWarning;
     // Start is called before the first frame update
     void Start()
     {
