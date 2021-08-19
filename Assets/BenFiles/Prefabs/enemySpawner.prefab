@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - {fileID: 3075214382395409793, guid: d31e65367a444c24fac18584048f8d08, type: 3}
-  - {fileID: 2927937301453062670, guid: e39669b2c9aae3d489ce0d98d0015e37, type: 3}
+  - {fileID: 2927937301453062670, guid: c5e36b62f1b6cf94db7db85f868d399d, type: 3}
   - {fileID: 3565613899607819659, guid: 0dc5069875d517246a2f74dd27c09580, type: 3}
   spawnRate: 3.5
   moveSpeed: 20
