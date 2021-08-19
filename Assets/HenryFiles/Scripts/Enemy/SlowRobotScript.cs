@@ -22,12 +22,15 @@ public class SlowRobotScript : MonoBehaviour
     public float attackDamage;
     float playerRange;
     float coreRange;
+    WaveTally tally;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRange = enemyAttackRange;
         coreRange = enemyAttackRange * 0.6f;
+        tally = GameObject.Find("manager").GetComponent<WaveTally>();
+        speed += tally.wave * 0.3f;
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)

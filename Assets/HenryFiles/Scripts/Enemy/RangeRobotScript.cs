@@ -22,11 +22,13 @@ public class RangeRobotScript : MonoBehaviour
     public float minDist = 1f;
     public Transform target;
     public bool isTargetingPlayer;
-
     public bool dead = false;
+    WaveTally tally;
     // Start is called before the first frame update
     void Start()
     {
+        tally = GameObject.Find("manager").GetComponent<WaveTally>();
+        speed += tally.wave * 0.3f;
         canShootE_1 = true;
         // if no target specified, assume the player
         if (whatIsTarget == null)

@@ -22,6 +22,7 @@ public class BehemothScript : MonoBehaviour
     public float attackDamage;
     float playerRange;
     float coreRange;
+    WaveTally tally;
 
     // Teleport Variables
     public bool isTeleporting;
@@ -36,6 +37,8 @@ public class BehemothScript : MonoBehaviour
     {
         playerRange = enemyAttackRange;
         coreRange = enemyAttackRange * 0.7f;
+        tally = GameObject.Find("manager").GetComponent<WaveTally>();
+        speed += (tally.wave-2) * 0.3f;
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)
