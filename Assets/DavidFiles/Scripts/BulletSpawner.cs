@@ -11,7 +11,7 @@ public class BulletSpawner : MonoBehaviour
     RaycastHit target;
     float currentTime;
     float nextShotTime;
-    int mask = 1 << 3;
+    int mask = 9;
     public bool isFiring = false;
 
     void Start()

@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec32fde1b55d446ab79682e539a162d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   waveInterval: 20
   timer: 0
 --- !u!4 &170336053
