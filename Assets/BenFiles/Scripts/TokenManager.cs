@@ -42,7 +42,7 @@ public class TokenManager : MonoBehaviour
                 CoreController core = target.transform.gameObject.GetComponent<CoreController>();
                 if(target.transform.gameObject.name=="core"&&tokens>=coreHealCost&&Time.time>=tBuffer.z&&core.health<200){
                     tokens -= coreHealCost;
-                    core.health += 10;
+                    core.health += 20;
                     if(core.health>200){core.health = 200;}
                     tBuffer.z = Time.time + cooldown;
                     StartCoroutine(buttonBlink(3));
