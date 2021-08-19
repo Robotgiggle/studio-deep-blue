@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
     public GameObject HUD;
+    public GameObject crosshairs;
     public GameObject pauseMenu;
     public GameObject cursor;
 
@@ -31,7 +32,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         cursor.GetComponent<MouseLockCursor>().Unpause();
         HUD.SetActive(true);
-        Time.timeScale = 1f;
+        crosshairs.SetActive(true);
+;        Time.timeScale = 1f;
     }
     
     public void PauseGame()
@@ -39,6 +41,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         cursor.GetComponent<MouseLockCursor>().pause();
         HUD.SetActive(false);
+        crosshairs.SetActive(false);
         Time.timeScale = 0f;
         isGamePaused = true;
     }
