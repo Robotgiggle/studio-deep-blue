@@ -100,7 +100,7 @@ MonoBehaviour:
   canAttack: 1
   isAttacking: 1
   enemyAttackRange: 3
-  sightRange: 10
+  sightRange: 12
   meleeObject: {fileID: 0}
   dead: 0
   attackCooldown: 1.15

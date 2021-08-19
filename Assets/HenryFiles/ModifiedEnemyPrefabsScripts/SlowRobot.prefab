@@ -146,11 +146,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   core: {fileID: 0}
-  speed: 3.8
+  speed: 3.5
   canAttack: 1
   isAttacking: 1
   enemyAttackRange: 4.3
-  sightRange: 12
+  sightRange: 15
   meleeObject: {fileID: 0}
   dead: 0
   attackCooldown: 2.2

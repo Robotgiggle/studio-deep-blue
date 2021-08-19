@@ -50,6 +50,9 @@ public class Enemy_1_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
+        if (transform.position.y<0){
+            Destroy(gameObject);
+        }
         if (EnemyHealth <= 0&&!isDead)
         {
             isDead = true;
@@ -68,6 +71,7 @@ public class Enemy_1_Health : MonoBehaviour
                 Vector3 dropPoint = transform.position;
                 dropPoint.x += Random.Range(-spread,spread);
                 dropPoint.z += Random.Range(-spread,spread);
+                dropPoint.y++;
                 Instantiate(token,dropPoint,transform.rotation);
             }
             Destroy(gameObject);
