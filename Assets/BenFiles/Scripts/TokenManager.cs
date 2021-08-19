@@ -35,7 +35,7 @@ public class TokenManager : MonoBehaviour
                     tokens -= coreHealCost;
                     CoreController core = target.transform.gameObject.GetComponent<CoreController>();
                     core.health += 10;
-                    if(core.health>100){core.health = 100;}
+                    if(core.health>200){core.health = 200;}
                 }else if(target.transform.gameObject.name=="head_lv1"&&tokens>=turretUpgradeCost){
                     tokens -= turretUpgradeCost;
                     target.transform.gameObject.GetComponent<TurretController>().levelUp();
