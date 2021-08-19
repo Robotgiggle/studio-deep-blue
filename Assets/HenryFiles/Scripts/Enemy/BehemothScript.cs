@@ -55,13 +55,22 @@ public class BehemothScript : MonoBehaviour
         timeToTeleport -= Time.deltaTime;
         if(timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) > 35.0f))
         {
+            target = Player;
             this.transform.position = new Vector3(Player.transform.position.x, Player.position.y + 20f, Player.position.z);
+            isTeleporting = true;
             timeToTeleport = 50f;
         }
         else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 35.0f))
         {
+            target = Player;
             this.transform.position = new Vector3(Player.transform.position.x + Random.Range(-25.0f, 25.0f), Player.position.y + 20f, Player.position.z);
+            isTeleporting = true;
             timeToTeleport = 50f;
+        }
+
+        if(this.GetComponent<Rigidbody>().velocity.y == 0)
+        {
+            isTeleporting = false;
         }
 
         dead = GetComponent<Enemy_1_Health>().isDead;

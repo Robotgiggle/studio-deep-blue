@@ -18,6 +18,7 @@ public class MinionSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GetComponentInParent<BehemothScript>().isTeleporting == false)
         if(Time.time>=tBuffer){
             angle = Random.Range(0f,359f);
             transform.Rotate(0,angle,0,Space.World);
