@@ -10,7 +10,7 @@ public class WeaponSound : MonoBehaviour
     private Animation m_Animation;
     [SerializeField] private Animation m_GunShot;
 
-    private float fireCooldown = 1f;
+    //private float fireCooldown = 1f;
     private float fireStart = 0;
     public bool canAnimate = true;
     public GameObject weaponToTrack;
