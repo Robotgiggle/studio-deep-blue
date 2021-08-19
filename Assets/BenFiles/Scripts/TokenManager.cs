@@ -27,7 +27,7 @@ public class TokenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetKey(KeyCode.E)){
             Vector3 source = transform.position;
             source += transform.forward * 0.5f;
             if(Physics.Raycast(source,transform.forward,out target,range,maskC)){
