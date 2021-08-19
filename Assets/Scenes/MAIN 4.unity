@@ -399,6 +399,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1306814974, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306814974, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149976198928424914, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: jp
+      value: 
+      objectReference: {fileID: 384218258}
     - target: {fileID: 1149976198928424918, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: pausemenu
       value: 
