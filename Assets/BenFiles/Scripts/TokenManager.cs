@@ -15,6 +15,7 @@ public class TokenManager : MonoBehaviour
     public int tokens;
     RaycastHit target;
     Transform buttons;
+    int turretBonus;
     int maskA = 1 << 3;
     int maskB = 1 << 4;
     int maskC = 1 << 6;
@@ -29,9 +30,10 @@ public class TokenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        turretBonus = GameObject.FindGameObjectsWithTag("turret").Length;
         //ui integration
         buttons.GetChild(1).gameObject.GetComponent<Text>().text = tokens.ToString().PadLeft(2,'0');
-        buttons.GetChild(2).GetChild(0).gameObject.GetComponent<Text>().text = turretPlaceCost.ToString();
+        buttons.GetChild(2).GetChild(0).gameObject.GetComponent<Text>().text = (turretPlaceCost+turretBonus).ToString();
         buttons.GetChild(3).GetChild(0).gameObject.GetComponent<Text>().text = turretUpgradeCost.ToString();
         buttons.GetChild(4).GetChild(0).gameObject.GetComponent<Text>().text = coreHealCost.ToString();
         //token abilities
@@ -58,10 +60,9 @@ public class TokenManager : MonoBehaviour
             if(Physics.Raycast(transform.position,transform.forward,out target,range,maskA)){
                 if(Physics.Raycast(transform.position,transform.forward,range,maskB)){
                     Debug.Log("can't place a turret on an existing object");
-                }else if(tokens>=turretPlaceCost){
+                }else if(tokens>=turretPlaceCost + turretBonus){
                     Instantiate(turret,target.point,Quaternion.Euler(Vector3.zero));
-                    tokens -= turretPlaceCost;
-                    turretPlaceCost++;
+                    tokens -= turretPlaceCost + turretBonus;
                     tBuffer.x = Time.time + cooldown;
                     StartCoroutine(buttonBlink(1));
                 }

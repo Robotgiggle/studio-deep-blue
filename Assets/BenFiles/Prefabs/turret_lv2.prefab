@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5761078217762728735}
   m_Layer: 6
   m_Name: turret_lv2
-  m_TagString: Untagged
+  m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba71c2694f070224f8d123bf5e3fdeeb, type: 3}
       propertyPath: m_Name
       value: turret_base_model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba71c2694f070224f8d123bf5e3fdeeb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba71c2694f070224f8d123bf5e3fdeeb, type: 3}
