@@ -146,14 +146,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   speed: 5
-  actualSpeed: 0
-  nextAttack: 0
   canAttack: 1
   isAttacking: 0
   target: {fileID: 0}
   enemyAttackRange: 3.5
   meleeObject: {fileID: 0}
   dead: 0
+  attackCooldown: 2
+  attackDamage: 5
 --- !u!114 &3613469927105874121
 MonoBehaviour:
   m_ObjectHideFlags: 0

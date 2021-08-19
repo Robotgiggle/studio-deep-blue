@@ -14,7 +14,6 @@ public class SlowRobotScript : MonoBehaviour
     public float enemyAttackRange = 2.0f;
     public GameObject meleeObject;
     public bool dead = false;
-    public bool enemyIsMelee = true;
     float tBuffer;
     Vector3 muzzle;
     int mask = 1 << 6;
@@ -99,9 +98,9 @@ public class SlowRobotScript : MonoBehaviour
         }
 
 
-        if (enemyIsMelee&&!dead)
+        if (!dead)
         {
-            StartCoroutine(meleeDelay());
+            StartCoroutine(meleeAttack());
         }
             //Movement
 
@@ -112,7 +111,7 @@ public class SlowRobotScript : MonoBehaviour
 
     }
 
-    IEnumerator meleeDelay()
+    IEnumerator meleeAttack()
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(Player.position, transform.position) < enemyAttackRange))
         {
@@ -137,10 +136,5 @@ public class SlowRobotScript : MonoBehaviour
             }
             yield return new WaitForSeconds(0.9f);
         }
-    }
-
-    void CheckIfTimeToAttack()
-    {
-        
     }
 }
