@@ -23,6 +23,10 @@ public class BehemothScript : MonoBehaviour
     float playerRange;
     float coreRange;
 
+    // Teleport Variables
+    public bool isTeleporting;
+    public float timeToTeleport = 40f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +52,18 @@ public class BehemothScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeToTeleport -= Time.deltaTime;
+        if(timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) > 35.0f))
+        {
+            this.transform.position = new Vector3(Player.transform.position.x, Player.position.y + 20f, Player.position.z);
+            timeToTeleport = 50f;
+        }
+        else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 35.0f))
+        {
+            this.transform.position = new Vector3(Player.transform.position.x + Random.Range(-25.0f, 25.0f), Player.position.y + 20f, Player.position.z);
+            timeToTeleport = 50f;
+        }
+
         dead = GetComponent<Enemy_1_Health>().isDead;
         if(!dead){muzzle = transform.GetChild(2).position;}
 
