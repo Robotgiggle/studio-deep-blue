@@ -94,4 +94,10 @@ public class HealthScript : MonoBehaviour
         respawnPosition = newRespawnPosition;
         respawnRotation = newRespawnRotation;
     }
+
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("bullet")){
+            healthPoints -= 4;
+        }
+    }
 }
