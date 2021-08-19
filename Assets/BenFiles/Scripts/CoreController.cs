@@ -7,18 +7,18 @@ using UnityEngine.UI;
 public class CoreController : MonoBehaviour
 {
     public GameObject player;
-    public Slider coreSlider;
     public int health;
     public int bulletDamage = 8;
     //public int weakDamage = 5;
     //public int strongDamage = 10;
     //public int bossDamage = 20;
     bool iframes = false;
+    Slider coreSlider;
     int tBuffer = 1;
     // Start is called before the first frame update
     void Start()
     {
-      
+        coreSlider = GameObject.Find("CoreSlider").GetComponent<Slider>();
     }
 
     // Update is called once per frame

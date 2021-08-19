@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour
     public float gravity = 9.81f;
     public float boostRate = 25f;
     public float nextSpeedBoost;
-    public JumpCheck jp;
+    //public JumpCheck jp;
 
     // Velocity y
     float _vy;
@@ -18,7 +18,7 @@ public class Controller : MonoBehaviour
     public GameObject trailEffect;
     private CharacterController myController;
 
-    public LayerMask whatIsGround;
+    public int whatIsGround = 1 << 3;
     public Transform groundCheck;
     Transform _transform;
     Rigidbody _rigidbody;
@@ -60,11 +60,11 @@ public class Controller : MonoBehaviour
         }
 
         //_vy = _rigidbody.velocity.y;
-        if (Input.GetButtonDown("Jump") && jp.groundTouch == true)
+        if (Input.GetButtonDown("Jump") && canJump)
         {
             //DoJump();
             Debug.Log("Jumping");
-            transform.Translate(Vector3.forward * Time.deltaTime * jumpForce);
+            transform.Translate(Vector3.up * Time.deltaTime * jumpForce);
         }
 
         //if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
