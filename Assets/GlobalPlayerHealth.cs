@@ -14,12 +14,17 @@ public class GlobalPlayerHealth : MonoBehaviour
     void Start()
     {
         CurrentHealth = 0;
-        CurrentHealth += 100;
+        CurrentHealth += 30;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (InternalHealth < 0)
+        {
+            InternalHealth = 0;
+            CurrentHealth = 0;
+        }
         InternalHealth = CurrentHealth;
         HealthDisplay.GetComponent<Text>().text = "Health: " + InternalHealth;
     }

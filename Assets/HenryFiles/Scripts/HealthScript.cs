@@ -8,8 +8,8 @@ public class HealthScript : MonoBehaviour
 
     public enum deathAction { loadLevelWhenDead, doNothingWhenDead };
 
-    public float healthPoints = 100f;
-    public float respawnHealthPoints = 100f;      //base health points
+    public float healthPoints = 30;
+    public float respawnHealthPoints = 30;      //base health points
     public float regenDelay;
     float tBuffer;
 
@@ -26,7 +26,8 @@ public class HealthScript : MonoBehaviour
     private Quaternion respawnRotation;
     public GameObject cursor;
 
-
+    public GameObject deathHUD;
+    public GameObject HUD;
     // Use this for initialization
     void Start()
     {
@@ -46,7 +47,7 @@ public class HealthScript : MonoBehaviour
     void Update()
     {
         if(Time.time>=tBuffer&&healthPoints<respawnHealthPoints){
-            healthPoints++;
+            //healthPoints++;
             tBuffer = Time.time + regenDelay;
         }
         if (healthPoints <= 0)
@@ -66,12 +67,15 @@ public class HealthScript : MonoBehaviour
             }
             else
             { // here is where you do stuff once ALL lives are gone)
+                healthPoints = 0;
                 isAlive = false;
-                
+                //deathHUD.SetActive(true);
+                //HUD.SetActive(false);
+                Debug.Log("HUDShouldBeDeath");
                 switch (onLivesGone)
                 {
                     case deathAction.loadLevelWhenDead:
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                         break;
                     case deathAction.doNothingWhenDead:
                         // do nothing, death must be handled in another way elsewhere
