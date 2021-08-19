@@ -130,25 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 793108953, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: shotCooldown
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 231056403248225832, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149976198646538964, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_Name
       value: FPSController
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424942, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_RootOrder
@@ -192,42 +176,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424942, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149976199491297088, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149976200496391034, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: coreHealCost
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: turretPlaceCost
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: waveClearReward
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: turretUpgradeCost
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066379410005521312, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774758902070604741, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9131377493990958833, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
