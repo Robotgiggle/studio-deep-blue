@@ -17,12 +17,12 @@ public class Enemy_1_Health : MonoBehaviour
     void Start()
     {
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
-        if(gameObject.layer=="UI"||gameObject.layer=="Ignore Raycast"){
+        if(gameObject.layer==2||gameObject.layer==5){
             EnemyHealth += tally.wave * 2;
         }else{
             EnemyHealth += tally.wave * 6;
         }
-        
+
         if(EnemyHealth>75){
             spread = 0.9f;
         }else{
