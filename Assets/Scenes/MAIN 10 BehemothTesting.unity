@@ -2852,6 +2852,10 @@ PrefabInstance:
       propertyPath: core
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1995175062803124644, guid: 4bf59701ebcbb504ca22032067b9744f, type: 3}
+      propertyPath: timeToTeleport
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2279794436604396401, guid: 4bf59701ebcbb504ca22032067b9744f, type: 3}
       propertyPath: m_Name
       value: BehemothRobot

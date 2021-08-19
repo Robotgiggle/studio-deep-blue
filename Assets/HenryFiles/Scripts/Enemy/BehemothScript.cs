@@ -25,7 +25,7 @@ public class BehemothScript : MonoBehaviour
 
     // Teleport Variables
     public bool isTeleporting;
-    public float timeToTeleport = 40f;
+    public float timeToTeleport = 20f;
 
     // Start is called before the first frame update
     void Start()
