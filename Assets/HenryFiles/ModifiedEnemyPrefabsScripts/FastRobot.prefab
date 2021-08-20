@@ -168,12 +168,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 6
-  TokensDropped: 2
+  TokensDropped: 3
   isHitEffect: {fileID: 4966207399199785302, guid: 5763fdb5a2e852541836441399be889c, type: 3}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
   token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
+  effect: {fileID: 0}
 --- !u!1 &7768538467978203899
 GameObject:
   m_ObjectHideFlags: 0
