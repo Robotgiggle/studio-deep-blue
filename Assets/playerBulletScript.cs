@@ -6,6 +6,7 @@ public class playerBulletScript : MonoBehaviour
 {
     public float speed = 10f;
     public float lifeTime = 3f;
+    public GameObject effect;
     //public Transform spawnSource;
 
     void Start()
@@ -50,6 +51,10 @@ public class playerBulletScript : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+        if(effect != null)
+        {
+            Instantiate(effect, transform.position, transform.rotation);
         }
     }
 }

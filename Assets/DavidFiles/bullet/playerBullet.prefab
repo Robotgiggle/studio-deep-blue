@@ -128,3 +128,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   lifeTime: 4
+  effect: {fileID: 3527860327035299888, guid: 5ac3d1e7d60c531489a6a4f8e60b2c28, type: 3}
