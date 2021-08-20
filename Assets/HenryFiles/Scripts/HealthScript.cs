@@ -17,6 +17,7 @@ public class HealthScript : MonoBehaviour
     public int numberOfLives = 1;                   //lives and variables for respawning
     public bool isAlive = true;
     public bool coreDeath;
+    public bool isDead = false;
 
     public GameObject explosionPrefab;
 
@@ -72,6 +73,7 @@ public class HealthScript : MonoBehaviour
             }
             else
             { // here is where you do stuff once ALL lives are gone)
+                isDead = true;
                 healthPoints = 0;
                 isAlive = false;
                 //deathHUD.SetActive(true);

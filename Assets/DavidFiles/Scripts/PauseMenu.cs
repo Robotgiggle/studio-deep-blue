@@ -28,22 +28,28 @@ public class PauseMenu : MonoBehaviour
     
     public void ResumeGame()
     {
-        isGamePaused = false;
-        pauseMenu.SetActive(false);
-        cursor.GetComponent<MouseLockCursor>().Unpause();
-        HUD.SetActive(true);
-        crosshairs.SetActive(true);
-;        Time.timeScale = 1f;
+        if (!cursor.GetComponent<HealthScript>().isDead)
+        {
+            isGamePaused = false;
+            pauseMenu.SetActive(false);
+            cursor.GetComponent<MouseLockCursor>().Unpause();
+            HUD.SetActive(true);
+            crosshairs.SetActive(true);
+            Time.timeScale = 1f;
+        }
     }
     
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
-        cursor.GetComponent<MouseLockCursor>().pause();
-        HUD.SetActive(false);
-        crosshairs.SetActive(false);
-        Time.timeScale = 0f;
-        isGamePaused = true;
+        if (!cursor.GetComponent<HealthScript>().isDead)
+        {
+            pauseMenu.SetActive(true);
+            cursor.GetComponent<MouseLockCursor>().pause();
+            HUD.SetActive(false);
+            crosshairs.SetActive(false);
+            Time.timeScale = 0f;
+            isGamePaused = true;
+        }
     }
 
     public void MMenu()

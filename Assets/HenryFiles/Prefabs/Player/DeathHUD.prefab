@@ -579,6 +579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5382441163016019646, guid: 55ab8c6c56de394448a255a9eb311d7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: deathMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5382441163016019647, guid: 55ab8c6c56de394448a255a9eb311d7d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
