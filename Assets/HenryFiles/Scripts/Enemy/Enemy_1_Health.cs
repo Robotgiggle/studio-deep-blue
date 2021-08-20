@@ -65,8 +65,8 @@ public class Enemy_1_Health : MonoBehaviour
         if (EnemyHealth <= 0&&!isDead)
         {
             isDead = true;
-            Destroy(transform.GetChild(1).gameObject);
-            Destroy(transform.GetChild(1).gameObject);
+            Destroy(transform.GetChild(2).gameObject);
+            transform.GetChild(1).gameObject.layer = 4;
             StartCoroutine(despawn());
 
         }
