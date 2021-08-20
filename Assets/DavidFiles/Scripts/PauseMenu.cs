@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     
     public void PauseGame()
     {
-        if (!cursor.GetComponent<HealthScript>().isDead)
+        //if (!cursor.GetComponent<HealthScript>().isDead)
         {
             pauseMenu.SetActive(true);
             cursor.GetComponent<MouseLockCursor>().pause();
@@ -50,15 +50,15 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f;
             isGamePaused = true;
         }
-        else //if (!cursor.GetComponent<HealthScript>().isDead)
-        {
+        //else //if (!cursor.GetComponent<HealthScript>().isDead)
+        //{
             //pauseMenu.SetActive(true);
-            cursor.GetComponent<MouseLockCursor>().pause();
+        //    cursor.GetComponent<MouseLockCursor>().pause();
             //HUD.SetActive(false);
             //crosshairs.SetActive(false);
             //Time.timeScale = 0f;
             //isGamePaused = true;
-        }
+        //}
     }
 
     public void MMenu()
@@ -67,6 +67,7 @@ public class PauseMenu : MonoBehaviour
         isGamePaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        //cursor.GetComponent<MouseLockCursor>().Unpause();
     }
 
     public void Quit()
