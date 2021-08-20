@@ -5,25 +5,23 @@ using UnityEngine;
 public class BossSpawner : MonoBehaviour
 {
     public GameObject Boss;
-    public GameObject wave;
-    public bool hasSpawned;
+    public float spawnDelay;
+    GameObject spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(wave.GetComponent<WaveTally>().signal == true && hasSpawned = false)
-        {
-            spawnBoss();
-        }
+
     }
 
-    void spawnBoss()
+    public IEnumerator spawnBoss()
     {
+        yield return new WaitForSeconds(spawnDelay);
         Instantiate(Boss, transform.position, transform.rotation);
-        hasSpawned = true;
     }
 }

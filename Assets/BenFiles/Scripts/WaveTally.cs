@@ -8,7 +8,6 @@ public class WaveTally : MonoBehaviour
     public int wave = 0;
     public bool waveDone;
     Vector3[] backup;
-    public bool signal;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +19,6 @@ public class WaveTally : MonoBehaviour
     void Update()
     {
         waveDone = (waves[wave].x==0&&waves[wave].y==0&&waves[wave].z==0);
-
-        if (wave == 3 && !signal)
-        {
-            signal = true;
-        }
         
     }
 

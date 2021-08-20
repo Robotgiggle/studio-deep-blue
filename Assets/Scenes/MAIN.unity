@@ -3785,6 +3785,7 @@ GameObject:
   - component: {fileID: 1922234813}
   - component: {fileID: 1922234812}
   - component: {fileID: 1922234814}
+  - component: {fileID: 1922234815}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -3838,6 +3839,20 @@ MonoBehaviour:
   - {x: 40, y: 32, z: 28}
   wave: 0
   waveDone: 0
+--- !u!114 &1922234815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922234811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32869a8ff2e4e3a40b87b6bfc2926902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boss: {fileID: 0}
+  spawnDelay: 0
 --- !u!1 &1970436884
 GameObject:
   m_ObjectHideFlags: 0

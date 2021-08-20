@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     GameObject player;
     WaveTally tally;
     bool peacetime;
+    bool boss;
     float tBuffer;
     public float timer;
     // Start is called before the first frame update
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
             if(enemies==null||enemies.Length==0){
                 endWave();
             }
+            if(tally.wave>=2&&!boss){
+                boss = true;
+                StartCoroutine(GetComponent<BossSpawner>().spawnBoss());
+            }
         }
         if(timer==0){
             if(tally.nextWave()){
@@ -42,6 +47,7 @@ public class GameManager : MonoBehaviour
     void endWave(){
         tBuffer = Time.time + 1;
         peacetime = true;
+        boss = false;
         if(tally.waves.Length==tally.wave+1){
             Debug.Log("all waves completed");
             //end game
