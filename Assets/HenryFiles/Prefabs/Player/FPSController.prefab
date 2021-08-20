@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
   cooldown: 1.2
-  range: 7
+  range: 8
   coreHealCost: 5
   turretPlaceCost: 5
   turretUpgradeCost: 10
