@@ -31,11 +31,17 @@ public class deathMenu : MonoBehaviour
             //player.GetComponent<MouseLockCursor>().pause();
             player.GetComponent<HealthScript>().isDead = true;
             pauseMenu.GetComponentInParent<PauseMenu>().PauseGame();
+
+            pauseMenu.SetActive(false);
+            pauseMenu.GetComponentInParent<PauseMenu>().unpause();
+            Time.timeScale = 1f;
+            //pauseMenu.GetComponentInParent<PauseMenu>().MMenu();//PauseGame();
         }
     }
 
     public void MMenu()
     {
         SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
     }
 }

@@ -70,6 +70,11 @@ public class PauseMenu : MonoBehaviour
         //cursor.GetComponent<MouseLockCursor>().Unpause();
     }
 
+    public void unpause()
+    {
+        isGamePaused = false;
+    }
+
     public void Quit()
     {
         Debug.Log("Quit");
