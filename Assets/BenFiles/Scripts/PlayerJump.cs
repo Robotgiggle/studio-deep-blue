@@ -8,6 +8,9 @@ public class PlayerJump : MonoBehaviour
     Controller mainMotion;
     Vector3 aboveGround;
     Vector3 belowGround;
+    public GameObject jumpEffect;
+    public GameObject partPoint;
+    public GameObject effect;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,14 @@ public class PlayerJump : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump")&&Physics.Linecast(aboveGround,belowGround,8)){
             StartCoroutine(jump());
+
+            if (jumpEffect != null)
+            {
+
+                //effect.GetComponent<ParticleSystem>().shape.radius = 5
+                effect = Instantiate(jumpEffect, partPoint.transform.position, partPoint.transform.rotation);
+                effect.transform.parent = this.transform;
+            }
         }
     }
 

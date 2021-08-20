@@ -1307,6 +1307,75 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!111 &237002369
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231056403248225832}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e390f7f25a4bef84d915dd1fe66a0d88, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e390f7f25a4bef84d915dd1fe66a0d88, type: 2}
+  - {fileID: 7400000, guid: 7b29f75503fac30478f1994436215461, type: 2}
+  - {fileID: 7400000, guid: eb2258769cd2fe443ab8b53e7c99b54f, type: 2}
+  - {fileID: 7400000, guid: b693ae8e24036af42baff6815edc71d1, type: 2}
+  - {fileID: 7400000, guid: 3c264d83d283cde4b85ba80b1a6fc150, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &6639076485172911761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149976198646538964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff426ffd0c814fe69162f0d995849be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
+  cooldown: 1.2
+  range: 7
+  coreHealCost: 5
+  turretPlaceCost: 5
+  turretUpgradeCost: 10
+  waveClearReward: 15
+  tokens: 0
+--- !u!114 &1528699814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149976198928424919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee91386754674710b51859290c4622d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpTime: 0.31
+--- !u!114 &793108953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149976199491297088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a40e17a8630524c98bd904e0bb4625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 588998245651394763, guid: a5acaa8a76c274b6f8363c705d389e36, type: 3}
+  shotCooldown: 0.2
+  animate: 0
+  isFiring: 0
 --- !u!1 &3246060563312545776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,75 +1414,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1528699814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149976198928424919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee91386754674710b51859290c4622d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpTime: 0.31
---- !u!114 &6639076485172911761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149976198646538964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff426ffd0c814fe69162f0d995849be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 2019793863496483340, guid: 9e559eb3144e049b890ccc79c46e5c34, type: 3}
-  cooldown: 1.2
-  range: 7
-  coreHealCost: 5
-  turretPlaceCost: 5
-  turretUpgradeCost: 10
-  waveClearReward: 15
-  tokens: 0
---- !u!111 &237002369
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231056403248225832}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e390f7f25a4bef84d915dd1fe66a0d88, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: e390f7f25a4bef84d915dd1fe66a0d88, type: 2}
-  - {fileID: 7400000, guid: 7b29f75503fac30478f1994436215461, type: 2}
-  - {fileID: 7400000, guid: eb2258769cd2fe443ab8b53e7c99b54f, type: 2}
-  - {fileID: 7400000, guid: b693ae8e24036af42baff6815edc71d1, type: 2}
-  - {fileID: 7400000, guid: 3c264d83d283cde4b85ba80b1a6fc150, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!114 &793108953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149976199491297088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a40e17a8630524c98bd904e0bb4625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 588998245651394763, guid: a5acaa8a76c274b6f8363c705d389e36, type: 3}
-  shotCooldown: 0.2
-  animate: 0
-  isFiring: 0
 --- !u!1 &6685672945009917351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,12 +1581,16 @@ PrefabInstance:
       objectReference: {fileID: 7294661797210110580}
     - target: {fileID: 1203779321, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1203779321, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: UpCurseRight
       value: 
       objectReference: {fileID: 7294661795702042876}
+    - target: {fileID: 1203779321, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
+      propertyPath: weaponToTrack
+      value: 
+      objectReference: {fileID: 1149976199491297088}
     - target: {fileID: 1203779321, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: DownCurseRight
       value: 
