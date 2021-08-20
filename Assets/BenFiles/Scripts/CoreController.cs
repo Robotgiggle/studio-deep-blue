@@ -15,6 +15,7 @@ public class CoreController : MonoBehaviour
     bool iframes = false;
     Slider coreSlider;
     int tBuffer = 1;
+    public GameObject destroyedEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class CoreController : MonoBehaviour
         	iframes = false;
         }
         if(health<=0){
+            Instantiate(destroyedEffect, this.transform.position, this.transform.rotation);
             player.coreDeath = true;
         	player.healthPoints = 0;
         }
