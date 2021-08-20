@@ -56,7 +56,7 @@ public class TokenManager : MonoBehaviour
                 }
             }
         }
-        if(Input.GetKey(KeyCode.Q)&&Time.time>=tBuffer.x){
+        if((Input.GetKey(KeyCode.Q)||Input.GetMouseButton(1))&&Time.time>=tBuffer.x){
             if(Physics.Raycast(transform.position,transform.forward,out target,range,maskA)){
                 if(Physics.Raycast(transform.position,transform.forward,range,maskB)){
                     Debug.Log("can't place a turret on an existing object");
