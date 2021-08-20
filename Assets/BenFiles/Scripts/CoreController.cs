@@ -32,7 +32,7 @@ public class CoreController : MonoBehaviour
         	iframes = false;
         }
         if(health<=0){
-            Instantiate(destroyedEffect, this.transform.position, this.transform.rotation);
+            //Instantiate(destroyedEffect, this.transform.position, this.transform.rotation);
             player.coreDeath = true;
         	player.healthPoints = 0;
         }
