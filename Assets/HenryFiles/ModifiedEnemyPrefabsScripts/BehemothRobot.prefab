@@ -134,10 +134,11 @@ MonoBehaviour:
   EnemyHealth: 80
   TokensDropped: 20
   isHitEffect: {fileID: 4966207399199785302, guid: 5763fdb5a2e852541836441399be889c, type: 3}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 9059403873234044818, guid: 95e6dc2683e67d74f9d883468a26895e, type: 3}
   token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
+  effect: {fileID: 0}
 --- !u!1 &7360414635513917808
 GameObject:
   m_ObjectHideFlags: 0

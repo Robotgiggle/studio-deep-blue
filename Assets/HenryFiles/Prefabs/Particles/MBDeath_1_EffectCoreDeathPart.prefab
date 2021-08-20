@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1443278319287035922}
   - component: {fileID: 2291964454926239932}
   m_Layer: 0
-  m_Name: MBDeath_1_Effect Boss
+  m_Name: MBDeath_1_EffectCoreDeathPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1304,8 +1304,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0, b: 0, a: 1}
-        key1: {r: 1, g: 0.92892253, b: 0, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4771,8 +4771,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 206665f9d78c6b04baa1ef80670f6e6d, type: 2}
-  - {fileID: 2100000, guid: 206665f9d78c6b04baa1ef80670f6e6d, type: 2}
+  - {fileID: 2100000, guid: 849aeafedf1aa7944afe1e643e921c25, type: 2}
+  - {fileID: 2100000, guid: 849aeafedf1aa7944afe1e643e921c25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

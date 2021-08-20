@@ -2908,18 +2908,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 440533261, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.23600008
-      objectReference: {fileID: 0}
-    - target: {fileID: 440533261, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.46100003
-      objectReference: {fileID: 0}
-    - target: {fileID: 440533261, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.25699964
-      objectReference: {fileID: 0}
     - target: {fileID: 716660465, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2927,18 +2915,6 @@ PrefabInstance:
     - target: {fileID: 716660465, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1278336339, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 1278336339, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.461
-      objectReference: {fileID: 0}
-    - target: {fileID: 1278336339, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.583
       objectReference: {fileID: 0}
     - target: {fileID: 1306814974, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3005,6 +2981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1995175062803124647, guid: 4bf59701ebcbb504ca22032067b9744f, type: 3}
+      propertyPath: EnemyHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2279794436604396401, guid: 4bf59701ebcbb504ca22032067b9744f, type: 3}
       propertyPath: m_Name
       value: BehemothRobot
