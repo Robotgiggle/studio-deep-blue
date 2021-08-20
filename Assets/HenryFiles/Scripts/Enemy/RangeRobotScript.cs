@@ -51,8 +51,6 @@ public class RangeRobotScript : MonoBehaviour
     {
         distanceToPlayer = (Vector3.Distance(playerLogTransform.position, this.transform.position));
         dead = GetComponent<Enemy_1_Health>().isDead;
-        Vector3 displacement = whatIsTarget.position - transform.position;
-        displacement = displacement.normalized;
         if ((Vector3.Distance(whatIsTarget.position, this.transform.position) <= enemyWeaponRange))
         {
             enemyIsInRange = true;
@@ -73,61 +71,43 @@ public class RangeRobotScript : MonoBehaviour
 
         if (whatIsTarget == null)
         {
-            if ((GameObject.FindWithTag("coreTargetTag") != null) && ((Vector3.Distance(whatIsTarget.position, this.transform.position) > 25.0f)))
+            if ((Vector3.Distance(playerLogTransform.position, this.transform.position) > enemyWeaponRange+3f))
             {
                 whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
-            else if ((GameObject.FindWithTag("Player") != null) && ((Vector3.Distance(playerLogTransform.position, this.transform.position) < 25.0f)))
+            else if (Vector3.Distance(playerLogTransform.position, this.transform.position) < enemyWeaponRange+3f)
             {
                 whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
-            if (GameObject.FindWithTag("coreTargetTag") == null)
-            {
-                Object.Destroy(gameObject);
-            }
+
             if (GameObject.FindWithTag("Player") != null)
             {
                 playerLogTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                //Object.Destroy(gameObject);
             }
         }
 
         if (whatIsTarget != null)
         {
-            if ((GameObject.FindWithTag("coreTargetTag") != null) && ((Vector3.Distance(whatIsTarget.position, this.transform.position)) > 30.0f && ((Vector3.Distance(playerLogTransform.position, this.transform.position) > 25.0f))))
+            if ((Vector3.Distance(playerLogTransform.position, this.transform.position) > enemyWeaponRange+4f))
             {
                 whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
-            else if ((GameObject.FindWithTag("Player") != null) && ((Vector3.Distance(playerLogTransform.position, this.transform.position) < 25.0f)))
+            else if (Vector3.Distance(playerLogTransform.position, this.transform.position) < enemyWeaponRange+4f)
             {
                 whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-            if (GameObject.FindWithTag("coreTargetTag") == null)
-            {
-                Object.Destroy(gameObject);
             }
 
             if (GameObject.FindWithTag("Player") != null)
             {
                 playerLogTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
-
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                //Object.Destroy(gameObject);
-            }
         }
 
-        if ((Vector3.Distance(playerLogTransform.position, this.transform.position) < enemyWeaponRange) && dead == false && playerTooClose)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if (dead == false && playerTooClose)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(playerLogTransform.position.x, transform.position.y, playerLogTransform.position.z));
-            //doWalkingAnimation = true;
             //Debug.Log("IsBackingAwayFromPlayer");
         }
         else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && !enemyIsInRange && !playerTooClose) //&& (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange) && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange)
@@ -135,51 +115,16 @@ public class RangeRobotScript : MonoBehaviour
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
-            //doWalkingAnimation = true;
             //Debug.Log("IsMovingTowardsTarget");
 
         }
         else
         {
-            //doWalkingAnimation = false;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             actualSpeed = 0f;
             //Debug.Log("IsIDLE");
         }
 
-        CheckIfTimeToFire();
-        //Movement
-
-        if (target == null)
-            return;
-
-        //float distance = Vector3.Distance(transform.position, target.position);
-
     }
 
-    void CheckIfTimeToFire()
-    {
-        if (Time.time > nextFire && (Vector3.Distance(whatIsTarget.position, transform.position) < enemyWeaponRange))
-        {
-            if (isRangedEnemy)
-            {
-                isShooting = true;
-                nextFire = Time.time + fireRate;
-                //canShootE_1 = false;
-                //loadEnemyWeapon();
-            }
-        }
-    }
-    /**
-    void loadEnemyWeapon()
-    {
-        if (Time.time > nextFire)
-        {
-               canShootE_1 = true;
-        }
-        else
-        {
-            isShooting = false;
-        }
-    }*/
 }
