@@ -317,6 +317,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1149976198928424918, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: regenDelay
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_Name
       value: FPSController
@@ -933,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954058, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: spawnRate
@@ -1056,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954058, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: moveDist
@@ -2887,7 +2891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954058, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: moveDist
@@ -3049,7 +3053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954058, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1013809693549954060, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
       propertyPath: zAxis

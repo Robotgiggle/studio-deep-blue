@@ -54,7 +54,7 @@ public class HealthScript : MonoBehaviour
     {
         healthSlider.value = healthPoints;
         if(Time.time>=tBuffer&&healthPoints<respawnHealthPoints){
-            //healthPoints++;
+            healthPoints++;
             tBuffer = Time.time + regenDelay;
         }
         if (healthPoints <= 0)
