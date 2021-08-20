@@ -79,7 +79,7 @@ public class Enemy_1_Health : MonoBehaviour
                 Vector3 dropPoint = transform.position;
                 dropPoint.x += Random.Range(-spread,spread);
                 dropPoint.z += Random.Range(-spread,spread);
-                dropPoint.y++;
+                dropPoint.y += 1.5f;
                 Instantiate(token,dropPoint,transform.rotation);
             }
             Destroy(gameObject);

@@ -171,10 +171,15 @@ MonoBehaviour:
   enemyWeaponRange: 22
   BulletForwardForce: 5
   speed: 4
+  actualSpeed: 0
   minDist: 1
   target: {fileID: 0}
   isTargetingPlayer: 0
+  distanceToPlayer: 0
   dead: 0
+  doWalkingAnimation: 0
+  enemyIsInRange: 0
+  playerTooClose: 0
 --- !u!95 &3565613900162070960
 Animator:
   serializedVersion: 3
@@ -206,10 +211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b840f78bf53440a42b3707d7a703c61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeBot: {fileID: 0}
+  rangeBot: {fileID: 3565613900162070960}
   speed: 0
   shoot: 0
   dead: 0
+  doWalking: 0
 --- !u!1001 &3565613898872904126
 PrefabInstance:
   m_ObjectHideFlags: 0

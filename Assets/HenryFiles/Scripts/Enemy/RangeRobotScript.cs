@@ -124,21 +124,19 @@ public class RangeRobotScript : MonoBehaviour
 
         if ((Vector3.Distance(playerLogTransform.position, this.transform.position) < enemyWeaponRange) && dead == false && playerTooClose)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
         {
-            speed = 4;
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(playerLogTransform.position.x, transform.position.y, playerLogTransform.position.z));
             //doWalkingAnimation = true;
-            Debug.Log("IsBackingAwayFromPlayer");
+            //Debug.Log("IsBackingAwayFromPlayer");
         }
         else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && !enemyIsInRange && !playerTooClose) //&& (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange) && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange)
         {
-            speed = 4;
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             //doWalkingAnimation = true;
-            Debug.Log("IsMovingTowardsTarget");
+            //Debug.Log("IsMovingTowardsTarget");
 
         }
         else
@@ -146,8 +144,7 @@ public class RangeRobotScript : MonoBehaviour
             //doWalkingAnimation = false;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             actualSpeed = 0f;
-            speed = 0f;
-            Debug.Log("IsIDLE");
+            //Debug.Log("IsIDLE");
         }
 
         CheckIfTimeToFire();
