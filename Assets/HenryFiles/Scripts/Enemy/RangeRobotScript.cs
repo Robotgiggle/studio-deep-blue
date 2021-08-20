@@ -10,8 +10,6 @@ public class RangeRobotScript : MonoBehaviour
     public float nextFire;
     public Transform whatIsTarget;
     public Transform playerLogTransform;
-    public Transform rightGun;
-    public Transform leftGun;
     public bool isRangedEnemy = true;
     public bool canShootE_1 = true;
     public bool isShooting;
@@ -27,9 +25,13 @@ public class RangeRobotScript : MonoBehaviour
     public bool doWalkingAnimation;
     public bool enemyIsInRange;
     public bool playerTooClose;
+    WaveTally tally;
     // Start is called before the first frame update
     void Start()
     {
+        tally = GameObject.Find("manager").GetComponent<WaveTally>();
+        speed += tally.wave * 0.3f;
+        transform.GetChild(3).gameObject.GetComponent<EBulletSpawner>().inaccuracy -= tally.wave;
         canShootE_1 = true;
         // if no target specified, assume the player
         if (whatIsTarget == null)
