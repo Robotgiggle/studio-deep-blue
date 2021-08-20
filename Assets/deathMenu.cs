@@ -7,17 +7,16 @@ using UnityEngine.UI;
 public class deathMenu : MonoBehaviour
 {
     public bool deathHUDIsNotActive = false;
-    public GameObject deathHUD;
+    public Transform deathHUD;
     public GameObject HUD;
     public GameObject crosshairs;
     public GameObject player;
     public GameObject pauseMenu;
-    public int tokenTally;
-    public GameObject tokenDisplay;
-    public int waveTally;
-    public GameObject waveDisplay;
     public GameObject tokenCountSource;
     public GameObject gameManager;
+    int tokenTally;
+    int waveTally;
+    string CoD;
     //public bool isGoingToMenu;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +33,7 @@ public class deathMenu : MonoBehaviour
             deathHUDIsNotActive = true;
             crosshairs.SetActive(false);
             HUD.SetActive(false);
-            deathHUD.SetActive(true);
+            deathHUD.gameObject.SetActive(true);
             //player.GetComponent<MouseLockCursor>().pause();
             player.GetComponent<HealthScript>().isDead = true;
             pauseMenu.GetComponentInParent<PauseMenu>().PauseGame();
@@ -44,10 +43,16 @@ public class deathMenu : MonoBehaviour
             Time.timeScale = 0f;
             //pauseMenu.GetComponentInParent<PauseMenu>().MMenu();//PauseGame();
         }
+        if(player.GetComponent<HealthScript>().coreDeath){
+            CoD = "Core Destroyed";
+        }else{
+            CoD = "You Were Killed";
+        }
         tokenTally = tokenCountSource.GetComponent<TokenManager>().tokens;
         waveTally = gameManager.GetComponent<WaveTally>().wave;
-        tokenDisplay.GetComponent<Text>().text = "Final Score: " + tokenTally;
-        waveDisplay.GetComponent<Text>().text = "Wave: " + waveTally + 1;
+        deathHUD.GetChild(2).GetChild(0).GetComponent<Text>().text = CoD;
+        deathHUD.GetChild(0).GetChild(0).GetComponent<Text>().text = "Tokens: " + tokenTally.ToString();
+        deathHUD.GetChild(1).GetChild(0).GetComponent<Text>().text = "Wave: " + (waveTally + 1).ToString();
     }
 
     public void MMenu()

@@ -93,16 +93,19 @@ public class HealthScript : MonoBehaviour
         }
     }
 
-    public void ApplyDamage(float amount)
+    public bool ApplyDamage(float amount)
     {
         healthPoints = healthPoints - amount;
-        GlobalPlayerHealth.CurrentHealth -= (int) amount;
+        if(healthPoints<=0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void ApplyHeal(float amount)
     {
         healthPoints = healthPoints + amount;
-        GlobalPlayerHealth.CurrentHealth += (int) amount;
     }
 
     public void ApplyBonusLife(int amount)
