@@ -46,6 +46,7 @@ public class CoreController : MonoBehaviour
             yield return new WaitForSeconds(1f);
             player.coreDeath = true;
             player.healthPoints = 0;
+            Destroy(gameObject);
         }
     }
 
