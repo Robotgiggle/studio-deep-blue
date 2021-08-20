@@ -858,6 +858,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &352072225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8585097275771623981, guid: 6df913e32417ab24bb46e3a6a79d2aba, type: 3}
+  m_PrefabInstance: {fileID: 961958685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &471916469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1887,6 +1892,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &931172867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7066379409797458023, guid: 6df913e32417ab24bb46e3a6a79d2aba, type: 3}
+  m_PrefabInstance: {fileID: 961958685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &961958685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2822,6 +2832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e50e1ae3f7a4edfb93ad4781042262, type: 3}
+--- !u!1 &1289710327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149976198646538964, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+  m_PrefabInstance: {fileID: 57294510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1347461770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,6 +3179,12 @@ MonoBehaviour:
   crosshairs: {fileID: 1419518725}
   player: {fileID: 682120419}
   pauseMenu: {fileID: 732692562}
+  tokenTally: 0
+  tokenDisplay: {fileID: 931172867}
+  waveTally: 0
+  waveDisplay: {fileID: 352072225}
+  tokenCountSource: {fileID: 1289710327}
+  gameManager: {fileID: 1922234811}
 --- !u!4 &1582939251
 Transform:
   m_ObjectHideFlags: 0
