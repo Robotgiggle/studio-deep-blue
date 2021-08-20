@@ -164,8 +164,6 @@ MonoBehaviour:
   nextFire: 0
   whatIsTarget: {fileID: 0}
   playerLogTransform: {fileID: 0}
-  rightGun: {fileID: 0}
-  leftGun: {fileID: 0}
   isRangedEnemy: 1
   canShootE_1: 1
   isShooting: 0
@@ -297,7 +295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5729125917011362245, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: inaccuracy
-      value: 4
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5729125917011362245, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: shotCooldown
