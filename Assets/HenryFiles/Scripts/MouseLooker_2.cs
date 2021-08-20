@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLooker_2 : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class MouseLooker_2 : MonoBehaviour
     public float MaximumX = 90f;
     public bool smooth;
     public float smoothTime = 5f;
-
     public bool testCursorLock;
+    public Slider slider;
 
     //internal private variables
     private Quaternion m_CharacterTargetRot;
@@ -39,6 +40,10 @@ public class MouseLooker_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(slider != null){
+            XSensitivity = Mathf.Pow(slider.value,3);
+            YSensitivity = Mathf.Pow(slider.value,3);
+        }
         // rotate stuff based on the mouse
         if (!MouseLockCursor.paused)
         {
