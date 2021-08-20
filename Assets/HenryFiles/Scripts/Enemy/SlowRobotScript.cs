@@ -14,7 +14,6 @@ public class SlowRobotScript : MonoBehaviour
     Transform target;
     public float enemyAttackRange = 2.0f;
     public float sightRange;
-    public GameObject meleeObject;
     public bool dead = false;
     Vector3 muzzle;
     int mask = 1 << 6;

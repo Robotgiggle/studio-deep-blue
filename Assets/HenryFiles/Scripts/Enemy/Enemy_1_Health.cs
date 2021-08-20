@@ -13,6 +13,7 @@ public class Enemy_1_Health : MonoBehaviour
     public bool isDead;
     WaveTally tally;
     float spread;
+    public GameObject effect;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +51,13 @@ public class Enemy_1_Health : MonoBehaviour
         if (other.gameObject.tag == "friendlyBullet")
         {
             EnemyHealth -= 2;
-            if(isHitEffect != null)
-            Instantiate(isHitEffect, other.transform.position, other.transform.rotation);
+            if (isHitEffect != null)
+            {
+
+                //effect.GetComponent<ParticleSystem>().shape.radius = 5
+                effect = Instantiate(isHitEffect, other.transform.position, this.transform.rotation);
+                effect.transform.parent = this.transform;
+            }
         }
     }
 

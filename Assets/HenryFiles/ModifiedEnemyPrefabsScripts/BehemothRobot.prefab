@@ -117,6 +117,8 @@ MonoBehaviour:
   airToGroundTimer: 3
   teleportEffect: {fileID: 6762739612620203999, guid: f282d2751f3eb204f9faa0083e2b2e9a, type: 3}
   teleportEffectPoint: {fileID: 8826801112249880433}
+  teleportSound: {fileID: 0}
+  teleportWarning: {fileID: 0}
 --- !u!114 &1995175062803124647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 80
   TokensDropped: 20
-  isHitEffect: {fileID: 0}
+  isHitEffect: {fileID: 4966207399199785302, guid: 5763fdb5a2e852541836441399be889c, type: 3}
   deathEffect: {fileID: 0}
   token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0

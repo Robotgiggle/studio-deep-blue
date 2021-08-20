@@ -47,7 +47,7 @@ public class deathMenu : MonoBehaviour
         tokenTally = tokenCountSource.GetComponent<TokenManager>().tokens;
         waveTally = gameManager.GetComponent<WaveTally>().wave;
         tokenDisplay.GetComponent<Text>().text = "Final Score: " + tokenTally;
-        waveDisplay.GetComponent<Text>().text = "Wave: " + waveTally;
+        waveDisplay.GetComponent<Text>().text = "Wave: " + waveTally + 1;
     }
 
     public void MMenu()
