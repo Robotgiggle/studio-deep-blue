@@ -16,6 +16,7 @@ public class CoreController : MonoBehaviour
     Slider coreSlider;
     int tBuffer = 1;
     public GameObject destroyedEffect;
+    public bool effectHasSpawned;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +33,19 @@ public class CoreController : MonoBehaviour
         	iframes = false;
         }
         if(health<=0){
-            //Instantiate(destroyedEffect, this.transform.position, this.transform.rotation);
+            if (!effectHasSpawned)
+            {
+                effectHasSpawned = true;
+                Instantiate(destroyedEffect, this.transform.position, this.transform.rotation);
+            }
+            StartCoroutine(coreDeath());
+        }
+
+        IEnumerator coreDeath()
+        {
+            yield return new WaitForSeconds(1f);
             player.coreDeath = true;
-        	player.healthPoints = 0;
+            player.healthPoints = 0;
         }
     }
 
