@@ -33,9 +33,11 @@ public class HealthScript : MonoBehaviour
     public GameObject deathHUD;
     public GameObject HUD;
     Slider healthSlider;
+    WaveTally tally;
     // Use this for initialization
     void Start()
     {
+        tally = GameObject.Find("manager").GetComponent<WaveTally>();
         healthSlider = HUD.transform.GetChild(0).GetChild(1).GetComponent<Slider>();
         // store initial position as respawn location
         respawnPosition = transform.position;
@@ -55,7 +57,7 @@ public class HealthScript : MonoBehaviour
         healthSlider.value = healthPoints;
         if(Time.time>=tBuffer&&healthPoints<respawnHealthPoints){
             healthPoints++;
-            tBuffer = Time.time + regenDelay;
+            tBuffer = Time.time + regenDelay - tally.wave;
         }
         if (healthPoints <= 0)
         {               // if the object is 'dead'
