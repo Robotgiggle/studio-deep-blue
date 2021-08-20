@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinionScript : MonoBehaviour
 {
@@ -170,7 +171,9 @@ public class MinionScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {
-                    hit.transform.gameObject.GetComponent<HealthScript>().healthPoints -= attackDamage;
+                    if(hit.transform.gameObject.GetComponent<HealthScript>().ApplyDamage(attackDamage)){
+                        GameObject.Find("KText").GetComponent<Text>().text = "by Bio-Scouter";
+                    }
                 }
             }
             yield return new WaitForSeconds(0.6f);

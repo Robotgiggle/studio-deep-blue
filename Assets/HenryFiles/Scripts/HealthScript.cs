@@ -95,7 +95,7 @@ public class HealthScript : MonoBehaviour
 
     public bool ApplyDamage(float amount)
     {
-        healthPoints = healthPoints - amount;
+        healthPoints -= amount;
         if(healthPoints<=0){
             return true;
         }else{
@@ -123,6 +123,9 @@ public class HealthScript : MonoBehaviour
         if(other.gameObject.CompareTag("bullet")){
             healthPoints -= 4;
             Destroy(other.gameObject);
+            if(healthPoints<=0){
+                GameObject.Find("KText").GetComponent<Text>().text = "by RK-49 \"Ranger\"";
+            }
         }
     }
 }

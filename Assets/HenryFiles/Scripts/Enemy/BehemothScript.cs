@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BehemothScript : MonoBehaviour
 {
@@ -229,7 +230,9 @@ public class BehemothScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {
-                    hit.transform.gameObject.GetComponent<HealthScript>().healthPoints -= attackDamage;
+                    if(hit.transform.gameObject.GetComponent<HealthScript>().ApplyDamage(attackDamage)){
+                        GameObject.Find("KText").GetComponent<Text>().text = "by ZL-81 \"Strongman\"";
+                    }
                 }
             }
             yield return new WaitForSeconds(2.6f);
