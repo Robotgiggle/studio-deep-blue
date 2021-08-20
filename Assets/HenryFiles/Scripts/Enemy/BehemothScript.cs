@@ -222,10 +222,10 @@ public class BehemothScript : MonoBehaviour
                 Debug.Log("hit the " + hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name == "core")
                 {
-                    hit.transform.gameObject.GetComponent<CoreController>().health -= Mathf.FloorToInt(attackDamage); //bypass the core's iframes
-                    if (gameObject.name == "Minion(Clone)")
-                    {
-                        Destroy(gameObject, 0.3f);
+                    CoreController c = hit.transform.gameObject.GetComponent<CoreController>();
+                    c.health -= Mathf.FloorToInt(attackDamage); //bypass the core's iframes
+                    if(c.health<=0){
+                        Player.gameObject.GetComponent<HealthScript>().killedBy = "by ZL-81 \"Strongman\"";
                     }
                 }
                 else if (hit.transform.gameObject.tag == "Player")

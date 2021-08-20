@@ -161,7 +161,9 @@ public class MinionScript : MonoBehaviour
                 Debug.Log("hit the " + hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name == "core")
                 {
-                    hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage));
+                    if(hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage))){
+                        Player.gameObject.GetComponent<HealthScript>().killedBy = "by Bio-Scouter";
+                    }
                     /*
                     if (gameObject.name == "Minion(Clone)")
                     {
