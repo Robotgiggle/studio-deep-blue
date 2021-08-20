@@ -27,7 +27,7 @@ public class HealthScript : MonoBehaviour
 
     private Vector3 respawnPosition;
     private Quaternion respawnRotation;
-    public GameObject pausemenu;
+    //public GameObject pausemenu;
 
     public GameObject deathHUD;
     public GameObject HUD;
@@ -78,7 +78,6 @@ public class HealthScript : MonoBehaviour
                 isAlive = false;
                 //deathHUD.SetActive(true);
                 //HUD.SetActive(false);
-                Debug.Log("HUDShouldBeDeath");
                 switch (onLivesGone)
                 {
                     case deathAction.loadLevelWhenDead:

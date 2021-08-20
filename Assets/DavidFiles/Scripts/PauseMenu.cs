@@ -50,6 +50,15 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f;
             isGamePaused = true;
         }
+        else //if (!cursor.GetComponent<HealthScript>().isDead)
+        {
+            //pauseMenu.SetActive(true);
+            cursor.GetComponent<MouseLockCursor>().pause();
+            //HUD.SetActive(false);
+            //crosshairs.SetActive(false);
+            //Time.timeScale = 0f;
+            //isGamePaused = true;
+        }
     }
 
     public void MMenu()

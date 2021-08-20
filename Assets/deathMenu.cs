@@ -11,6 +11,7 @@ public class deathMenu : MonoBehaviour
     public GameObject crosshairs;
     public GameObject player;
     public GameObject pauseMenu;
+    //public bool isGoingToMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class deathMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetComponent<HealthScript>().healthPoints <= 0)// && deathHUDIsNotActive)
+        if (player.GetComponent<HealthScript>().healthPoints <= 0)// && !isGoingToMenu)// && deathHUDIsNotActive)
         {
             Time.timeScale = 0;
             deathHUDIsNotActive = true;
@@ -28,14 +29,13 @@ public class deathMenu : MonoBehaviour
             HUD.SetActive(false);
             deathHUD.SetActive(true);
             //player.GetComponent<MouseLockCursor>().pause();
+            player.GetComponent<HealthScript>().isDead = true;
+            pauseMenu.GetComponentInParent<PauseMenu>().PauseGame();
         }
     }
 
     public void MMenu()
     {
-        deathHUD.SetActive(false);
-        deathHUDIsNotActive = false;
-        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 }
