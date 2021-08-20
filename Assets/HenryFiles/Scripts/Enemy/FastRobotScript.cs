@@ -157,8 +157,9 @@ public class FastRobotScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {
-                    if(hit.transform.gameObject.GetComponent<HealthScript>().ApplyDamage(attackDamage)){
-                        GameObject.Find("KText").GetComponent<Text>().text = "by CX-36 \"Speedy\"";
+                    HealthScript h = hit.transform.gameObject.GetComponent<HealthScript>();
+                    if(h.ApplyDamage(attackDamage)){
+                        h.killedBy = "by CX-36 \"Speedy\"";
                     }
                 }
             }

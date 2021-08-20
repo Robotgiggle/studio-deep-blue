@@ -230,8 +230,9 @@ public class BehemothScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {
-                    if(hit.transform.gameObject.GetComponent<HealthScript>().ApplyDamage(attackDamage)){
-                        GameObject.Find("KText").GetComponent<Text>().text = "by ZL-81 \"Strongman\"";
+                    HealthScript h = hit.transform.gameObject.GetComponent<HealthScript>();
+                    if(h.ApplyDamage(attackDamage)){
+                        h.killedBy = "by ZL-81 \"Strongman\"";
                     }
                 }
             }

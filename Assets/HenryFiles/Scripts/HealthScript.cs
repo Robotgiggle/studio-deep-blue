@@ -18,6 +18,7 @@ public class HealthScript : MonoBehaviour
     public bool isAlive = true;
     public bool coreDeath;
     public bool isDead = false;
+    public string killedBy;
 
     public GameObject explosionPrefab;
 
@@ -124,7 +125,7 @@ public class HealthScript : MonoBehaviour
             healthPoints -= 4;
             Destroy(other.gameObject);
             if(healthPoints<=0){
-                GameObject.Find("KText").GetComponent<Text>().text = "by RK-49 \"Ranger\"";
+                killedBy = "by RK-49 \"Ranger\"";
             }
         }
     }

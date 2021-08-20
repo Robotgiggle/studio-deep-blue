@@ -53,6 +53,7 @@ public class deathMenu : MonoBehaviour
         deathHUD.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = CoD;
         deathHUD.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Tokens: " + tokenTally.ToString();
         deathHUD.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Wave: " + (waveTally + 1).ToString();
+        deathHUD.transform.GetChild(4).GetChild(0).GetComponent<Text>().text = player.GetComponent<HealthScript>().killedBy;
     }
 
     public void MMenu()

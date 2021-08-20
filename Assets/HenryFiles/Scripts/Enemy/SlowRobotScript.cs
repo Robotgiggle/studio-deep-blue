@@ -154,8 +154,9 @@ public class SlowRobotScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {
-                    if(hit.transform.gameObject.GetComponent<HealthScript>().ApplyDamage(attackDamage)){
-                        GameObject.Find("KText").GetComponent<Text>().text = "by VB-64 \"Bigboy\"";
+                    HealthScript h = hit.transform.gameObject.GetComponent<HealthScript>();
+                    if(h.ApplyDamage(attackDamage)){
+                        h.killedBy = "by VB-64 \"Bigboy\"";
                     }
                 }
             }
