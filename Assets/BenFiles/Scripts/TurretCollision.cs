@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretCollision : MonoBehaviour
 {
-    public int health = 10;
+    public int health = 20;
     public int bulletDamage = 8;
     public int weakDamage = 5;
     public int strongDamage = 10;
