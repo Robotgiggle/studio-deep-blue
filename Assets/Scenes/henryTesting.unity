@@ -2969,6 +2969,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -18.675747
       objectReference: {fileID: 0}
+    - target: {fileID: 1149976198646538961, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
       propertyPath: m_Name
       value: FPSControllerMergeModel
@@ -2983,7 +2987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424942, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.76
+      value: 12.4
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424942, guid: fa0ba98321ad6014cb5a4772fae9fe3d, type: 3}
       propertyPath: m_LocalPosition.z
