@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class deathMenu : MonoBehaviour
 {
     public bool deathHUDIsNotActive = false;
-    public Transform deathHUD;
+    public GameObject deathHUD;
     public GameObject HUD;
     public GameObject crosshairs;
     public GameObject player;
@@ -33,7 +33,7 @@ public class deathMenu : MonoBehaviour
             deathHUDIsNotActive = true;
             crosshairs.SetActive(false);
             HUD.SetActive(false);
-            deathHUD.gameObject.SetActive(true);
+            deathHUD.SetActive(true);
             //player.GetComponent<MouseLockCursor>().pause();
             player.GetComponent<HealthScript>().isDead = true;
             pauseMenu.GetComponentInParent<PauseMenu>().PauseGame();
@@ -50,9 +50,9 @@ public class deathMenu : MonoBehaviour
         }
         tokenTally = tokenCountSource.GetComponent<TokenManager>().tokens;
         waveTally = gameManager.GetComponent<WaveTally>().wave;
-        deathHUD.GetChild(2).GetChild(0).GetComponent<Text>().text = CoD;
-        deathHUD.GetChild(0).GetChild(0).GetComponent<Text>().text = "Tokens: " + tokenTally.ToString();
-        deathHUD.GetChild(1).GetChild(0).GetComponent<Text>().text = "Wave: " + (waveTally + 1).ToString();
+        deathHUD.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = CoD;
+        deathHUD.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Tokens: " + tokenTally.ToString();
+        deathHUD.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Wave: " + (waveTally + 1).ToString();
     }
 
     public void MMenu()
