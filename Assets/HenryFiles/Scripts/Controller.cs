@@ -133,7 +133,7 @@ public class Controller : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("token")){
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent.gameObject);
             transform.GetChild(0).gameObject.GetComponent<TokenManager>().tokens++;
         }
     }
