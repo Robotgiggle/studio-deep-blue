@@ -16,6 +16,7 @@ public class CoreController : MonoBehaviour
     Slider coreSlider;
     int tBuffer = 1;
     public GameObject destroyedEffect;
+    public GameObject hitEffect;
     public bool effectHasSpawned;
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class CoreController : MonoBehaviour
     public bool takeDamage(int damage){
         if(!iframes){
             health -= damage;
+            Instantiate(hitEffect, this.transform.position, this.transform.rotation);
             iframes = true;
         }
         if(health<=0){

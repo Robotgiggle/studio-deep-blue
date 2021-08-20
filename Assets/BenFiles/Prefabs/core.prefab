@@ -94,6 +94,8 @@ MonoBehaviour:
   health: 200
   bulletDamage: 4
   destroyedEffect: {fileID: 9059403873234044818, guid: 1781a1b215707d343855220f971c14d6, type: 3}
+  hitEffect: {fileID: 9059403873234044818, guid: d2419a7d1c66db44a9bab7317287db25, type: 3}
+  effectHasSpawned: 0
 --- !u!1 &6815701763677603636
 GameObject:
   m_ObjectHideFlags: 0
