@@ -317,6 +317,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1149976198928424918, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: healthPoints
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_Name
       value: FPSController
@@ -2111,7 +2115,6 @@ MonoBehaviour:
   crosshairs: {fileID: 1419518725}
   pauseMenu: {fileID: 732692562}
   cursor: {fileID: 682120419}
-  deathMenu: {fileID: 961958686}
 --- !u!4 &995150595
 Transform:
   m_ObjectHideFlags: 0
