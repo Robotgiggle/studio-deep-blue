@@ -34,13 +34,14 @@ public class deathMenu : MonoBehaviour
 
             pauseMenu.SetActive(false);
             pauseMenu.GetComponentInParent<PauseMenu>().unpause();
-            Time.timeScale = 1f;
+            Time.timeScale = 0f;
             //pauseMenu.GetComponentInParent<PauseMenu>().MMenu();//PauseGame();
         }
     }
 
     public void MMenu()
     {
+        //Time.timeScale = 1f;
         SceneManager.LoadScene(0);
         //SceneManager.LoadScene(0);
     }
