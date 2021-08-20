@@ -41,10 +41,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6
-  m_Height: 1.5386055
+  m_Radius: 0.62
+  m_Height: 1.6067895
   m_Direction: 1
-  m_Center: {x: 0, y: -0.22414231, z: 0}
+  m_Center: {x: 0, y: -0.1900503, z: 0}
 --- !u!1 &3078459951682861729
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   speed: 0
   shoot: 0
   dead: 0
-  doWalking: 0
+  backing: 0
 --- !u!1001 &3565613898872904126
 PrefabInstance:
   m_ObjectHideFlags: 0
