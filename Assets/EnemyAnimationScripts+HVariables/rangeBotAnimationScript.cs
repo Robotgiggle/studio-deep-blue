@@ -29,21 +29,21 @@ public class rangeBotAnimationScript : MonoBehaviour
 
     void AnimCheck()
     {
-        if (speed > 0 || doWalking)
+        if (speed > 0)// || doWalking)
         {
             rangeBot.SetBool("isWalking", true);
         }
-        else if(!doWalking)
+        else //if(!doWalking)
         {
             rangeBot.SetBool("isWalking", false);
         }
-        if (shoot == true && !doWalking)
+        if (shoot == true)// && !doWalking)
         {
-            rangeBot.SetBool("isShooting", true);
+            //rangeBot.SetBool("isShooting", true);
         }
         else
         {
-            rangeBot.SetBool("isShooting", false);
+            //rangeBot.SetBool("isShooting", false);
         }
         if (dead == true)
         {
