@@ -3599,6 +3599,7 @@ MonoBehaviour:
   waves:
   - {x: 30, y: 25, z: 20}
   - {x: 40, y: 32, z: 28}
+  - {x: 50, y: 40, z: 35}
   wave: 0
   waveDone: 0
 --- !u!1 &1978392078
