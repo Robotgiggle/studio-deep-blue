@@ -20,7 +20,7 @@ public class Enemy_1_Health : MonoBehaviour
         if(gameObject.layer==2||gameObject.layer==5){
             EnemyHealth += tally.wave * 2;
         }else{
-            EnemyHealth += tally.wave * 6;
+            EnemyHealth += tally.wave * 4;
         }
 
         if(EnemyHealth>75){
