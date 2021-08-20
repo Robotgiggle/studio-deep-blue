@@ -19,7 +19,7 @@ public class TurretController : MonoBehaviour
     {
         tbuffer = reloadTime;
         if(this.name!="head_lv1"){
-            transform.parent.GetComponent<TurretCollision>().health += 20;
+            transform.parent.GetComponent<TurretCollision>().health += 10;
         }
     }
 
@@ -79,9 +79,5 @@ public class TurretController : MonoBehaviour
     
     void OnCollisionEnter(Collision other){
         transform.parent.GetComponent<TurretCollision>().OnCollisionEnter(other);
-    }
-
-    void OnTriggerEnter(Collider other){
-        transform.parent.GetComponent<TurretCollision>().OnTriggerEnter(other);
     }
 }

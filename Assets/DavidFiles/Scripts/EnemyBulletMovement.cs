@@ -21,6 +21,7 @@ public class EnemyBulletMovement : MonoBehaviour
         }
     }
 
+    /*
     void OnTriggerEnter(Collider other)
     {
 
@@ -43,5 +44,6 @@ public class EnemyBulletMovement : MonoBehaviour
             }
         }
     }
+    */
 }
 

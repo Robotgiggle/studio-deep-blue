@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CoreController : MonoBehaviour
 {
     public int health;
-    public int bulletDamage = 8;
+    public int bulletDamage = 4;
     //public int weakDamage = 5;
     //public int strongDamage = 10;
     //public int bossDamage = 20;
