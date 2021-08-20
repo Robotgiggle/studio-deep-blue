@@ -17,10 +17,6 @@ TagManager:
   - playerBulletSpawner
   - ground
   - turret
-  - tp1
-  - tp2
-  - tp3
-  - tp4
   layers:
   - Default
   - TransparentFX
