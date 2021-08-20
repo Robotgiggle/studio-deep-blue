@@ -30,6 +30,7 @@ public class BulletSpawner : MonoBehaviour
             direction = Quaternion.LookRotation((target.point-transform.position),Vector3.up);
             fireStart = Time.time;
             Instantiate(bullet, transform.position, direction);
+            isFiring = true;
         }
 
         if(Time.time > fireStart + shotCooldown)
