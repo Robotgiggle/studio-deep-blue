@@ -12,6 +12,7 @@ public class BulletSpawner : MonoBehaviour
     float currentTime;
     float nextShotTime;
     int mask = 9;
+    public bool animate = false;
     public bool isFiring = false;
 
     void Start()
@@ -22,16 +23,16 @@ public class BulletSpawner : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + shotCooldown))// && canAnimate)
+        if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + shotCooldown) && Time.timeScale != 0)
         {
-            isFiring = true;
+            if(animate){isFiring = true;}
             Physics.Raycast(transform.parent.position,transform.parent.forward,out target,100,mask);
             direction = Quaternion.LookRotation((target.point-transform.position),Vector3.up);
             fireStart = Time.time;
             Instantiate(bullet, transform.position, direction);
         }
 
-        if(Time.time < fireStart + shotCooldown)
+        if(Time.time > fireStart + shotCooldown)
         {
             isFiring = false;
         }
