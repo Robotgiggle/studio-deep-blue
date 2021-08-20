@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class BossSpawner : MonoBehaviour
 {
-    public GameObject Boss;
+    public GameObject boss;
     public float spawnDelay;
-    GameObject spawnPoint;
+    RaycastHit spawnPoint;
+    Vector3 spawnZone;
+    int whichZone;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnZone = new Vector3(65,45,65);
     }
 
     // Update is called once per frame
@@ -22,6 +24,20 @@ public class BossSpawner : MonoBehaviour
     public IEnumerator spawnBoss()
     {
         yield return new WaitForSeconds(spawnDelay);
-        Instantiate(Boss, transform.position, transform.rotation);
+        whichZone = Random.Range(0,4);
+        switch(whichZone){
+            case 0:
+                spawnZone.x *= -1;
+                spawnZone.z *= -1;
+                break;
+            case 1:
+                spawnZone.x *= -1;
+                break;
+            case 2:
+                spawnZone.z *= -1;
+                break;
+        }
+        Physics.Raycast(spawnZone,Vector3.down,out spawnPoint,50,8);
+        Instantiate(boss, spawnPoint.point, transform.rotation);
     }
 }
