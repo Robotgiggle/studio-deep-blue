@@ -325,14 +325,6 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1109721491}
-    - target: {fileID: 1149976198928424941, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: XSensitivity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149976198928424941, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: YSensitivity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424942, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_RootOrder
       value: 8

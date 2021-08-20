@@ -1374,6 +1374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 588998245651394763, guid: a5acaa8a76c274b6f8363c705d389e36, type: 3}
   shotCooldown: 0.2
+  animate: 0
   isFiring: 0
 --- !u!1 &3246060563312545776
 GameObject:
@@ -1704,7 +1705,7 @@ PrefabInstance:
       objectReference: {fileID: 7066379408659250547, guid: 6df913e32417ab24bb46e3a6a79d2aba, type: 3}
     - target: {fileID: 3616466899093700146, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: regenDelay
-      value: 15
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3616466899093700146, guid: 8c44979e01fad2940901e8f3a5bb9035, type: 3}
       propertyPath: LevelToLoad
