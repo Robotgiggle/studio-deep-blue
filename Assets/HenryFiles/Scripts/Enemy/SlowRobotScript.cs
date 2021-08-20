@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlowRobotScript : MonoBehaviour
 {
@@ -145,7 +146,9 @@ public class SlowRobotScript : MonoBehaviour
                 Debug.Log("hit the " + hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name == "core")
                 {
-                    hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage));
+                    if(hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage))){
+                        Player.gameObject.GetComponent<HealthScript>().killedBy = "by VB-64 \"Bigboy\"";
+                    }
                     if (gameObject.name == "Minion(Clone)")
                     {
                         Destroy(gameObject, 0.3f);
@@ -153,7 +156,10 @@ public class SlowRobotScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {
-                    hit.transform.gameObject.GetComponent<HealthScript>().healthPoints -= attackDamage;
+                    HealthScript h = hit.transform.gameObject.GetComponent<HealthScript>();
+                    if(h.ApplyDamage(attackDamage)){
+                        h.killedBy = "by VB-64 \"Bigboy\"";
+                    }
                 }
             }
             yield return new WaitForSeconds(0.9f);

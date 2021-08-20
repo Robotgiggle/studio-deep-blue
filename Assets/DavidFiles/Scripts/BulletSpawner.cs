@@ -25,12 +25,11 @@ public class BulletSpawner : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && (Time.time > fireStart + shotCooldown) && Time.timeScale != 0)
         {
-            if(animate){isFiring = true;}
             Physics.Raycast(transform.parent.position,transform.parent.forward,out target,100,mask);
             direction = Quaternion.LookRotation((target.point-transform.position),Vector3.up);
             fireStart = Time.time;
             Instantiate(bullet, transform.position, direction);
-            isFiring = true;
+            if(animate){isFiring = true;}
         }
 
         if(Time.time > fireStart + shotCooldown)

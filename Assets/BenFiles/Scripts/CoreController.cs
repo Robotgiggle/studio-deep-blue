@@ -36,10 +36,15 @@ public class CoreController : MonoBehaviour
         }
     }
 
-    public void takeDamage(int damage){
+    public bool takeDamage(int damage){
         if(!iframes){
             health -= damage;
             iframes = true;
+        }
+        if(health<=0){
+            return true;
+        }else{
+            return false;
         }
     }
 
@@ -63,6 +68,9 @@ public class CoreController : MonoBehaviour
     		health -= bulletDamage;
     		iframes = true;
     		Destroy(other.gameObject);
+            if(health<=0){
+                player.killedBy = "by RK-49 \"Ranger\"";
+            }
     	}else if(other.gameObject.CompareTag("bullet")){
             Destroy(other.gameObject);
         }

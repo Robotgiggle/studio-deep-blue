@@ -12,12 +12,11 @@ public class deathMenu : MonoBehaviour
     public GameObject crosshairs;
     public GameObject player;
     public GameObject pauseMenu;
-    public int tokenTally;
-    public GameObject tokenDisplay;
-    public int waveTally;
-    public GameObject waveDisplay;
     public GameObject tokenCountSource;
     public GameObject gameManager;
+    int tokenTally;
+    int waveTally;
+    string CoD;
     //public bool isGoingToMenu;
     // Start is called before the first frame update
     void Start()
@@ -44,10 +43,17 @@ public class deathMenu : MonoBehaviour
             Time.timeScale = 0f;
             //pauseMenu.GetComponentInParent<PauseMenu>().MMenu();//PauseGame();
         }
+        if(player.GetComponent<HealthScript>().coreDeath){
+            CoD = "Core Destroyed";
+        }else{
+            CoD = "You Were Killed";
+        }
         tokenTally = tokenCountSource.GetComponent<TokenManager>().tokens;
         waveTally = gameManager.GetComponent<WaveTally>().wave;
-        tokenDisplay.GetComponent<Text>().text = "Final Score: " + tokenTally;
-        waveDisplay.GetComponent<Text>().text = "Wave: " + waveTally + 1;
+        deathHUD.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = CoD;
+        deathHUD.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Tokens: " + tokenTally.ToString();
+        deathHUD.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Wave: " + (waveTally + 1).ToString();
+        deathHUD.transform.GetChild(4).GetChild(0).GetComponent<Text>().text = player.GetComponent<HealthScript>().killedBy;
     }
 
     public void MMenu()

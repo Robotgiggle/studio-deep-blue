@@ -18,6 +18,7 @@ public class HealthScript : MonoBehaviour
     public bool isAlive = true;
     public bool coreDeath;
     public bool isDead = false;
+    public string killedBy;
 
     public GameObject explosionPrefab;
 
@@ -93,16 +94,19 @@ public class HealthScript : MonoBehaviour
         }
     }
 
-    public void ApplyDamage(float amount)
+    public bool ApplyDamage(float amount)
     {
-        healthPoints = healthPoints - amount;
-        GlobalPlayerHealth.CurrentHealth -= (int) amount;
+        healthPoints -= amount;
+        if(healthPoints<=0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void ApplyHeal(float amount)
     {
         healthPoints = healthPoints + amount;
-        GlobalPlayerHealth.CurrentHealth += (int) amount;
     }
 
     public void ApplyBonusLife(int amount)
@@ -120,6 +124,9 @@ public class HealthScript : MonoBehaviour
         if(other.gameObject.CompareTag("bullet")){
             healthPoints -= 4;
             Destroy(other.gameObject);
+            if(healthPoints<=0){
+                killedBy = "by RK-49 \"Ranger\"";
+            }
         }
     }
 }
