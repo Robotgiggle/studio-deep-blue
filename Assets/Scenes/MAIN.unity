@@ -3434,7 +3434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 2279794436604396401, guid: 4bf59701ebcbb504ca22032067b9744f, type: 3}
-  spawnDelay: 15
+  spawnDelay: 25
 --- !u!1 &1970436884
 GameObject:
   m_ObjectHideFlags: 0

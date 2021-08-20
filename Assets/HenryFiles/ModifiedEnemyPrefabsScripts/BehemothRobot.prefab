@@ -103,10 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   core: {fileID: 0}
-  speed: 3
+  speed: 3.2
   canAttack: 1
   isAttacking: 1
-  enemyAttackRange: 8
+  enemyAttackRange: 10
   sightRange: 15
   meleeObject: {fileID: 0}
   dead: 0
@@ -119,6 +119,11 @@ MonoBehaviour:
   teleportEffectPoint: {fileID: 8826801112249880433}
   teleportSound: {fileID: 0}
   teleportWarning: {fileID: 0}
+  emergencyTeleportPointl: {fileID: 0}
+  emergencyTeleportPoint2: {fileID: 0}
+  emergencyTeleportPoint3: {fileID: 0}
+  emergencyTeleportPoint4: {fileID: 0}
+  teleportPoint: 0
 --- !u!114 &1995175062803124647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 80
+  EnemyHealth: 200
   TokensDropped: 20
   isHitEffect: {fileID: 4966207399199785302, guid: 5763fdb5a2e852541836441399be889c, type: 3}
   deathEffect: {fileID: 9059403873234044818, guid: 95e6dc2683e67d74f9d883468a26895e, type: 3}

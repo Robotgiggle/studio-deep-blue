@@ -31,7 +31,7 @@ public class MinionScript : MonoBehaviour
         playerRange = enemyAttackRange;
         coreRange = enemyAttackRange * 0.7f;
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
-        speed += (tally.wave-2) * 0.3f;
+        speed += tally.wave * 0.3f;
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)

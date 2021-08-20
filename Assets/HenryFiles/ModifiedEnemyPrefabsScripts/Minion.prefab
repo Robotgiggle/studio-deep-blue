@@ -100,7 +100,7 @@ MonoBehaviour:
   canAttack: 1
   isAttacking: 1
   enemyAttackRange: 3
-  sightRange: 12
+  sightRange: 15
   meleeObject: {fileID: 0}
   dead: 0
   attackCooldown: 1.15
@@ -124,6 +124,7 @@ MonoBehaviour:
   token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
+  effect: {fileID: 0}
 --- !u!95 &4768197775557824069
 Animator:
   serializedVersion: 3

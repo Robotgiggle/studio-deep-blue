@@ -26,14 +26,14 @@ public class GameManager : MonoBehaviour
             tBuffer++;
             timer--;
         }
+        if(tally.wave>=2&&!boss){
+            boss = true;
+            StartCoroutine(GetComponent<BossSpawner>().spawnBoss());
+        }
         if(tally.waveDone&&!peacetime){
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
             if(enemies==null||enemies.Length==0){
                 endWave();
-            }
-            if(tally.wave>=2&&!boss){
-                boss = true;
-                StartCoroutine(GetComponent<BossSpawner>().spawnBoss());
             }
         }
         if(timer==0){
@@ -47,11 +47,11 @@ public class GameManager : MonoBehaviour
     void endWave(){
         tBuffer = Time.time + 1;
         peacetime = true;
-        boss = false;
         if(tally.waves.Length==tally.wave+1){
             Debug.Log("all waves completed");
             //end game
         }else{
+            boss = false;
             Debug.Log("wave "+(tally.wave+1)+" completed");
             //send message to game UI to display "wave complete" text
             player.transform.GetChild(0).GetComponent<TokenManager>().reward();

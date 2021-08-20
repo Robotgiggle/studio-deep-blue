@@ -41,15 +41,15 @@ public class BehemothScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        emergencyTeleportPointl = GameObject.FindWithTag("tp1").GetComponent<Transform>();
-        emergencyTeleportPoint2 = GameObject.FindWithTag("tp2").GetComponent<Transform>();
-        emergencyTeleportPoint3 = GameObject.FindWithTag("tp3").GetComponent<Transform>();
-        emergencyTeleportPoint4 = GameObject.FindWithTag("tp4").GetComponent<Transform>();
+        emergencyTeleportPointl = GameObject.Find("TP1").GetComponent<Transform>();
+        emergencyTeleportPoint2 = GameObject.Find("TP2").GetComponent<Transform>();
+        emergencyTeleportPoint3 = GameObject.Find("TP3").GetComponent<Transform>();
+        emergencyTeleportPoint4 = GameObject.Find("TP4").GetComponent<Transform>();
 
         playerRange = enemyAttackRange;
         coreRange = enemyAttackRange * 0.7f;
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
-        speed += (tally.wave-2) * 0.3f;
+        speed += tally.wave * 0.3f;
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)
