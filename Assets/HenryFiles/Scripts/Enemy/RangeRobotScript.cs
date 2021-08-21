@@ -26,6 +26,8 @@ public class RangeRobotScript : MonoBehaviour
     public bool enemyIsInRange;
     public bool playerTooClose;
     WaveTally tally;
+
+
     // Start is called before the first frame update
     void Start()
     {

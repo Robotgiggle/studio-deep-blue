@@ -12,9 +12,20 @@ public class EBulletSpawner : MonoBehaviour
     float currentTime;
     float nextShotTime;
 
+    public Transform player;
+    private AudioSource m_AudioSource;
+    public AudioClip m_attackSound;
     void Start()
     {
-
+        if (player == null)
+        {
+            //"coreTargetTag"
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+        }
+        m_AudioSource = player.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -32,7 +43,13 @@ public class EBulletSpawner : MonoBehaviour
             direction.z += Random.Range(-inaccuracy,inaccuracy);
             Instantiate(bullet, this.transform.position, Quaternion.Euler(direction));
             nextShotTime = Time.time + shotCooldown;
+            playShootSound();
         }
 
+    }
+    void playShootSound()
+    {
+        m_AudioSource.clip = m_attackSound;
+        m_AudioSource.Play();
     }
 }

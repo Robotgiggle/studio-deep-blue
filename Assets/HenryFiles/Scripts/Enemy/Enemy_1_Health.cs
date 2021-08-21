@@ -15,11 +15,22 @@ public class Enemy_1_Health : MonoBehaviour
     float spread;
     public GameObject effect;
 
+    public Transform player;
     private AudioSource m_AudioSource;
     public AudioClip m_DeathSound;
     // Start is called before the first frame update
     void Start()
     {
+        if (player == null)
+        {
+            //"coreTargetTag"
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+        }
+        m_AudioSource = player.GetComponent<AudioSource>();
+
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
         EnemyHealth += tally.wave * 4;
         if(EnemyHealth>75){

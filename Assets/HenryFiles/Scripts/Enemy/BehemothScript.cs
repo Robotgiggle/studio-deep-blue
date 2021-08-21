@@ -38,6 +38,9 @@ public class BehemothScript : MonoBehaviour
     public Transform emergencyTeleportPoint3;
     public Transform emergencyTeleportPoint4;
     public int teleportPoint;
+
+    private AudioSource m_AudioSource;
+    public AudioClip m_AttackSound;
     // Start is called before the first frame update
     void Start()
     {

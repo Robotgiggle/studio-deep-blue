@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: shotCooldown
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5729125917011362245, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
+      propertyPath: m_attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e6150e4d748959545a31fe4252b9cfd9, type: 3}
     - target: {fileID: 5729125917011362266, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: m_RootOrder
       value: 3

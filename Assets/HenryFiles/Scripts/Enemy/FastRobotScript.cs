@@ -25,6 +25,8 @@ public class FastRobotScript : MonoBehaviour
     float coreRange;
     WaveTally tally;
 
+    private AudioSource m_AudioSource;
+    public AudioClip m_attackSound;
     // Start is called before the first frame update
     void Start()
     {
