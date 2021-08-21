@@ -110,21 +110,17 @@ public class RangeRobotScript : MonoBehaviour
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(playerLogTransform.position.x, transform.position.y, playerLogTransform.position.z));
-            //Debug.Log("IsBackingAwayFromPlayer");
         }
         else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && !enemyIsInRange && !playerTooClose) //&& (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange) && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange)
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
-            //Debug.Log("IsMovingTowardsTarget");
-
         }
         else
         {
             transform.LookAt(new Vector3(whatIsTarget.position.x, transform.position.y, whatIsTarget.position.z));
             actualSpeed = 0f;
-            //Debug.Log("IsIDLE");
         }
 
     }
