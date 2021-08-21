@@ -8,8 +8,6 @@ public class CrosshairsAnimation : MonoBehaviour
     public GameObject DownCurse;
     public GameObject UpCurseRight;
     public GameObject DownCurseRight;
-    private float firestart = 0f;
-    private float firecooldown = 0.2f;
     public GameObject weaponToTrack;
 
     // Start is called before the first frame update
@@ -33,7 +31,7 @@ public class CrosshairsAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (weaponToTrack.GetComponent<BulletSpawner>().isFiring)//((Input.GetButtonDown("Fire1")) && (Time.time > firestart + firecooldown))
+        if (weaponToTrack.GetComponent<BulletSpawner>().isFiring)
         {
             PlayerWeaponCrosshairAnimation();
             //firestart = Time.time;

@@ -29,6 +29,11 @@ public class deathMenu : MonoBehaviour
     {
         if (player.GetComponent<HealthScript>().healthPoints <= 0)// && !isGoingToMenu)// && deathHUDIsNotActive)
         {
+            if(GameObject.Find("manager").GetComponent<GameManager>().win){
+                deathHUD.transform.GetChild(2).gameObject.SetActive(false);
+                deathHUD.transform.GetChild(4).gameObject.SetActive(false);
+                deathHUD.transform.GetChild(5).gameObject.SetActive(true);
+            }
             Time.timeScale = 0;
             deathHUDIsNotActive = true;
             crosshairs.SetActive(false);

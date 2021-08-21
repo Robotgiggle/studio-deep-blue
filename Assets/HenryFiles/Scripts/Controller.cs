@@ -133,7 +133,7 @@ public class Controller : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("token")){
-            TokenManager t = GetComponent<TokenManager>();
+            TokenManager t = transform.GetChild(0).GetComponent<TokenManager>();
             if(t.tokens<99){
                 Destroy(other.transform.parent.gameObject);
                 t.tokens++;

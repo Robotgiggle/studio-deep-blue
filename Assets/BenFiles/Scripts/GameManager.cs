@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float waveInterval = 20;
+    public float timer;
+    public bool win;
     GameObject player;
     WaveTally tally;
     bool peacetime;
     bool boss;
     float tBuffer;
-    public float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,12 +50,18 @@ public class GameManager : MonoBehaviour
         peacetime = true;
         if(tally.waves.Length==tally.wave+1){
             Debug.Log("all waves completed");
-            //end game
+            StartCoroutine(endGame());
         }else{
             boss = false;
             Debug.Log("wave "+(tally.wave+1)+" completed");
             //send message to game UI to display "wave complete" text
             player.transform.GetChild(0).GetComponent<TokenManager>().reward();
         }
+    }
+
+    IEnumerator endGame(){
+        yield return new WaitForSeconds(2.5f);
+        win = true;
+        player.GetComponent<HealthScript>().healthPoints = -10;
     }
 }

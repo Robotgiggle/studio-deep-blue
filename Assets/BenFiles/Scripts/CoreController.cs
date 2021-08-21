@@ -15,8 +15,8 @@ public class CoreController : MonoBehaviour
     bool iframes = false;
     Slider coreSlider;
     int tBuffer = 1;
-    public GameObject destroyedEffect;
     public GameObject hitEffect;
+    public GameObject destroyedEffect;
     public bool effectHasSpawned;
     // Start is called before the first frame update
     void Start()
