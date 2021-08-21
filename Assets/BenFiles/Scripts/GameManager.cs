@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public float waveInterval = 20;
     public float timer;
     public bool win;
+    WaveAnnouncer announcer;
     GameObject player;
     WaveTally tally;
     bool peacetime;
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        announcer = GameObject.Find("Announcer").GetComponent<WaveAnnouncer>();
         player = GameObject.FindWithTag("Player");
         tally = gameObject.GetComponent<WaveTally>(); 
         timer = waveInterval;
@@ -48,19 +51,19 @@ public class GameManager : MonoBehaviour
     void endWave(){
         tBuffer = Time.time + 1;
         peacetime = true;
+        StartCoroutine(announcer.print("Wave Complete",2f));
         if(tally.waves.Length==tally.wave+1){
-            Debug.Log("all waves completed");
+            //Debug.Log("all waves completed");
             StartCoroutine(endGame());
         }else{
             boss = false;
-            Debug.Log("wave "+(tally.wave+1)+" completed");
-            //send message to game UI to display "wave complete" text
+            //Debug.Log("wave "+(tally.wave+1)+" completed");
             player.transform.GetChild(0).GetComponent<TokenManager>().reward();
         }
     }
 
     IEnumerator endGame(){
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3.5f);
         win = true;
         player.GetComponent<HealthScript>().healthPoints = -10;
     }

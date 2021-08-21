@@ -7,12 +7,15 @@ public class WaveTally : MonoBehaviour
     public Vector3[] waves;
     public int wave = 0;
     public bool waveDone;
+    WaveAnnouncer announcer;
     Vector3[] backup;
     // Start is called before the first frame update
     void Start()
     {
         backup = waves;
-        Debug.Log("started wave 1");
+        announcer = GameObject.Find("Announcer").GetComponent<WaveAnnouncer>();
+        //Debug.Log("started wave 1");
+        StartCoroutine(announcer.print("Wave Incoming",2f));
     }
 
     // Update is called once per frame
@@ -30,7 +33,8 @@ public class WaveTally : MonoBehaviour
                 c.spawnRate *= 0.65f;
                 c.gameObject.SetActive(true);
             }
-            Debug.Log("started wave "+(wave+1));
+            //Debug.Log("started wave "+(wave+1));
+            StartCoroutine(announcer.print("Wave Incoming",2f));
             return true;
         }else{
             return false;
