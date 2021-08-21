@@ -151,7 +151,6 @@ MonoBehaviour:
   isAttacking: 1
   enemyAttackRange: 4.3
   sightRange: 15
-  meleeObject: {fileID: 0}
   dead: 0
   attackCooldown: 2.25
   attackDamage: 10
@@ -174,6 +173,8 @@ MonoBehaviour:
   token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
+  effect: {fileID: 0}
+  m_DeathSound: {fileID: 8300000, guid: bab71f626407a694d9c2745cb7987209, type: 3}
 --- !u!1 &5303511078383908532
 GameObject:
   m_ObjectHideFlags: 0

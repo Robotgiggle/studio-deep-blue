@@ -125,6 +125,7 @@ MonoBehaviour:
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  m_DeathSound: {fileID: 8300000, guid: 2c6b771e9d7d7fa4789d107e71c616a5, type: 3}
 --- !u!95 &4768197775557824069
 Animator:
   serializedVersion: 3

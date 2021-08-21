@@ -14,6 +14,9 @@ public class Enemy_1_Health : MonoBehaviour
     WaveTally tally;
     float spread;
     public GameObject effect;
+
+    private AudioSource m_AudioSource;
+    public AudioClip m_DeathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +67,7 @@ public class Enemy_1_Health : MonoBehaviour
         }
         if (EnemyHealth <= 0&&!isDead)
         {
+            playDeathSound();
             isDead = true;
             Destroy(transform.GetChild(2).gameObject);
             transform.GetChild(1).gameObject.layer = 4;
@@ -86,5 +90,11 @@ public class Enemy_1_Health : MonoBehaviour
             }
             Destroy(gameObject);
         }
+    }
+
+    private void playDeathSound()
+    {
+        m_AudioSource.clip = m_DeathSound;
+        m_AudioSource.Play();
     }
 }

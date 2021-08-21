@@ -175,6 +175,7 @@ MonoBehaviour:
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  m_DeathSound: {fileID: 8300000, guid: 33843666f1455e3429a0c8b8a372621b, type: 3}
 --- !u!1 &7768538467978203899
 GameObject:
   m_ObjectHideFlags: 0
