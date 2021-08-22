@@ -18,6 +18,7 @@ public class CoreController : MonoBehaviour
     public GameObject hitEffect;
     public GameObject destroyedEffect;
     public bool effectHasSpawned;
+    public GameObject coreModel;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +48,7 @@ public class CoreController : MonoBehaviour
             yield return new WaitForSeconds(1f);
             player.coreDeath = true;
             player.healthPoints = 0;
-            gameObject.SetActive(false);
+            coreModel.SetActive(false);
         }
     }
 

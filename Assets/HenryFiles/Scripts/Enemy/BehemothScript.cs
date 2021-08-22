@@ -68,6 +68,7 @@ public class BehemothScript : MonoBehaviour
                 core = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
         }
+        m_AudioSource = Player.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
