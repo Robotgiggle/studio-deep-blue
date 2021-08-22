@@ -8,9 +8,6 @@ public class CoreController : MonoBehaviour
 {
     public int health;
     public int bulletDamage = 4;
-    //public int weakDamage = 5;
-    //public int strongDamage = 10;
-    //public int bossDamage = 20;
     HealthScript player;
     bool iframes = false;
     Slider coreSlider;
@@ -64,21 +61,6 @@ public class CoreController : MonoBehaviour
             return false;
         }
     }
-
-    /*
-    void OnCollisionEnter(Collision other){
-    	if(!iframes){
-    		if(other.gameObject.CompareTag("weak")){
-    			health -= weakDamage;
-    		}else if(other.gameObject.CompareTag("strong")){
-    			health -= strongDamage;
-    		}else if(other.gameObject.CompareTag("boss")){
-    			health -= bossDamage;
-    		}
-    		iframes = true;
-    	}
-    }
-    */
 
     void OnTriggerEnter(Collider other){
     	if(other.gameObject.CompareTag("bullet")&&!iframes){

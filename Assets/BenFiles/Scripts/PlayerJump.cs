@@ -25,11 +25,8 @@ public class PlayerJump : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump")&&Physics.Linecast(aboveGround,belowGround,8)){
             StartCoroutine(jump());
-
             if (jumpEffect != null)
             {
-
-                //effect.GetComponent<ParticleSystem>().shape.radius = 5
                 effect = Instantiate(jumpEffect, partPoint.transform.position, partPoint.transform.rotation);
                 effect.transform.parent = this.transform;
             }

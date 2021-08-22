@@ -30,16 +30,19 @@ public class GameManager : MonoBehaviour
             tBuffer++;
             timer--;
         }
+        //spawn boss if possible
         if(tally.wave>=2&&!boss){
             boss = true;
             StartCoroutine(GetComponent<BossSpawner>().spawnBoss());
         }
+        //check if all enemies are dead
         if(tally.waveDone&&!peacetime){
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
             if(enemies==null||enemies.Length==0){
                 endWave();
             }
         }
+        //start next wave
         if(timer==0){
             if(tally.nextWave()){
                 timer = waveInterval;
@@ -53,11 +56,9 @@ public class GameManager : MonoBehaviour
         peacetime = true;
         StartCoroutine(announcer.print("Wave Complete",2f));
         if(tally.waves.Length==tally.wave+1){
-            //Debug.Log("all waves completed");
             StartCoroutine(endGame());
         }else{
             boss = false;
-            //Debug.Log("wave "+(tally.wave+1)+" completed");
             player.transform.GetChild(0).GetComponent<TokenManager>().reward();
         }
     }

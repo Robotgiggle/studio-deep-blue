@@ -14,7 +14,6 @@ public class WaveTally : MonoBehaviour
     {
         backup = waves;
         announcer = GameObject.Find("Announcer").GetComponent<WaveAnnouncer>();
-        //Debug.Log("started wave 1");
         StartCoroutine(announcer.print("Wave Incoming",2f));
     }
 
@@ -33,7 +32,6 @@ public class WaveTally : MonoBehaviour
                 c.spawnRate *= 0.67f;
                 c.gameObject.SetActive(true);
             }
-            //Debug.Log("started wave "+(wave+1));
             StartCoroutine(announcer.print("Wave Incoming",2f));
             return true;
         }else{

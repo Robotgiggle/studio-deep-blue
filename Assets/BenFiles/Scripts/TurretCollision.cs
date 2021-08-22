@@ -22,7 +22,7 @@ public class TurretCollision : MonoBehaviour
     {
         if(Time.time>=tbuffer){iframes = false;}
         if(health<=0){
-            //death animation?
+            //death effect?
             Destroy(this.gameObject);
         }
     }

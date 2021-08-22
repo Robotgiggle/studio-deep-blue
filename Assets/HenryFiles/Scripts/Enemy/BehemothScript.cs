@@ -196,22 +196,17 @@ public class BehemothScript : MonoBehaviour
             isAttacking = true;
         }
         //perform motion
-        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(target.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)
         {
-            speed = 1f;
-            transform.position -= transform.forward * speed * Time.deltaTime;
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
-            //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
-            speed = 1f;
-            transform.position += transform.forward * speed * Time.deltaTime;
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
