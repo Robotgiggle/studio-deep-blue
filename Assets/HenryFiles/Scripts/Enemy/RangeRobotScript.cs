@@ -90,7 +90,7 @@ public class RangeRobotScript : MonoBehaviour
             }
         }
 
-        if (whatIsTarget != null && playerLogTransform.GetComponentInParent<HealthScript>().healthPoints != 0)
+        if (whatIsTarget != null)
         {
             if ((Vector3.Distance(playerLogTransform.position, this.transform.position) > enemyWeaponRange+4f))
             {

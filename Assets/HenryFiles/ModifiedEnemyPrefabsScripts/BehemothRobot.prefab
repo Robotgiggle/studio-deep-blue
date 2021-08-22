@@ -103,17 +103,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   core: {fileID: 0}
-  speed: 3.2
+  speed: 3
   canAttack: 1
   isAttacking: 1
-  enemyAttackRange: 10
+  enemyAttackRange: 9
   sightRange: 15
   meleeObject: {fileID: 0}
   dead: 0
   attackCooldown: 3.87
   attackDamage: 20
   isTeleporting: 0
-  timeToTeleport: 20
+  timeToTeleport: 16
   airToGroundTimer: 3
   teleportEffect: {fileID: 6762739612620203999, guid: f282d2751f3eb204f9faa0083e2b2e9a, type: 3}
   teleportEffectPoint: {fileID: 8826801112249880433}
@@ -124,6 +124,7 @@ MonoBehaviour:
   emergencyTeleportPoint3: {fileID: 0}
   emergencyTeleportPoint4: {fileID: 0}
   teleportPoint: 0
+  m_attackSound: {fileID: 0}
 --- !u!114 &1995175062803124647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 200
+  EnemyHealth: 160
   TokensDropped: 20
   isHitEffect: {fileID: 4966207399199785302, guid: 5763fdb5a2e852541836441399be889c, type: 3}
   deathEffect: {fileID: 9059403873234044818, guid: 95e6dc2683e67d74f9d883468a26895e, type: 3}
@@ -144,6 +145,7 @@ MonoBehaviour:
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  player: {fileID: 0}
   m_DeathSound: {fileID: 8300000, guid: 1b70d34e9440ecf4fac60733f334d68e, type: 3}
 --- !u!1 &7360414635513917808
 GameObject:
@@ -319,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 4768197775360550572, guid: c80a20a606a374045b66bcd13d190c51, type: 3}
     - target: {fileID: 7601675468408107509, guid: 71a92c5eaa9bf43ae8ba310114943d89, type: 3}
       propertyPath: spawnCooldown
-      value: 2.5
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7816759153728114646, guid: 71a92c5eaa9bf43ae8ba310114943d89, type: 3}
       propertyPath: m_Name

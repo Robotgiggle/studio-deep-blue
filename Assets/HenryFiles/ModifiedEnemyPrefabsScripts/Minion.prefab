@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   core: {fileID: 0}
-  speed: 5
+  speed: 4.2
   canAttack: 1
   isAttacking: 1
   enemyAttackRange: 3
@@ -105,6 +105,7 @@ MonoBehaviour:
   dead: 0
   attackCooldown: 1.15
   attackDamage: 2
+  m_attackSound: {fileID: 0}
 --- !u!114 &3580755694612672943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 4
+  EnemyHealth: 2
   TokensDropped: 1
   isHitEffect: {fileID: 0}
   deathEffect: {fileID: 0}
@@ -125,6 +126,7 @@ MonoBehaviour:
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  player: {fileID: 0}
   m_DeathSound: {fileID: 8300000, guid: 2c6b771e9d7d7fa4789d107e71c616a5, type: 3}
 --- !u!95 &4768197775557824069
 Animator:

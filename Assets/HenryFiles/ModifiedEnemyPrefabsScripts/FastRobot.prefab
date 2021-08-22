@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   core: {fileID: 0}
-  speed: 5
+  speed: 5.2
   canAttack: 1
   isAttacking: 0
   enemyAttackRange: 3.5
@@ -155,6 +155,7 @@ MonoBehaviour:
   dead: 0
   attackCooldown: 2
   attackDamage: 5
+  m_attackSound: {fileID: 0}
 --- !u!114 &3613469927105874121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,14 +168,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 6
-  TokensDropped: 3
+  EnemyHealth: 8
+  TokensDropped: 2
   isHitEffect: {fileID: 4966207399199785302, guid: 5763fdb5a2e852541836441399be889c, type: 3}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
   token: {fileID: 2103761500486158747, guid: 63ab47806a9a04d82b31152084cda4fe, type: 3}
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  player: {fileID: 0}
   m_DeathSound: {fileID: 8300000, guid: 33843666f1455e3429a0c8b8a372621b, type: 3}
 --- !u!1 &7768538467978203899
 GameObject:

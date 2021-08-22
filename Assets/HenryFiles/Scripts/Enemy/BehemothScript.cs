@@ -177,7 +177,7 @@ public class BehemothScript : MonoBehaviour
             }
         }
         //if near the core, shrink sightRange
-        if(Vector3.Distance(core.position,transform.position)<6.5f){sightRange = 8;}
+        if(Vector3.Distance(core.position,transform.position)<6.5f){sightRange = 11;}
         //select core or player as target
         if(Vector3.Distance(Player.position,transform.position)<sightRange){
             target = Player;

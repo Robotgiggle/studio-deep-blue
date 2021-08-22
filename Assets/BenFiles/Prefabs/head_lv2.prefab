@@ -92,9 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head2: {fileID: 5822640601449068487}
   bullet: {fileID: 4879448512616401791, guid: 925bd8d0340dd464382857cf7272ad35, type: 3}
-  reloadTime: 0.5
+  reloadTime: 0.6
   inaccuracy: 5
-  range: 18
+  range: 16
 --- !u!1 &6046077429990773425
 GameObject:
   m_ObjectHideFlags: 0

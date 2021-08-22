@@ -33,7 +33,7 @@ public class FastRobotScript : MonoBehaviour
         playerRange = enemyAttackRange;
         coreRange = enemyAttackRange * 0.7f;
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
-        speed += tally.wave * 0.3f;
+        speed += tally.wave * 0.2f;
         if (Player == null)
         {
             if (GameObject.FindWithTag("Player") != null)

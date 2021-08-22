@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97849afdf49c8ff4abb135f9f06273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 6
+  EnemyHealth: 8
   TokensDropped: 3
   isHitEffect: {fileID: 4966207399199785302, guid: 5763fdb5a2e852541836441399be889c, type: 3}
   deathEffect: {fileID: 9059403873234044818, guid: 45d3a6f4676d958449f4eb18e52f0df1, type: 3}
@@ -148,6 +148,7 @@ MonoBehaviour:
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  player: {fileID: 0}
   m_DeathSound: {fileID: 8300000, guid: f2312c3496e26624aa1914a923674223, type: 3}
 --- !u!114 &1557538361245794267
 MonoBehaviour:
@@ -300,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5729125917011362245, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: shotCooldown
-      value: 2
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 5729125917011362245, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: m_attackSound

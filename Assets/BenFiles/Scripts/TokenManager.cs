@@ -72,8 +72,8 @@ public class TokenManager : MonoBehaviour
 
     public void reward(){
         tokens += waveClearReward;
-        coreHealCost += waveClearReward / 5;
-        waveClearReward += 5;
+        coreHealCost += waveClearReward / 4;
+        waveClearReward += 4;
     }
 
     IEnumerator buttonBlink(int button){
