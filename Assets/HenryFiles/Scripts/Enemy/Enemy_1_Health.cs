@@ -82,6 +82,7 @@ public class Enemy_1_Health : MonoBehaviour
             isDead = true;
             Destroy(transform.GetChild(2).gameObject);
             transform.GetChild(1).gameObject.layer = 4;
+            GameObject.Find("DeathMenu").GetComponent<deathMenu>().kills++;
             StartCoroutine(despawn());
 
         }
