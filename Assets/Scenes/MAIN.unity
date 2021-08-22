@@ -1862,10 +1862,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathHUD
       objectReference: {fileID: 0}
-    - target: {fileID: 7066379408659250547, guid: 6df913e32417ab24bb46e3a6a79d2aba, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7066379408659250559, guid: 6df913e32417ab24bb46e3a6a79d2aba, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2977,6 +2973,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 732692562}
   tokenCountSource: {fileID: 1289710327}
   gameManager: {fileID: 1922234811}
+  kills: 0
 --- !u!4 &1582939251
 Transform:
   m_ObjectHideFlags: 0

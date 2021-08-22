@@ -14,6 +14,7 @@ public class deathMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject tokenCountSource;
     public GameObject gameManager;
+    public int kills = 0;
     int tokenTally;
     int waveTally;
     string CoD;
@@ -30,9 +31,9 @@ public class deathMenu : MonoBehaviour
         if (player.GetComponent<HealthScript>().healthPoints <= 0)// && !isGoingToMenu)// && deathHUDIsNotActive)
         {
             if(GameObject.Find("manager").GetComponent<GameManager>().win){
-                deathHUD.transform.GetChild(2).gameObject.SetActive(false);
-                deathHUD.transform.GetChild(4).gameObject.SetActive(false);
-                deathHUD.transform.GetChild(5).gameObject.SetActive(true);
+                deathHUD.transform.GetChild(1).gameObject.SetActive(false);
+                deathHUD.transform.GetChild(3).gameObject.SetActive(false);
+                deathHUD.transform.GetChild(4).gameObject.SetActive(true);
             }
             Time.timeScale = 0;
             deathHUDIsNotActive = true;
@@ -55,10 +56,11 @@ public class deathMenu : MonoBehaviour
         }
         tokenTally = tokenCountSource.GetComponent<TokenManager>().tokens;
         waveTally = gameManager.GetComponent<WaveTally>().wave;
-        deathHUD.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = CoD;
-        deathHUD.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Tokens: " + tokenTally.ToString();
-        deathHUD.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Wave: " + (waveTally + 1).ToString();
-        deathHUD.transform.GetChild(4).GetChild(0).GetComponent<Text>().text = player.GetComponent<HealthScript>().killedBy;
+        deathHUD.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = CoD;
+        deathHUD.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Wave: " + (waveTally + 1).ToString();
+        deathHUD.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = "Kills: " + kills.ToString();
+        deathHUD.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = "Tokens: " + tokenTally.ToString();
+        deathHUD.transform.GetChild(3).GetChild(0).GetComponent<Text>().text = player.GetComponent<HealthScript>().killedBy;
     }
 
     public void MMenu()
