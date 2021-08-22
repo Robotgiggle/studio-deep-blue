@@ -12,20 +12,11 @@ public class EBulletSpawner : MonoBehaviour
     float currentTime;
     float nextShotTime;
 
-    public Transform Player;
     private AudioSource m_AudioSource;
     public AudioClip m_attackSound;
     void Start()
     {
-        if (Player == null)
-        {
-            //"coreTargetTag"
-            if (GameObject.FindWithTag("Player") != null)
-            {
-                Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            }
-        }
-        m_AudioSource = Player.GetComponent<AudioSource>();
+        m_AudioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
     }
 
     void Update()

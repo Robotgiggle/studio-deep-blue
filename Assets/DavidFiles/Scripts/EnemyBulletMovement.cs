@@ -20,30 +20,5 @@ public class EnemyBulletMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    /*
-    void OnTriggerEnter(Collider other)
-    {
-
-        if (other.gameObject.GetComponent<HealthScript>() != null && other.gameObject.tag == "Player")
-        {   // if the hit object has the Health script on it, deal damage
-            //GlobalPlayerHealth.CurrentHealth -= damageToPlayer;
-            other.gameObject.GetComponent<HealthScript>().ApplyDamage(damageToPlayer);
-
-            // Destroy(this.gameObject);
-
-            if (destroySelfOnImpact)
-            {
-                Destroy(gameObject, delayBeforeDestroy);      // destroy the object whenever it hits something
-            }
-
-            if (explosionPrefab != null)
-            {
-                Instantiate(explosionPrefab, transform.position, transform.rotation);
-                Destroy(this.gameObject);
-            }
-        }
-    }
-    */
 }
 
