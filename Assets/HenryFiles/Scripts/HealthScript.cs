@@ -28,7 +28,6 @@ public class HealthScript : MonoBehaviour
 
     private Vector3 respawnPosition;
     private Quaternion respawnRotation;
-    //public GameObject pausemenu;
 
     Slider healthSlider;
     WaveTally tally;
@@ -40,12 +39,6 @@ public class HealthScript : MonoBehaviour
         // store initial position as respawn location
         respawnPosition = transform.position;
         respawnRotation = transform.rotation;
-
-        if (LevelToLoad == "") // default to current scene 
-        {
-            //cursor.GetComponent<MouseLockCursor>().pause();
-            //SceneManager.LoadScene(0);
-        }
         tBuffer = regenDelay;
     }
 
@@ -86,8 +79,6 @@ public class HealthScript : MonoBehaviour
                         // do nothing, death must be handled in another way elsewhere
                         break;
                 }
-                //pausemenu.GetComponent<PauseMenu>().PauseGame();
-                //Destroy(gameObject);
             }
         }
     }
@@ -109,7 +100,7 @@ public class HealthScript : MonoBehaviour
 
     public void ApplyBonusLife(int amount)
     {
-        //    numberOfLives = numberOfLives + amount;
+        //numberOfLives = numberOfLives + amount;
     }
 
     public void updateRespawn(Vector3 newRespawnPosition, Quaternion newRespawnRotation)

@@ -10,12 +10,11 @@ public class FastRobotScript : MonoBehaviour
     public float speed = 4f;
     float actualSpeed;
     float nextAttack;
-    public bool canAttack = true; //true;
+    public bool canAttack = true;
     public bool isAttacking;
     Transform target;
     public float enemyAttackRange = 2.0f;
     public float sightRange;
-    public GameObject meleeObject;
     public bool dead = false;
     Vector3 muzzle;
     int mask = 1 << 6;
@@ -103,12 +102,11 @@ public class FastRobotScript : MonoBehaviour
             isAttacking = true;
         }
         //perform motion
-        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(target.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)
         {
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
-            //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
@@ -127,16 +125,6 @@ public class FastRobotScript : MonoBehaviour
         {
             StartCoroutine(meleeAttack());
         }
-
-        
-        //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
-        //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
-        //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
-
-        //Movement
-
-
-        //float distance = Vector3.Distance(transform.position, target.position);
 
     }
 

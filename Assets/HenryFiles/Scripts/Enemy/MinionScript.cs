@@ -10,12 +10,11 @@ public class MinionScript : MonoBehaviour
     public float speed = 4f;
     float actualSpeed;
     float nextAttack;
-    public bool canAttack = true; //true;
+    public bool canAttack = true;
     public bool isAttacking;
     Transform target;
     public float enemyAttackRange = 2.0f;
     public float sightRange;
-    public GameObject meleeObject;
     public bool dead = false;
     Vector3 muzzle;
     int mask = 1 << 6;
@@ -104,25 +103,14 @@ public class MinionScript : MonoBehaviour
             isAttacking = true;
         }
         //perform motion
-        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(target.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)
         {
-            speed = 2f;
-            transform.position -= transform.forward * speed * Time.deltaTime;
-            actualSpeed = speed * 0.75f;
-            transform.position -= transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
-            //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
-            speed = 2f;
-            transform.position += transform.forward * speed * Time.deltaTime;
-            actualSpeed = speed;
-            transform.position += transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
@@ -139,18 +127,6 @@ public class MinionScript : MonoBehaviour
         {
             StartCoroutine(meleeAttack());
         }
-
-        //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
-        //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
-        //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
-
-        //Movement
-
-        if (target == null)
-            return;
-
-        //float distance = Vector3.Distance(transform.position, target.position);
-
     }
 
     void playShootSound()
@@ -175,12 +151,6 @@ public class MinionScript : MonoBehaviour
                     if(hit.transform.gameObject.GetComponent<CoreController>().takeDamage(Mathf.FloorToInt(attackDamage))){
                         Player.gameObject.GetComponent<HealthScript>().killedBy = "by Bio-Scouter";
                     }
-                    /*
-                    if (gameObject.name == "Minion(Clone)")
-                    {
-                        GetComponent<Enemy_1_Health>().EnemyHealth -= 2;
-                    }
-                    */
                 }
                 else if (hit.transform.gameObject.tag == "Player")
                 {

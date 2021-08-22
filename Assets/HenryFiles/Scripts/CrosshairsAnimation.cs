@@ -34,7 +34,6 @@ public class CrosshairsAnimation : MonoBehaviour
         if (weaponToTrack.GetComponent<BulletSpawner>().isFiring)
         {
             PlayerWeaponCrosshairAnimation();
-            //firestart = Time.time;
         }
     }
 }

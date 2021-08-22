@@ -9,7 +9,6 @@ public class rangeBotAnimationScript : MonoBehaviour
     public bool shoot = false;
     public bool dead = false;
     public bool backing = false;
-    //public bool doWalking = false;
 
     void Start()
     {
@@ -18,29 +17,25 @@ public class rangeBotAnimationScript : MonoBehaviour
 
     void Update()
     {
-        //shoot = get shoot bool from Henry's range enemy AI script
-        //dead = get dead bool from Henry's range enemy AI script
-        //speed = get speed variable from Henry's range enemy AI script
         shoot = GetComponentInParent<RangeRobotScript>().enemyIsInRange;
         dead = GetComponentInParent<Enemy_1_Health>().isDead;
-        speed = GetComponentInParent<RangeRobotScript>().actualSpeed;
+        speed = GetComponentInParent<RangeRobotScript>().speed;
         backing = GetComponentInParent<RangeRobotScript>().playerTooClose;
-        //doWalking = GetComponentInParent<RangeRobotScript>().doWalkingAnimation;
         AnimCheck();
     }
 
     void AnimCheck()
     {
-        if (speed > 0)// || doWalking)
+        if (speed > 0)
         {
             rangeBot.SetBool("isWalking", true);
         }
-        else //if(!doWalking)
+        else
         {
             rangeBot.SetBool("isWalking", false);
         }
 
-        if (shoot)// && !doWalking)
+        if (shoot)
         {
             rangeBot.SetBool("isShooting", true);
         }
@@ -49,7 +44,7 @@ public class rangeBotAnimationScript : MonoBehaviour
             rangeBot.SetBool("isShooting", false);
         }
 
-        if (backing)// || doWalking)
+        if (backing)
         {
             rangeBot.SetBool("isWalking", true);
             rangeBot.SetBool("isShooting", false);

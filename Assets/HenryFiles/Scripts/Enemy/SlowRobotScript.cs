@@ -10,7 +10,7 @@ public class SlowRobotScript : MonoBehaviour
     public float speed = 4f;
     float actualSpeed;
     float nextAttack;
-    public bool canAttack = true; //true;
+    public bool canAttack = true;
     public bool isAttacking;
     Transform target;
     public float enemyAttackRange = 2.0f;
@@ -103,20 +103,14 @@ public class SlowRobotScript : MonoBehaviour
             isAttacking = true;
         }
         //perform motion
-        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)// && (Vector3.Distance(target.position, this.transform.position) > 200.0f))
+        if ((Vector3.Distance(target.position, this.transform.position) < 1f) && dead == false)
         {
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
-            //transform.LookAt(Vector3(otherObject.position.x, transform.position.y, otherObject.position.z));
         }
         else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
-            speed = 1f;
-            transform.position += transform.forward * speed * Time.deltaTime;
-            actualSpeed = speed;
-            transform.position += transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
@@ -132,10 +126,6 @@ public class SlowRobotScript : MonoBehaviour
         {
             StartCoroutine(meleeAttack());
         }
-
-        //if (enemyIsMelee)
-        //float distance = Vector3.Distance(transform.position, target.position);
-
     }
 
     void playShootSound()

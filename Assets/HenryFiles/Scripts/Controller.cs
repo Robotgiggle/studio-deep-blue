@@ -9,23 +9,18 @@ public class Controller : MonoBehaviour
     public float gravity = 9.81f;
     public float boostRate = 25f;
     public float nextSpeedBoost;
-    //public JumpCheck jp;
 
     // Velocity y
     float _vy;
-    //public float jumpForce = 600;
 
     public GameObject trailEffect;
     private CharacterController myController;
 
     public int whatIsGround = 1 << 3;
-    //public Transform groundCheck;
     Transform _transform;
     Rigidbody _rigidbody;
     public bool isGrounded = false;
-    //public bool canJump = false;
     int _playerLayer;
-    //public Vector3 jump;
 
     //SFX
     AudioSource _audio;
@@ -41,47 +36,12 @@ public class Controller : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        //jump = new Vector3(0.0f, 2.0f, 0.0f);
         myController = gameObject.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /**if(Input.GetButtonDown(""))
-        {
-
-        }*/
-
-        /*
-        isGrounded = Physics.Linecast(_transform.position, groundCheck.position, whatIsGround);
-        if (isGrounded)
-        {
-            canJump = true;
-        }
-
-        //_vy = _rigidbody.velocity.y;
-        if (Input.GetButtonDown("Jump") && canJump)
-        {
-            //DoJump();
-            Debug.Log("Jumping");
-            transform.Translate(Vector3.up * Time.deltaTime * jumpForce);
-        }
-        */
-
-        //if (Input.GetButtonDown("Jump") && _vy <= 0f && canJump)
-        //{
-        //    DoJump();
-        //    Debug.Log("Jump Should be Working");
-        //}
-        //Key must be added titled "SpeedBoost" under input in project settings
-        /**
-        if(Time.time > nextSpeedBoost && (Input.GetButtonDown("SpeedBoost")))
-        {
-            nextSpeedBoost = Time.time + boostRate;
-            moveSpeed = 7f;
-            StartCoroutine(SpeedBoostEnd());
-        }*/
         if (moveSpeed >= 7f)
         {
             if (trailEffect != null)
@@ -109,22 +69,6 @@ public class Controller : MonoBehaviour
         yield return new WaitForSeconds(3f);
         moveSpeed = 3f;
     }
-
-    /*
-    // make the player jump
-    void DoJump()
-    {
-        // reset current vertical motion to 0 prior to jump
-        _vy = 0f;
-        // add a force in the up direction
-        _rigidbody.AddForce(jump * jumpForce, ForceMode.Impulse);
-        //_rigidbody.AddForce(new Vector3(0, jumpForce));
-        canJump = false;
-        // play the jump sound
-        if (jumpSFX != null)
-            PlaySound(jumpSFX);
-    }
-    */
 
     void PlaySound(AudioClip clip)
     {

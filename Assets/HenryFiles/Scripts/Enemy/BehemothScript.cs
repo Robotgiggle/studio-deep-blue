@@ -10,12 +10,11 @@ public class BehemothScript : MonoBehaviour
     public float speed = 4f;
     float actualSpeed;
     float nextAttack;
-    public bool canAttack = true; //true;
+    public bool canAttack = true;
     public bool isAttacking;
     Transform target;
     public float enemyAttackRange = 2.0f;
     public float sightRange;
-    public GameObject meleeObject;
     public bool dead = false;
     Vector3 muzzle;
     int mask = 1 << 6;
@@ -75,17 +74,12 @@ public class BehemothScript : MonoBehaviour
     void Update()
     {
         timeToTeleport -= Time.deltaTime;
-        if(timeToTeleport <= 0)// && (Vector3.Distance(core.position, this.transform.position) > 10.0f))
+        if(timeToTeleport <= 0)
         {
-            Instantiate(teleportEffect, teleportEffectPoint.transform.position, teleportEffectPoint.transform.rotation); //new Vector3(this.transform.position.x, this.transform.position.y, Player.position.z), this.transform.rotation);
+            Instantiate(teleportEffect, teleportEffectPoint.transform.position, teleportEffectPoint.transform.rotation);
             StartCoroutine(teleport());
 
-        }/*
-        else if (timeToTeleport <= 0 && (Vector3.Distance(core.position, this.transform.position) <= 10.0f))
-        {
-            Instantiate(teleportEffect, new Vector3(this.transform.position.x, this.transform.position.y + 2, Player.position.z), this.transform.rotation);
-            StartCoroutine(teleport());
-        }*/
+        }
 
         IEnumerator teleport()
         {
@@ -96,7 +90,6 @@ public class BehemothScript : MonoBehaviour
                 target = Player;
                 this.transform.position = new Vector3(Player.transform.position.x, Player.position.y + 20f, Player.position.z);
                 Instantiate(teleportEffect, teleportEffectPoint.transform.position, teleportEffectPoint.transform.rotation);
-                //Instantiate(teleportEffect, new Vector3(this.transform.position.x, this.transform.position.y + 2, Player.position.z), this.transform.rotation);
                 isTeleporting = true;
                 timeToTeleport = 20f;
             }
@@ -108,26 +101,25 @@ public class BehemothScript : MonoBehaviour
                 teleportPoint = Random.Range(1, 5);
                 if (teleportPoint == 1)
                 {
-                    this.transform.position = emergencyTeleportPointl.transform.position;//(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
-                    //this.transform.position = //new Vector3(emergencyTeleportPointl.transform.position.x, emergencyTeleportPointl.position.y, emergencyTeleportPointl.position.z);//(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
+                    this.transform.position = emergencyTeleportPointl.transform.position;
+                    
                 }
                 else if(teleportPoint == 2)
                 {
-                    this.transform.position = emergencyTeleportPoint2.transform.position;//(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
+                    this.transform.position = emergencyTeleportPoint2.transform.position;
 
                 }
                 else if (teleportPoint == 3)
                 {
-                    this.transform.position = emergencyTeleportPoint3.transform.position;//(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
+                    this.transform.position = emergencyTeleportPoint3.transform.position;
 
                 }
                 else if (teleportPoint == 4)
                 {
-                    this.transform.position = emergencyTeleportPoint4.transform.position;//(Player.transform.position.x + Random.Range(15.0f, 25.0f), Player.position.y + 20f, Player.position.z);
+                    this.transform.position = emergencyTeleportPoint4.transform.position;
 
                 }
                 Instantiate(teleportEffect, teleportEffectPoint.transform.position, teleportEffectPoint.transform.rotation);
-                //Instantiate(teleportEffect, new Vector3(this.transform.position.x, this.transform.position.y + 2, Player.position.z), this.transform.rotation);
                 isTeleporting = true;
                 timeToTeleport = 20f;
             }
@@ -200,16 +192,10 @@ public class BehemothScript : MonoBehaviour
         {
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
-            actualSpeed = speed * 0.75f;
-            transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         }
         else if ((Vector3.Distance(target.position, this.transform.position) < 150.0f) && dead == false && (Vector3.Distance(target.position, this.transform.position) > enemyAttackRange))
         {
-            actualSpeed = speed;
-            transform.position += transform.forward * actualSpeed * Time.deltaTime;
-            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
@@ -226,17 +212,6 @@ public class BehemothScript : MonoBehaviour
         {
             StartCoroutine(meleeAttack());
         }
-
-        //transform.Rotate(new Vector3(0, -180, 0), Space.Self);
-        //transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
-        //transform.Rotate(new Vector3(-transform.eulerAngles.x, -0, 0), Space.Self);
-
-        //Movement
-
-        if (target == null)
-            return;
-
-        //float distance = Vector3.Distance(transform.position, target.position);
 
     }
 

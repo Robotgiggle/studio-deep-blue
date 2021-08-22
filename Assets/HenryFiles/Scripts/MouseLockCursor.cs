@@ -20,14 +20,6 @@ public class MouseLockCursor : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         { 
             isCursorLock = false;
-            if(!paused)
-            {
-                /*//isCursorLock = false; 
-                LockCursor(false);
-                Time.timeScale = 0;
-                paused = true;
-                Debug.Log("Paused");  */
-            }
         }
     }
 

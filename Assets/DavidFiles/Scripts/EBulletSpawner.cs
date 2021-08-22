@@ -25,7 +25,6 @@ public class EBulletSpawner : MonoBehaviour
         {
             transform.LookAt(new Vector3(GetComponentInParent<RangeRobotScript>().whatIsTarget.position.x, GetComponentInParent<RangeRobotScript>().whatIsTarget.transform.position.y, GetComponentInParent<RangeRobotScript>().whatIsTarget.transform.position.z));
         }
-        //isAttacking = get shooting bool from Henry's minion enemy AI script
         if (Time.time > nextShotTime && GetComponentInParent<Enemy_1_Health>().isDead != true && GetComponentInParent<RangeRobotScript>().enemyIsInRange)
         {
             direction = transform.rotation.eulerAngles;

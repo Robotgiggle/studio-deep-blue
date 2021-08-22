@@ -10,7 +10,6 @@ public class WeaponSound : MonoBehaviour
     private Animation m_Animation;
     [SerializeField] private Animation m_GunShot;
 
-    //private float fireCooldown = 1f;
     private float fireStart = 0;
     public bool canAnimate = true;
     public GameObject weaponToTrack;
@@ -23,11 +22,10 @@ public class WeaponSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (weaponToTrack.GetComponent<BulletSpawner>().isFiring)// Input.GetButtonDown("Fire1") && (Time.time > fireStart + fireCooldown) && (!MouseLockCursor.paused))
+        if (weaponToTrack.GetComponent<BulletSpawner>().isFiring)
         {
             PlayWeaponSound();
             PlayWeaponFire();
-            //canAnimate = true;
             fireStart = Time.time;
         }
     }
@@ -47,7 +45,6 @@ public class WeaponSound : MonoBehaviour
         {
             m_Animation = GetComponent<Animation>();
             m_Animation.Play();
-            //canAnimate = false;
         }
     }
 }

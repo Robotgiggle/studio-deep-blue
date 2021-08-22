@@ -6,23 +6,14 @@ public class RangeRobotScript : MonoBehaviour
 {
 
     //public GameObject bullet;
-    public float fireRate = 5;
-    public float nextFire;
     public Transform whatIsTarget;
     public Transform playerLogTransform;
-    public bool isRangedEnemy = true;
-    public bool canShootE_1 = true;
     public bool isShooting;
     public float enemyWeaponRange = 15.0f;
-    public float BulletForwardForce = 5;
     public float speed = 4f;
-    public float actualSpeed;
-    public float minDist = 1f;
-    public Transform target;
-    public bool isTargetingPlayer;
+    float actualSpeed;
     public float distanceToPlayer;
     public bool dead = false;
-    public bool doWalkingAnimation;
     public bool enemyIsInRange;
     public bool playerTooClose;
     WaveTally tally;
@@ -34,11 +25,9 @@ public class RangeRobotScript : MonoBehaviour
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
         speed += tally.wave * 0.3f;
         transform.GetChild(3).gameObject.GetComponent<EBulletSpawner>().inaccuracy -= tally.wave;
-        canShootE_1 = true;
         // if no target specified, assume the player
         if (whatIsTarget == null)
         {
-            //"coreTargetTag"
             if (GameObject.FindWithTag("coreTargetTag") != null)
             {
                 whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
@@ -64,7 +53,7 @@ public class RangeRobotScript : MonoBehaviour
             enemyIsInRange = false;
         }
 
-        if ((Vector3.Distance(playerLogTransform.position, this.transform.position) <= enemyWeaponRange - 2))
+        if ((distanceToPlayer <= enemyWeaponRange - 2))
         {
             playerTooClose = true;
         }
@@ -75,11 +64,11 @@ public class RangeRobotScript : MonoBehaviour
 
         if (whatIsTarget == null)
         {
-            if ((Vector3.Distance(playerLogTransform.position, this.transform.position) > enemyWeaponRange+3f))
+            if ((distanceToPlayer > enemyWeaponRange+3f))
             {
                 whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
-            else if (Vector3.Distance(playerLogTransform.position, this.transform.position) < enemyWeaponRange+3f)
+            else if (distanceToPlayer < enemyWeaponRange+3f)
             {
                 whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
@@ -92,11 +81,11 @@ public class RangeRobotScript : MonoBehaviour
 
         if (whatIsTarget != null)
         {
-            if ((Vector3.Distance(playerLogTransform.position, this.transform.position) > enemyWeaponRange+4f))
+            if ((distanceToPlayer > enemyWeaponRange+4f))
             {
                 whatIsTarget = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
-            else if (Vector3.Distance(playerLogTransform.position, this.transform.position) < enemyWeaponRange+4f)
+            else if (distanceToPlayer < enemyWeaponRange+4f)
             {
                 whatIsTarget = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
@@ -107,13 +96,13 @@ public class RangeRobotScript : MonoBehaviour
             }
         }
 
-        if (dead == false && playerTooClose)// && (Vector3.Distance(Player.position, this.transform.position) > 200.0f))
+        if (dead == false && playerTooClose)
         {
             actualSpeed = speed * 0.75f;
             transform.position -= transform.forward * actualSpeed * Time.deltaTime;
             transform.LookAt(new Vector3(playerLogTransform.position.x, transform.position.y, playerLogTransform.position.z));
         }
-        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && !enemyIsInRange && !playerTooClose) //&& (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange) && (Vector3.Distance(whatIsTarget.position, this.transform.position) > enemyWeaponRange)
+        else if ((Vector3.Distance(whatIsTarget.position, this.transform.position) < 150.0f) && dead == false && !enemyIsInRange && !playerTooClose)
         {
             actualSpeed = speed;
             transform.position += transform.forward * actualSpeed * Time.deltaTime;

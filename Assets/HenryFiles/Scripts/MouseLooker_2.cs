@@ -48,7 +48,6 @@ public class MouseLooker_2 : MonoBehaviour
         if (!MouseLockCursor.paused)
         {
             LookRotation();
-            //Debug.Log("Camera Is Rotating");
             // if ESCAPE key is pressed, then unlock the cursor
             if (Input.GetButtonDown("Cancel"))
             {
@@ -99,7 +98,7 @@ public class MouseLooker_2 : MonoBehaviour
             m_CameraTargetRot = ClampRotationAroundXAxis(m_CameraTargetRot);
 
         //update the character and the camera based on calculations
-        if (smooth) //if smooth, then slerp over tim
+        if (smooth) //if smooth, then slerp over time
         {
             character.localRotation = Quaternion.Slerp(character.localRotation, m_CharacterTargetRot, 
                 smoothTime * Time.deltaTime);
