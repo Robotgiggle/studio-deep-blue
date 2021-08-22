@@ -16,41 +16,16 @@ public class BehemothAnimationScript : MonoBehaviour
 
     void Update()
     {
-        //punch = get punch bool from Henry's behemoth enemy AI script
-        //dead = get dead bool from Henry's behemoth enemy AI script
-        //speed = get speed variable from Henry's behemoth enemy AI script
         punch = GetComponentInParent<BehemothScript>().isAttacking;
         dead = GetComponentInParent<Enemy_1_Health>().isDead;
-        speed = GetComponentInParent<BehemothScript>().speed;
-
         AnimCheck();
     }
 
     void AnimCheck()
     {
-        if (speed > 0)
-        {
-            behBot.SetBool("isWalking", true);
-        }
-        else
-        {
-            behBot.SetBool("isWalking", false);
-        }
-        if (punch == true)
-        {
-            behBot.SetBool("isPunching", true);
-        }
-        else
-        {
-            behBot.SetBool("isPunching", false);
-        }
-        if (dead == true)
-        {
-            behBot.SetBool("isDead", true);
-        }
-        else
-        {
-            behBot.SetBool("isDead", false);
-        }
+        behBot.SetBool("isWalking", true);
+        behBot.SetBool("isPunching", false);
+        if (punch == true){behBot.SetBool("isPunching", true);}
+        if (dead == true){behBot.SetBool("isDead", true);}
     }
 }

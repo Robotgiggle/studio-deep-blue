@@ -19,44 +19,16 @@ public class rangeBotAnimationScript : MonoBehaviour
     {
         shoot = GetComponentInParent<RangeRobotScript>().enemyIsInRange;
         dead = GetComponentInParent<Enemy_1_Health>().isDead;
-        speed = GetComponentInParent<RangeRobotScript>().speed;
         backing = GetComponentInParent<RangeRobotScript>().playerTooClose;
         AnimCheck();
     }
 
     void AnimCheck()
     {
-        if (speed > 0)
-        {
-            rangeBot.SetBool("isWalking", true);
-        }
-        else
-        {
-            rangeBot.SetBool("isWalking", false);
-        }
-
-        if (shoot)
-        {
-            rangeBot.SetBool("isShooting", true);
-        }
-        else
-        {
-            rangeBot.SetBool("isShooting", false);
-        }
-
-        if (backing)
-        {
-            rangeBot.SetBool("isWalking", true);
-            rangeBot.SetBool("isShooting", false);
-        }
-
-        if (dead == true)
-        {
-            rangeBot.SetBool("isDead", true);
-        }
-        else
-        {
-            rangeBot.SetBool("isDead", false);
-        }
+        rangeBot.SetBool("isWalking", true);
+        rangeBot.SetBool("isShooting", false);
+        if (shoot){rangeBot.SetBool("isShooting", true);}
+        if (backing){rangeBot.SetBool("isShooting", false);}
+        if (dead == true){rangeBot.SetBool("isDead", true);}
     }
 }

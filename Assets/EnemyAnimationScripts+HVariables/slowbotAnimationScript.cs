@@ -16,40 +16,16 @@ public class slowbotAnimationScript : MonoBehaviour
     
     void Update()
     {
-        //punch = get punch bool from Henry's slow enemy AI script
-        //dead = get dead bool from Henry's slow enemy AI script
-        //speed = get speed variable from Henry's slow enemy AI script
         punch = GetComponentInParent<SlowRobotScript>().isAttacking;
         dead = GetComponentInParent<Enemy_1_Health>().isDead;
-        speed = GetComponentInParent<SlowRobotScript>().speed;
-
         AnimCheck();
     }
 
     void AnimCheck()
     {
-        if (speed > 0)
-        {
-            slowBot.SetBool("isMoving", true);
-        } else
-        {
-            slowBot.SetBool("isMoving", false);
-        }
-        if (punch == true)
-        {
-            slowBot.SetBool("isPunching", true);
-        }
-        else
-        {
-            slowBot.SetBool("isPunching", false);
-        }
-        if (dead == true)
-        {
-            slowBot.SetBool("isDead", true);
-        }
-        else
-        {
-            slowBot.SetBool("isDead", false);
-        }
+        slowBot.SetBool("isMoving", true);
+        slowBot.SetBool("isPunching", false);
+        if (punch == true){slowBot.SetBool("isPunching", true);}
+        if (dead == true){slowBot.SetBool("isDead", true);}
     }
 }
