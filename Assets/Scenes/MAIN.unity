@@ -205,25 +205,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 716660465, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+    - target: {fileID: 720436717, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 716660465, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+    - target: {fileID: 720436717, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1306814974, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+    - target: {fileID: 1302579938, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1306814974, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+    - target: {fileID: 1302579938, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_Name
       value: FPSController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1149976198928424941, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: slider
@@ -272,10 +276,6 @@ PrefabInstance:
     - target: {fileID: 1149976198928424942, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6639076485172911761, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-      propertyPath: waveClearReward
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
@@ -2085,7 +2085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HUD: {fileID: 1785989031}
-  crosshairs: {fileID: 1419518725}
   pauseMenu: {fileID: 732692562}
   cursor: {fileID: 682120419}
 --- !u!4 &995150595
@@ -2708,11 +2707,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1149976198646538964, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
   m_PrefabInstance: {fileID: 57294510}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1419518725 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7294661795890451993, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
-  m_PrefabInstance: {fileID: 57294510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1437184926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,8 +2974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathHUDIsNotActive: 0
   deathHUD: {fileID: 961958686}
-  HUD: {fileID: 1785989031}
-  crosshairs: {fileID: 1419518725}
+  playerHUD: {fileID: 1785989031}
   player: {fileID: 682120419}
   pauseMenu: {fileID: 732692562}
   tokenCountSource: {fileID: 1289710327}

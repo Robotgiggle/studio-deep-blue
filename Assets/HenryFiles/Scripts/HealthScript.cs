@@ -30,15 +30,13 @@ public class HealthScript : MonoBehaviour
     private Quaternion respawnRotation;
     //public GameObject pausemenu;
 
-    public GameObject deathHUD;
-    public GameObject HUD;
     Slider healthSlider;
     WaveTally tally;
     // Use this for initialization
     void Start()
     {
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
-        healthSlider = HUD.transform.GetChild(0).GetChild(1).GetComponent<Slider>();
+        healthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
         // store initial position as respawn location
         respawnPosition = transform.position;
         respawnRotation = transform.rotation;
@@ -79,8 +77,6 @@ public class HealthScript : MonoBehaviour
                 isDead = true;
                 healthPoints = 0;
                 isAlive = false;
-                //deathHUD.SetActive(true);
-                //HUD.SetActive(false);
                 switch (onLivesGone)
                 {
                     case deathAction.loadLevelWhenDead:

@@ -22,7 +22,7 @@ public class CoreController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("FPSController").GetComponent<HealthScript>();
+        player = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
         coreSlider = GameObject.Find("CoreSlider").GetComponent<Slider>();
     }
 

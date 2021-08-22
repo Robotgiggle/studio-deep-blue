@@ -8,8 +8,7 @@ public class deathMenu : MonoBehaviour
 {
     public bool deathHUDIsNotActive = false;
     public GameObject deathHUD;
-    public GameObject HUD;
-    public GameObject crosshairs;
+    public GameObject playerHUD;
     public GameObject player;
     public GameObject pauseMenu;
     public GameObject tokenCountSource;
@@ -37,8 +36,7 @@ public class deathMenu : MonoBehaviour
             }
             Time.timeScale = 0;
             deathHUDIsNotActive = true;
-            crosshairs.SetActive(false);
-            HUD.SetActive(false);
+            playerHUD.SetActive(false);
             deathHUD.SetActive(true);
             //player.GetComponent<MouseLockCursor>().pause();
             player.GetComponent<HealthScript>().isDead = true;
