@@ -40,7 +40,7 @@ public class BehemothScript : MonoBehaviour
     public int teleportPoint;
 
     private AudioSource m_AudioSource;
-    public AudioClip m_AttackSound;
+    public AudioClip m_attackSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -244,6 +244,12 @@ public class BehemothScript : MonoBehaviour
 
     }
 
+    void playShootSound()
+    {
+        m_AudioSource.clip = m_attackSound;
+        m_AudioSource.Play();
+    }
+
     IEnumerator meleeAttack()
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(target.position, transform.position) < enemyAttackRange))
@@ -251,6 +257,7 @@ public class BehemothScript : MonoBehaviour
             nextAttack = Time.time + attackCooldown;
             yield return new WaitForSeconds(attackCooldown-2.6f);
             RaycastHit hit;
+            playShootSound();
             if (Physics.Raycast(muzzle,transform.forward,out hit,enemyAttackRange+0.7f, mask))
             {
                 Debug.Log("hit the " + hit.transform.gameObject.name);

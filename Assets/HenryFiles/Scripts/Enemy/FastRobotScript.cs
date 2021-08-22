@@ -49,6 +49,7 @@ public class FastRobotScript : MonoBehaviour
                 core = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
         }
+        m_AudioSource = Player.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -139,6 +140,12 @@ public class FastRobotScript : MonoBehaviour
 
     }
 
+    void playShootSound()
+    {
+        m_AudioSource.clip = m_attackSound;
+        m_AudioSource.Play();
+    }
+
     IEnumerator meleeAttack()
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(target.position, transform.position) < enemyAttackRange))
@@ -146,6 +153,7 @@ public class FastRobotScript : MonoBehaviour
             nextAttack = Time.time + attackCooldown;
             yield return new WaitForSeconds(attackCooldown-1.2f);
             RaycastHit hit;
+            playShootSound();
             if (Physics.Raycast(muzzle,transform.forward,out hit,enemyAttackRange+0.5f, mask))
             {
                 Debug.Log("hit the " + hit.transform.gameObject.name);

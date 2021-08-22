@@ -39,6 +39,7 @@ public class MinionScript : MonoBehaviour
             if (GameObject.FindWithTag("Player") != null)
             {
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+                m_AudioSource = Player.GetComponent<AudioSource>();
             }
         }
 
@@ -49,6 +50,7 @@ public class MinionScript : MonoBehaviour
                 core = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
         }
+        m_AudioSource = Player.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -151,6 +153,12 @@ public class MinionScript : MonoBehaviour
 
     }
 
+    void playShootSound()
+    {
+        m_AudioSource.clip = m_attackSound;
+        m_AudioSource.Play();
+    }
+
     IEnumerator meleeAttack()
     {
         if (Time.time > nextAttack && canAttack == true && (Vector3.Distance(target.position, transform.position) < enemyAttackRange))
@@ -158,6 +166,7 @@ public class MinionScript : MonoBehaviour
             nextAttack = Time.time + attackCooldown;
             yield return new WaitForSeconds(attackCooldown-0.6f);
             RaycastHit hit;
+            playShootSound();            
             if (Physics.Raycast(muzzle,transform.forward,out hit,enemyAttackRange+0.5f, mask))
             {
                 Debug.Log("hit the " + hit.transform.gameObject.name);
