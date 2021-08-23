@@ -162,23 +162,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c3f2810a5066943b74489e1149ba1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 7
-  nextFire: 0
   whatIsTarget: {fileID: 0}
   playerLogTransform: {fileID: 0}
-  isRangedEnemy: 1
-  canShootE_1: 1
   isShooting: 0
   enemyWeaponRange: 20
-  BulletForwardForce: 5
   speed: 4
-  actualSpeed: 0
-  minDist: 1
-  target: {fileID: 0}
-  isTargetingPlayer: 0
   distanceToPlayer: 0
   dead: 0
-  doWalkingAnimation: 0
   enemyIsInRange: 0
   playerTooClose: 0
 --- !u!95 &3565613900162070960
@@ -307,6 +297,10 @@ PrefabInstance:
       propertyPath: m_attackSound
       value: 
       objectReference: {fileID: 8300000, guid: e6150e4d748959545a31fe4252b9cfd9, type: 3}
+    - target: {fileID: 5729125917011362265, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5729125917011362266, guid: 322ca4c672a90c34386028be8a8e1f36, type: 3}
       propertyPath: m_RootOrder
       value: 3

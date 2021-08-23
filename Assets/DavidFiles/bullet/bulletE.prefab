@@ -131,4 +131,4 @@ MonoBehaviour:
   damageToPlayer: 1
   destroySelfOnImpact: 0
   delayBeforeDestroy: 0
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 3527860327035299888, guid: 4f755ded83ed8dd4e9bf36594400fa68, type: 3}

@@ -17,6 +17,15 @@ public class EnemyBulletMovement : MonoBehaviour
         lifeTime-=Time.deltaTime;
         if(lifeTime <= 0)
         {
+            Instantiate(explosionPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Untagged" || other.gameObject.tag == "Player")
+        {
+            Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
