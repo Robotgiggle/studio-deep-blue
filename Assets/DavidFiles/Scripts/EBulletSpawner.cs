@@ -16,7 +16,7 @@ public class EBulletSpawner : MonoBehaviour
     public AudioClip m_attackSound;
     void Start()
     {
-        m_AudioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
+        m_AudioSource = this.GetComponent<AudioSource>();
     }
 
     void Update()

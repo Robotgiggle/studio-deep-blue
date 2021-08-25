@@ -34,7 +34,7 @@ public class Enemy_1_Health : MonoBehaviour
                 player = GameObject.FindWithTag("Player").GetComponent<Transform>();
             }
         }
-        m_AudioSource = player.GetComponent<AudioSource>();
+        m_AudioSource = this.GetComponent<AudioSource>();
 
         tally = GameObject.Find("manager").GetComponent<WaveTally>();
         EnemyHealth += tally.wave * 4;

@@ -49,7 +49,7 @@ public class SlowRobotScript : MonoBehaviour
                 core = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
         }
-        m_AudioSource = Player.GetComponent<AudioSource>();
+        m_AudioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

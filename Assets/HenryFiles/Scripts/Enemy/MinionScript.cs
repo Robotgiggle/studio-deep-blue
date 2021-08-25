@@ -38,7 +38,6 @@ public class MinionScript : MonoBehaviour
             if (GameObject.FindWithTag("Player") != null)
             {
                 Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-                m_AudioSource = Player.GetComponent<AudioSource>();
             }
         }
 
@@ -49,7 +48,7 @@ public class MinionScript : MonoBehaviour
                 core = GameObject.FindWithTag("coreTargetTag").GetComponent<Transform>();
             }
         }
-        m_AudioSource = Player.GetComponent<AudioSource>();
+        m_AudioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
