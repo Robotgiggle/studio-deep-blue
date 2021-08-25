@@ -148,6 +148,7 @@ MonoBehaviour:
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  spawnInEffect: {fileID: 1044626265131593977, guid: 570c5c17618ab9844aa974224be4942d, type: 3}
   player: {fileID: 0}
   m_DeathSound: {fileID: 8300000, guid: f2312c3496e26624aa1914a923674223, type: 3}
 --- !u!114 &1557538361245794267

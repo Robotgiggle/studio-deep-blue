@@ -14,6 +14,7 @@ public class Enemy_1_Health : MonoBehaviour
     WaveTally tally;
     float spread;
     public GameObject effect;
+    public GameObject spawnInEffect;
 
     public Transform player;
     private AudioSource m_AudioSource;
@@ -21,6 +22,11 @@ public class Enemy_1_Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(spawnInEffect != null)
+        {
+            Instantiate(spawnInEffect, new Vector3(transform.position.x, transform.position.y + 0.75f, transform.position.z), transform.rotation);
+        }
+
         if (player == null)
         {
             if (GameObject.FindWithTag("Player") != null)

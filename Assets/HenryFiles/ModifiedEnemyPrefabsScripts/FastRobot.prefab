@@ -151,7 +151,6 @@ MonoBehaviour:
   isAttacking: 0
   enemyAttackRange: 3.5
   sightRange: 15
-  meleeObject: {fileID: 0}
   dead: 0
   attackCooldown: 2
   attackDamage: 5
@@ -176,6 +175,7 @@ MonoBehaviour:
   hasPlayed: 0
   isDead: 0
   effect: {fileID: 0}
+  spawnInEffect: {fileID: 1044626265131593977, guid: 570c5c17618ab9844aa974224be4942d, type: 3}
   player: {fileID: 0}
   m_DeathSound: {fileID: 8300000, guid: 33843666f1455e3429a0c8b8a372621b, type: 3}
 --- !u!1 &7768538467978203899
