@@ -93,9 +93,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   bulletDamage: 4
-  destroyedEffect: {fileID: 9059403873234044818, guid: 1781a1b215707d343855220f971c14d6, type: 3}
   hitEffect: {fileID: 9059403873234044818, guid: d2419a7d1c66db44a9bab7317287db25, type: 3}
+  destroyedEffect: {fileID: 9059403873234044818, guid: 1781a1b215707d343855220f971c14d6, type: 3}
   effectHasSpawned: 0
+  coreModel: {fileID: 7840123434025946386}
 --- !u!1 &6815701763677603636
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,5 +201,10 @@ PrefabInstance:
 --- !u!4 &1876784940377845617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8418694475dc8416ab0d8aefb51ad266, type: 3}
+  m_PrefabInstance: {fileID: 2126003077029513370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7840123434025946386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 8418694475dc8416ab0d8aefb51ad266, type: 3}
   m_PrefabInstance: {fileID: 2126003077029513370}
   m_PrefabAsset: {fileID: 0}

@@ -65,7 +65,8 @@ public class CoreController : MonoBehaviour
     void OnTriggerEnter(Collider other){
     	if(other.gameObject.CompareTag("bullet")&&!iframes){
     		health -= bulletDamage;
-    		iframes = true;
+            Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+            iframes = true;
     		Destroy(other.gameObject);
             if(health<=0){
                 player.killedBy = "by RK-49 \"Ranger\"";
