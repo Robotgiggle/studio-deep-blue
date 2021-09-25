@@ -32,7 +32,7 @@ public class HealthScript : MonoBehaviour
     Slider healthSlider;
     WaveTally tally;
 
-    private AudioSoruce m_AudioSource; 
+    private AudioSource m_AudioSource; 
     [SerializeField] private AudioClip m_DeathSound;
 
     // Use this for initialization
@@ -91,7 +91,7 @@ public class HealthScript : MonoBehaviour
     {
         healthPoints -= amount;
         if(healthPoints<=0){
-            
+            PlayDeathSound();
             return true;
         }else{
             return false;
