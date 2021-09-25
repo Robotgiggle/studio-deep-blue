@@ -277,6 +277,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1149976200496391029, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: m_AudioSource
+      value: 
+      objectReference: {fileID: 682120424}
+    - target: {fileID: 1149976200496391029, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+      propertyPath: m_WeaponSound_1
+      value: 
+      objectReference: {fileID: 8300000, guid: daf8aa03d228cf84a8a1e890f5ebb24e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
 --- !u!1 &101126795
@@ -1539,6 +1547,11 @@ CanvasRenderer:
 --- !u!1 &682120419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1149976198928424919, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
+  m_PrefabInstance: {fileID: 57294510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &682120424 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1149976198928424912, guid: 3c8783944a485cb4697974adf33eb41c, type: 3}
   m_PrefabInstance: {fileID: 57294510}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
